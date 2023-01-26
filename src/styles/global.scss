@@ -1,0 +1,33 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+*,
+**::before,
+**::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: $light-blue;
+}
+
+h1 {
+  @include font-bold;
+  color: $medium-dark-blue;
+}
+
+h2 {
+  @include font-semibold;
+  color: $medium-dark-blue;
+}
+
+h3 {
+  @include font-semibold;
+  color: $dark-blue;
+}
+
+p {
+  @include font-regular;
+  color: $navy-blue;
+}

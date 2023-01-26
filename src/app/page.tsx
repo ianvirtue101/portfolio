@@ -1,91 +1,56 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <h1> Hey there! Welcome to my portfolio website!</h1>
+      {/* add text below */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      <h2>
+        I'm really excited to share my work with you and tell you a bit more
+        about my background.
+      </h2>
+      <p>
+        I've been in the industry for over 5 years now, working in
+        communications, business development, and non-profit management. My most
+        recent experience was as a Content Development Manager at Learnedly,
+        where I got to use my skills in front-end development to design,
+        develop, and maintain the company's website from scratch. I used
+        JavaScript, HTML, CSS, and APIs to make sure the website was responsive,
+        user-friendly, and optimized for search engines.
+      </p>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <p>
+        I also got to do some research, create engaging course content and
+        develop lesson plans and scripts for videos and other multimedia
+        content. Before that, I was the owner of Ian Virtue Photography, where I
+        got to create engaging content for various social media channels,
+        including video and infographics, resulting in a 200% engagement
+        increase over a 3-month period. I was also able to deliver professional
+        designs, complex digital graphics, and responsive websites for a diverse
+        client base including businesses, organizations, professionals, and
+        individuals.
+      </p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      <p>
+        I received my diploma in Web Development from BrainStation and my
+        Bachelor of Arts in Communication, Media, & Film and Digital Journalism
+        from the University of Windsor. My skills include JavaScript, React,
+        Node.js, Express, Next.js, and Agile development methodologies, as well
+        as experience in creating responsive websites and web applications,
+        working with APIs, user authentication, and web design principles.
+      </p>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <p>
+        Additionally, I am proficient in Adobe Creative Suite, photography,
+        videography, and social media marketing. I am also skilled in using
+        tools such as Figma, Jira, Heroku, GitHub, Jest, and CSS/SCSS/HTML and
+        have working experience with Python, proficient in basic functionality
+        and data manipulation.
+      </p>
+
+      <h3>
+        So take a look around, let me know if you have any questions, and if
+        you're interested in working together, let's chat!
+      </h3>
     </main>
-  )
+  );
 }

@@ -1,0 +1,63 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+// media breakpoints
+
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: $large-desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin font-bold {
+  font-family: "Raleway";
+  font-weight: 700 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-semibold {
+  font-family: "Raleway";
+  font-weight: 600 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-regular {
+  font-family: "Raleway";
+  font-weight: 300 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-light {
+  font-family: "Raleway";
+  font-weight: 200 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-extra-light {
+  font-family: "Raleway";
+  font-weight: 100 !important;
+  font-style: normal;
+  font-display: swap;
+}
