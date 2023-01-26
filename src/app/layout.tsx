@@ -1,7 +1,6 @@
 import "../styles/global.scss";
 import Navbar from "../components/navbar/navbar";
 
-
 export default function RootLayout({
   children,
 }: {
@@ -14,8 +13,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <Navbar />
-      <body> {children}</body>
+
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
