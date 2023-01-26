@@ -1,24 +1,47 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+
+import styles from "./navbar.module.scss";
 
 export default function navbar() {
   const [currentPage, setCurrentPage] = useState("home");
 
   return (
     <>
-      <NavigationMenu.Root>
-        <NavigationMenu.Item onClick={() => setCurrentPage("home")}>
-          Home
+      <NavigationMenu.Root className={styles.nav}>
+        <NavigationMenu.Item
+          className={styles.navItem}
+          onClick={() => setCurrentPage("home")}
+        >
+          <Link className={styles.navLink} href="/">
+            Home
+          </Link>
         </NavigationMenu.Item>
-        <NavigationMenu.Item onClick={() => setCurrentPage("about")}>
-          About
+        <NavigationMenu.Item
+          className={styles.navItem}
+          onClick={() => setCurrentPage("about")}
+        >
+          <Link className={styles.navLink} href="/about">
+            About
+          </Link>
         </NavigationMenu.Item>
-        <NavigationMenu.Item onClick={() => setCurrentPage("work")}>
-          Work
+        <NavigationMenu.Item
+          className={styles.navItem}
+          onClick={() => setCurrentPage("work")}
+        >
+          <Link className={styles.navLink} href="/resume">
+            Resume
+          </Link>
         </NavigationMenu.Item>
-        <NavigationMenu.Item onClick={() => setCurrentPage("contact")}>
-          Contact
+        <NavigationMenu.Item
+          className={styles.navItem}
+          onClick={() => setCurrentPage("contact")}
+        >
+          <Link className={styles.navLink} href="/contact">
+            Contact
+          </Link>
         </NavigationMenu.Item>
       </NavigationMenu.Root>
     </>

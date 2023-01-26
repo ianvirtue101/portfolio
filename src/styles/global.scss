@@ -31,3 +31,8 @@ p {
   @include font-regular;
   color: $navy-blue;
 }
+
+a {
+  @include font-semibold;
+  color: $medium-dark-blue;
+}
