@@ -1,6 +1,7 @@
 import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
 import "./home.scss";
+import Headshot from "../../assets/ian-virtue-headshot.png";
 
 export default function Home() {
   return (
@@ -15,7 +16,16 @@ export default function Home() {
           </h2>
         </div>
 
-        <div></div>
+        <div className="image-container">
+          <div className="image-container__block">
+            <Image
+              className="image-container__image"
+              src={Headshot}
+              alt="Ian Virtue Headshot"
+              width={300}
+            />
+          </div>
+        </div>
       </section>
       <p>
         I've been in the industry for over 5 years now, working in
