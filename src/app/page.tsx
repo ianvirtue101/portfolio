@@ -14,6 +14,8 @@ export default function Home() {
             about my background.
           </h2>
         </div>
+
+        <div></div>
       </section>
       <p>
         I've been in the industry for over 5 years now, working in

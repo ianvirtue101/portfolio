@@ -1,12 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import styles from "./rotatingText.module.scss";
+import styles from "./RotatingText.module.scss";
 
 export default function RotatingText() {
-  const [text, setText] = useState("Hello World");
+  const [text, setText] = useState("I'm Ian Virtue");
 
-  const textArray = ["Hello World", "I'm Ian", "I'm a Software Engineer"];
+  const textArray = [
+    "Full Stack Developer",
+    "Building responsive websites",
+    "Creating engaging content",
+    "Expert in JavaScript, React, and Node.js",
+    "Professional photographer",
+    "Adobe Creative Suite Pro",
+  ];
 
   const controls = useAnimation();
 
@@ -45,10 +52,10 @@ export default function RotatingText() {
   return (
     <div className={styles.rotatingText}>
       <motion.h1
-        className={styles.rotatingText__text}
         animate={controls}
         variants={variants}
         transition={transition}
+        style={{ fontSize: "2rem", color: "#004777" }}
       >
         {text}
       </motion.h1>
