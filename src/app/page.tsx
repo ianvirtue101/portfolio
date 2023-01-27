@@ -1,13 +1,20 @@
+import Image from "next/image";
+import RotatingText from "../components/rotatingText/rotatingText";
+import "./home.scss";
+
 export default function Home() {
   return (
     <main>
-      <h1> Hey there! Welcome to my portfolio website!</h1>
-      {/* add text below */}
+      <section className="section">
+        <div className="container">
+          <RotatingText />
 
-      <h2>
-        I'm really excited to share my work with you and tell you a bit more
-        about my background.
-      </h2>
+          <h2 className="container__text">
+            I'm really excited to share my work with you and tell you a bit more
+            about my background.
+          </h2>
+        </div>
+      </section>
       <p>
         I've been in the industry for over 5 years now, working in
         communications, business development, and non-profit management. My most

@@ -4,6 +4,7 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  padding: 1rem;
 }
 
 .navItem {
@@ -14,4 +15,11 @@
 .navLink {
   text-decoration: none;
   font-size: 1.25rem;
+
+  // add a subtle on hover animotion
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $navy-blue;
+  }
 }
