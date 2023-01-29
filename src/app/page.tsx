@@ -1,9 +1,37 @@
 import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
+import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import Headshot from "../../assets/ian-virtue-headshot.png";
 
 export default function Home() {
+  const data = {
+    instagram: {
+      channel: "instagram",
+      link: "https://www.instagram.com/ian.virtue/",
+      handle: "ian.virtue",
+      followers: "1145",
+      description:
+        "Landscape & Commercial Photographer helping eco-focused brands do more for the world",
+    },
+    linkedin: {
+      channel: "linkedin",
+      link: "https://www.linkedin.com/in/ian-virtue/",
+      handle: "ian virtue",
+      followers: "519",
+      description:
+        "Building visually stunning websites, designs, and media that engage and inspire",
+    },
+    github: {
+      channel: "github",
+      link: "https://github.com/ianvirtue101",
+      handle: "ianvirtue101",
+      followers: "8",
+      description:
+        "Landscape & Commercial Photographer helping eco-focused brands do more for the world",
+    },
+  };
+
   return (
     <main>
       <section className="section">
@@ -25,6 +53,13 @@ export default function Home() {
               width={300}
             />
           </div>
+
+          <HoverCards
+            channel={data.instagram.channel}
+            handle={data.instagram.handle}
+            followers={data.instagram.followers}
+            description={data.instagram.description}
+          />
         </div>
       </section>
       <p>
