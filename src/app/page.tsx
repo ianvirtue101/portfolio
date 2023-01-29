@@ -7,7 +7,7 @@ import Headshot from "../../assets/ian-virtue-headshot.png";
 export default function Home() {
   const data = {
     instagram: {
-      channel: "instagram",
+      channel: "Instagram",
       link: "https://www.instagram.com/ian.virtue/",
       handle: "ian.virtue",
       followers: "1145",
@@ -15,7 +15,7 @@ export default function Home() {
         "Landscape & Commercial Photographer helping eco-focused brands do more for the world",
     },
     linkedin: {
-      channel: "linkedin",
+      channel: "Linkedin",
       link: "https://www.linkedin.com/in/ian-virtue/",
       handle: "ian virtue",
       followers: "519",
@@ -23,7 +23,7 @@ export default function Home() {
         "Building visually stunning websites, designs, and media that engage and inspire",
     },
     github: {
-      channel: "github",
+      channel: "Github",
       link: "https://github.com/ianvirtue101",
       handle: "ianvirtue101",
       followers: "8",
@@ -53,13 +53,29 @@ export default function Home() {
               width={300}
             />
           </div>
-
-          <HoverCards
-            channel={data.instagram.channel}
-            handle={data.instagram.handle}
-            followers={data.instagram.followers}
-            description={data.instagram.description}
-          />
+          <div className="image-container__hover-card">
+            <HoverCards
+              channel={data.instagram.channel}
+              link={data.instagram.link}
+              handle={data.instagram.handle}
+              followers={data.instagram.followers}
+              description={data.instagram.description}
+            />
+            <HoverCards
+              channel={data.linkedin.channel}
+              link={data.linkedin.link}
+              handle={data.linkedin.handle}
+              followers={data.linkedin.followers}
+              description={data.linkedin.description}
+            />
+            <HoverCards
+              channel={data.github.channel}
+              link={data.github.link}
+              handle={data.github.handle}
+              followers={data.github.followers}
+              description={data.github.description}
+            />
+          </div>
         </div>
       </section>
       <p>

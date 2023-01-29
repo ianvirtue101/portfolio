@@ -43,4 +43,6 @@ a {
   color: $medium-dark-blue;
 }
 
-
+div {
+  @include font-regular;                    
+}

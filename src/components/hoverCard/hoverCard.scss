@@ -1,0 +1,48 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.SocialMediaTrigger {
+}
+
+.SocialMediaLogo {
+  width: 80%;
+  padding: 0rem 1rem;
+}
+
+.SocialMediaHoverCardContent {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.SocialMediaContainer {
+}
+
+.SocialMediaTitle {
+  @include font-bold;
+  padding-bottom: 0.5rem;
+}
+
+.SocialMediaHandle {
+  transition: all ease-in-out 0.5s;
+
+  &:hover {
+    color: $navy-blue;
+  }
+}
+
+.SocialMediaDescription {
+  padding: 1rem 0rem;
+}
+
+.SocialMediaFollowers {
+}
+
+.SocialMediaFollowersCount {
+}
+
+.SocialMediaFollowersLabel {
+}
+
+.SocialMediaHoverCardArrow {
+}

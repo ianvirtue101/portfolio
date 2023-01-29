@@ -1,13 +1,18 @@
 "use client";
 import * as HoverCard from "@radix-ui/react-hover-card";
+import Link from "next/link";
+
+import "./hoverCard.scss";
 
 export default function HoverCards({
   channel,
+  link,
   handle,
   followers,
   description,
 }: {
   channel: string;
+  link: string;
   handle: string;
   followers: string;
   description: string;
@@ -28,36 +33,26 @@ export default function HoverCards({
           className="SocialMediaHoverCardContent"
           sideOffset={5}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 7,
-              background: "white",
-            }}
-          >
+          <div>
             {/* <img
               className="SocialMediaLogo large"
               src={`../${channel}.svg`}
               alt={`${channel} logo`}
             /> */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 15,
-                background: "white",
-              }}
-            >
-              <div>
+            <div>
+              <div className="SocialMediaContainer">
                 <div className="SocialMediaTitle">{channel}</div>
-                <div className="SocialMediaHandle">@{handle}</div>
+
+                <Link href={link} className="SocialMediaHandle">
+                  @{handle}
+                </Link>
               </div>
               <div className="SocialMediaDescription">{description}</div>
-              <div style={{ display: "flex", gap: 15 }}>
+              <div>
                 <div className="SocialMediaFollowers">
-                  <div className="SocialMediaFollowersCount">{followers}</div>{" "}
-                  <div className="SocialMediaFollowersLabel">Followers</div>
+                  <div className="SocialMediaFollowersCount">
+                    {followers} Followers
+                  </div>{" "}
                 </div>
               </div>
             </div>

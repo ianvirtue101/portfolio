@@ -51,4 +51,11 @@
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
+
+  &__hover-card {
+    display: flex;
+    justify-content: space-between;
+    // shrink the hover card
+    transform: scale(0.8);
+  }
 }
