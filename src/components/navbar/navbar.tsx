@@ -5,7 +5,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 
 import styles from "./navbar.module.scss";
 
-export default function navbar() {
+export default function Navbar() {
   const [currentPage, setCurrentPage] = useState("home");
 
   return (

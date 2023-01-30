@@ -1,5 +1,6 @@
 "use client";
 import * as HoverCard from "@radix-ui/react-hover-card";
+import Image from "next/image";
 import Link from "next/link";
 
 import "./hoverCard.scss";
@@ -21,10 +22,12 @@ export default function HoverCards({
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
         <div className="SocialMediaTrigger">
-          <img
+          <Image
             className="SocialMediaLogo"
             src={`../${channel}.svg`}
             alt={`${channel} logo`}
+            width={50}
+            height={50}
           />
         </div>
       </HoverCard.Trigger>

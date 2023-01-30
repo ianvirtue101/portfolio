@@ -39,8 +39,8 @@ export default function Home() {
           <RotatingText />
 
           <h2 className="container__text">
-            I'm really excited to share my work with you and tell you a bit more
-            about my background.
+            I&apos;m really excited to share my work with you and tell you a bit
+            more about my background.
           </h2>
         </div>
 
@@ -79,11 +79,11 @@ export default function Home() {
         </div>
       </section>
       <p>
-        I've been in the industry for over 5 years now, working in
+        I&apos;ve been in the industry for over 5 years now, working in
         communications, business development, and non-profit management. My most
         recent experience was as a Content Development Manager at Learnedly,
         where I got to use my skills in front-end development to design,
-        develop, and maintain the company's website from scratch. I used
+        develop, and maintain the company&apos;s website from scratch. I used
         JavaScript, HTML, CSS, and APIs to make sure the website was responsive,
         user-friendly, and optimized for search engines.
       </p>
@@ -119,7 +119,7 @@ export default function Home() {
 
       <h3>
         So take a look around, let me know if you have any questions, and if
-        you're interested in working together, let's chat!
+        you&apos;re interested in working together, let&apos;s chat!
       </h3>
     </main>
   );
