@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import "./rotatingtext.module.scss";
+import "./rotatingtext.scss";
 
 export default function RotatingText() {
   const [text, setText] = useState("I'm Ian Virtue");
