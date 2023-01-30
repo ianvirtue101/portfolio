@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import styles from "./rotatingtext.module.scss";
+import "./rotatingtext.module.scss";
 
 export default function RotatingText() {
   const [text, setText] = useState("I'm Ian Virtue");
@@ -50,7 +50,7 @@ export default function RotatingText() {
   }, [text]);
 
   return (
-    <div className={styles.rotatingText}>
+    <div className="rotatingText">
       <motion.h1
         animate={controls}
         variants={variants}
