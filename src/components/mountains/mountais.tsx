@@ -29,14 +29,14 @@ export default function Mountains() {
     };
   }, []);
 
-  const mountain1Y = useMemo(() => scrollY * 0.25, [scrollY]);
-  const mountain2Y = useMemo(() => scrollY * 0.15, [scrollY]);
-  const mountain3Y = useMemo(() => scrollY * 0.1, [scrollY]);
-  const mountain5Y = useMemo(() => scrollY * 0.2, [scrollY]);
+  const mountain1Y = useMemo(() => scrollY * 0.1, [scrollY]);
+  const mountain2Y = useMemo(() => scrollY * 0.2, [scrollY]);
+  const mountain3Y = useMemo(() => scrollY * 0.3, [scrollY]);
+  const mountain5Y = useMemo(() => scrollY * 0.4, [scrollY]);
 
-  const cloud1X = useMemo(() => scrollY * 0.7, [scrollY]);
-  const cloud2X = useMemo(() => scrollY * -1.5, [scrollY]);
-  const cloud3X = useMemo(() => scrollY * -1.1, [scrollY]);
+  const cloud1X = useMemo(() => scrollY * 0.2, [scrollY]);
+  const cloud2X = useMemo(() => scrollY * -0.5, [scrollY]);
+  const cloud3X = useMemo(() => scrollY * -1.0, [scrollY]);
 
   // Mountian Springs
 
@@ -97,6 +97,7 @@ export default function Mountains() {
               objectFit: "cover",
               width: "100%",
               height: "auto",
+              zIndex: "1",
             }}
             src={Mountain5}
             alt="mountain-vector5"
@@ -115,7 +116,7 @@ export default function Mountains() {
               left: "2rem",
               objectFit: "cover",
               width: "50%",
-
+              zIndex: "1",
               height: "auto",
             }}
             src={Cloud3}
@@ -134,6 +135,7 @@ export default function Mountains() {
               objectFit: "cover",
               width: "100%",
               height: "auto",
+              zIndex: "1",
             }}
             src={Mountain3}
             alt="mountain-vector3"
@@ -152,7 +154,7 @@ export default function Mountains() {
               right: "2rem",
               objectFit: "cover",
               width: "50%",
-
+              zIndex: "1",
               height: "auto",
             }}
             src={Cloud2}
@@ -172,6 +174,7 @@ export default function Mountains() {
               objectFit: "cover",
               width: "100%",
               height: "auto",
+              zIndex: "1",
             }}
             src={Mountain2}
             alt="mountain-vector2"
@@ -190,6 +193,7 @@ export default function Mountains() {
               objectFit: "cover",
               width: "40%",
               height: "auto",
+              zIndex: "1",
             }}
             src={Cloud1}
             alt="mountain-vector1"
@@ -208,6 +212,7 @@ export default function Mountains() {
               objectFit: "cover",
               width: "100%",
               height: "auto",
+              zIndex: "1",
             }}
             src={Mountain1}
             alt="mountain-vector1"
