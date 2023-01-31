@@ -2,7 +2,8 @@ import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
-import Headshot from "../../assets/ian-virtue-headshot.png";
+import Headshot from "../assets/ian-virtue-headshot.png";
+import Mountains from "@/components/mountains/mountais";
 
 export default function Home() {
   const data = {
@@ -34,10 +35,10 @@ export default function Home() {
 
   return (
     <main>
+      <Mountains />
       <section className="section">
         <div className="container">
           <RotatingText />
-
           <h2 className="container__text">
             I&apos;m really excited to share my work with you and tell you a bit
             more about my background.
@@ -78,6 +79,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <p>
         I&apos;ve been in the industry for over 5 years now, working in
         communications, business development, and non-profit management. My most
