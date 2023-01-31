@@ -113,20 +113,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <p className="body-section__text">
-          I also got to do some research, create engaging course content and
-          develop lesson plans and scripts for videos and other multimedia
-          content. Before that, I was the owner of Ian Virtue Photography, where
-          I got to create engaging content for various social media channels,
-          including video and infographics, resulting in a 200% engagement
-          increase over a 3-month period. I was also able to deliver
-          professional designs, complex digital graphics, and responsive
-          websites for a diverse client base including businesses,
-          organizations, professionals, and individuals.
-        </p>
-
-        <p className="body-section__text">
+      </section>
+      <section id="resume" className="resume-section">
+        <p className="resume-section__text">
           I received my diploma in Web Development from BrainStation and my
           Bachelor of Arts in Communication, Media, & Film and Digital
           Journalism from the University of Windsor. My skills include
@@ -135,20 +124,12 @@ export default function Home() {
           and web applications, working with APIs, user authentication, and web
           design principles.
         </p>
-
-        <p className="body-section__text">
-          Additionally, I am proficient in Adobe Creative Suite, photography,
-          videography, and social media marketing. I am also skilled in using
-          tools such as Figma, Jira, Heroku, GitHub, Jest, and CSS/SCSS/HTML and
-          have working experience with Python, proficient in basic functionality
-          and data manipulation.
-        </p>
-
-        <h3>
-          So take a look around, let me know if you have any questions, and if
-          you&apos;re interested in working together, let&apos;s chat!
-        </h3>
       </section>
+
+      <h3>
+        So take a look around, let me know if you have any questions, and if
+        you&apos;re interested in working together, let&apos;s chat!
+      </h3>
     </main>
   );
 }
