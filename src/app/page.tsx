@@ -5,11 +5,15 @@ import "./home.scss";
 import Headshot from "../assets/ianvirtue.png";
 import Mountains from "@/components/mountains/mountais";
 import Link from "next/link";
+import instagram from "../../public/instagram.svg";
+import linkedin from "../../public/linkedin.svg";
+import github from "../../public/github.svg";
 
 export default function Home() {
   const data = {
     instagram: {
       channel: "Instagram",
+      image: { instagram },
       link: "https://www.instagram.com/ian.virtue/",
       handle: "ian.virtue",
       followers: "1145",
@@ -18,6 +22,7 @@ export default function Home() {
     },
     linkedin: {
       channel: "Linkedin",
+      image: { linkedin },
       link: "https://www.linkedin.com/in/ian-virtue/",
       handle: "ian virtue",
       followers: "519",
@@ -26,6 +31,7 @@ export default function Home() {
     },
     github: {
       channel: "Github",
+      image: { github },
       link: "https://github.com/ianvirtue101",
       handle: "ianvirtue101",
       followers: "8",
@@ -86,6 +92,7 @@ export default function Home() {
                 handle={data.instagram.handle}
                 followers={data.instagram.followers}
                 description={data.instagram.description}
+                image={data.instagram.image}
               />
               <HoverCards
                 channel={data.linkedin.channel}
@@ -93,6 +100,7 @@ export default function Home() {
                 handle={data.linkedin.handle}
                 followers={data.linkedin.followers}
                 description={data.linkedin.description}
+                image={data.linkedin.image}
               />
               <HoverCards
                 channel={data.github.channel}
@@ -100,6 +108,7 @@ export default function Home() {
                 handle={data.github.handle}
                 followers={data.github.followers}
                 description={data.github.description}
+                image={data.github.image}
               />
             </div>
           </div>

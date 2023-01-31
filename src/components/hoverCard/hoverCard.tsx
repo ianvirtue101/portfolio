@@ -11,12 +11,14 @@ export default function HoverCards({
   handle,
   followers,
   description,
+  image,
 }: {
   channel: string;
   link: string;
   handle: string;
   followers: string;
   description: string;
+  image: any;
 }) {
   return (
     <HoverCard.Root>
@@ -24,7 +26,7 @@ export default function HoverCards({
         <div className="SocialMediaTrigger">
           <Image
             className="SocialMediaLogo"
-            src={`../${channel}.svg`}
+            src={`../${image}.svg`}
             alt={`${channel} logo`}
             width={50}
             height={50}
