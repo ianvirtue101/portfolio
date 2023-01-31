@@ -45,7 +45,11 @@ export default function Home() {
             I&apos;m really excited to share my work with you and tell you a bit
             more about my background.
           </h2>
-          <Link href="#contact">Let&apos;s Work Together</Link>
+
+          <div className="container__buttonBLock"> </div>
+          <Link className="container__button" href="#contact">
+            Let&apos;s Work Together
+          </Link>
         </div>
       </section>
       <section className="body-section">
