@@ -30,7 +30,7 @@
 }
 
 .image-container {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 1);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   padding: 2rem;
@@ -46,6 +46,7 @@
 
   &__image {
     border-radius: 1rem;
+    background: rgba(142, 152, 230, 1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
@@ -55,8 +56,6 @@
     align-items: center;
     padding-top: 0.5rem;
     width: 100%;
-    // shrink the hover card
-    transform: scale(0.8);
   }
 }
 
@@ -64,9 +63,16 @@
   padding-top: 6rem;
   background-color: #1f2761;
   z-index: 2;
-  font-size: 10rem;
+  font-size: 1rem;
 
   &__text {
+    flex-basis: 50%;
     color: #e6eaff;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }

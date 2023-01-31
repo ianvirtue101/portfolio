@@ -2,7 +2,7 @@ import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
-import Headshot from "../assets/ian-virtue-headshot.png";
+import Headshot from "../assets/ianvirtue.png";
 import Mountains from "@/components/mountains/mountais";
 
 export default function Home() {
@@ -38,57 +38,61 @@ export default function Home() {
       <Mountains />
       <section className="section">
         <div className="container">
+          <h1 className="container__text">Hi, I'm Ian</h1>
           <RotatingText />
           <h2 className="container__text">
             I&apos;m really excited to share my work with you and tell you a bit
             more about my background.
           </h2>
         </div>
-
-        {/* <div className="image-container">
-          <div className="image-container__block">
-            <Image
-              className="image-container__image"
-              src={Headshot}
-              alt="Ian Virtue Headshot"
-              width={300}
-            />
-          </div>
-          <div className="image-container__hover-card">
-            <HoverCards
-              channel={data.instagram.channel}
-              link={data.instagram.link}
-              handle={data.instagram.handle}
-              followers={data.instagram.followers}
-              description={data.instagram.description}
-            />
-            <HoverCards
-              channel={data.linkedin.channel}
-              link={data.linkedin.link}
-              handle={data.linkedin.handle}
-              followers={data.linkedin.followers}
-              description={data.linkedin.description}
-            />
-            <HoverCards
-              channel={data.github.channel}
-              link={data.github.link}
-              handle={data.github.handle}
-              followers={data.github.followers}
-              description={data.github.description}
-            />
-          </div>
-        </div> */}
       </section>
       <section className="body-section">
-        <p className="body-section__text">
-          I&apos;ve been in the industry for over 5 years now, working in
-          communications, business development, and non-profit management. My
-          most recent experience was as a Content Development Manager at
-          Learnedly, where I got to use my skills in front-end development to
-          design, develop, and maintain the company&apos;s website from scratch.
-          I used JavaScript, HTML, CSS, and APIs to make sure the website was
-          responsive, user-friendly, and optimized for search engines.
-        </p>
+        <div className="body-section__group">
+          <p className="body-section__text">
+            I&apos;ve been in the industry for over 5 years now, working in
+            communications, business development, and non-profit management. My
+            most recent experience was as a Content Development Manager at
+            Learnedly, where I got to use my skills in front-end development to
+            design, develop, and maintain the company&apos;s website from
+            scratch. I used JavaScript, HTML, CSS, and APIs to make sure the
+            website was responsive, user-friendly, and optimized for search
+            engines.
+          </p>
+
+          <div className="image-container">
+            <div className="image-container__block">
+              <Image
+                className="image-container__image"
+                src={Headshot}
+                alt="Ian Virtue Headshot"
+                width={300}
+              />
+            </div>
+            <div className="image-container__hover-card">
+              <HoverCards
+                channel={data.instagram.channel}
+                link={data.instagram.link}
+                handle={data.instagram.handle}
+                followers={data.instagram.followers}
+                description={data.instagram.description}
+              />
+              <HoverCards
+                channel={data.linkedin.channel}
+                link={data.linkedin.link}
+                handle={data.linkedin.handle}
+                followers={data.linkedin.followers}
+                description={data.linkedin.description}
+              />
+              <HoverCards
+                channel={data.github.channel}
+                link={data.github.link}
+                handle={data.github.handle}
+                followers={data.github.followers}
+                description={data.github.description}
+              />
+            </div>
+          </div>
+        </div>
 
         <p className="body-section__text">
           I also got to do some research, create engaging course content and
