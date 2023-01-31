@@ -4,6 +4,7 @@ import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import Headshot from "../assets/ianvirtue.png";
 import Mountains from "@/components/mountains/mountais";
+import Link from "next/link";
 
 export default function Home() {
   const data = {
@@ -38,17 +39,18 @@ export default function Home() {
       <Mountains />
       <section className="section">
         <div className="container">
-          <h1 className="container__text">Hi, I'm Ian</h1>
+          <h1 className="container__text">Hi, I&apos;m Ian</h1>
           <RotatingText />
           <h2 className="container__text">
             I&apos;m really excited to share my work with you and tell you a bit
             more about my background.
           </h2>
+          <Link href="#contact">Let's Work Together</Link>
         </div>
       </section>
       <section className="body-section">
         <div className="body-section__group">
-          <p className="body-section__text">
+          <p id="about" className="body-section__text">
             I&apos;ve been in the industry for over 5 years now, working in
             communications, business development, and non-profit management. My
             most recent experience was as a Content Development Manager at

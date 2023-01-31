@@ -23,7 +23,7 @@ export default function Navbar() {
           className={styles.navItem}
           onClick={() => setCurrentPage("about")}
         >
-          <Link className={styles.navLink} href="/about">
+          <Link className={styles.navLink} href="#about">
             About
           </Link>
         </NavigationMenu.Item>
@@ -31,7 +31,7 @@ export default function Navbar() {
           className={styles.navItem}
           onClick={() => setCurrentPage("work")}
         >
-          <Link className={styles.navLink} href="/resume">
+          <Link className={styles.navLink} href="#resume">
             Resume
           </Link>
         </NavigationMenu.Item>
@@ -39,7 +39,7 @@ export default function Navbar() {
           className={styles.navItem}
           onClick={() => setCurrentPage("contact")}
         >
-          <Link className={styles.navLink} href="/contact">
+          <Link className={styles.navLink} href="#contact">
             Contact
           </Link>
         </NavigationMenu.Item>
