@@ -7,12 +7,12 @@ export default function RotatingText() {
   const [text, setText] = useState("I'm Ian Virtue");
 
   const textArray = [
-    "Full Stack Developer",
-    "Building responsive websites",
-    "Creating engaging content",
-    "Expert in JavaScript, React, and Node.js",
-    "Professional photographer",
-    "Adobe Creative Suite Pro",
+    "I'm a Full Stack Developer",
+    "I build responsive websites",
+    "In case you can't tell, I love the outdoors",
+    "I'm an Expert in JavaScript, Next.js, and Node.js",
+    "A Professional Photographer",
+    "I'm an Adobe Creative Suite Pro",
   ];
 
   const controls = useAnimation();

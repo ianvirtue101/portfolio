@@ -45,7 +45,7 @@ export default function Home() {
       <Mountains />
       <section className="section">
         <div className="container">
-          <h1 className="container__text">Hi, I&apos;m Ian</h1>
+          <h1 className="container__title">Hi, I&apos;m Ian</h1>
           <RotatingText />
           <h2 className="container__text">
             I&apos;m really excited to share my work with you and tell you a bit
@@ -85,6 +85,7 @@ export default function Home() {
                 width={300}
               />
             </div>
+            <h2>Let&apos;s Connect</h2>
             <div className="image-container__hover-card">
               <HoverCards
                 channel={data.instagram.channel}
