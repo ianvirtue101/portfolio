@@ -45,7 +45,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="image-container">
+        {/* <div className="image-container">
           <div className="image-container__block">
             <Image
               className="image-container__image"
@@ -77,52 +77,54 @@ export default function Home() {
               description={data.github.description}
             />
           </div>
-        </div>
+        </div> */}
       </section>
+      <section className="body-section">
+        <p className="body-section__text">
+          I&apos;ve been in the industry for over 5 years now, working in
+          communications, business development, and non-profit management. My
+          most recent experience was as a Content Development Manager at
+          Learnedly, where I got to use my skills in front-end development to
+          design, develop, and maintain the company&apos;s website from scratch.
+          I used JavaScript, HTML, CSS, and APIs to make sure the website was
+          responsive, user-friendly, and optimized for search engines.
+        </p>
 
-      <p>
-        I&apos;ve been in the industry for over 5 years now, working in
-        communications, business development, and non-profit management. My most
-        recent experience was as a Content Development Manager at Learnedly,
-        where I got to use my skills in front-end development to design,
-        develop, and maintain the company&apos;s website from scratch. I used
-        JavaScript, HTML, CSS, and APIs to make sure the website was responsive,
-        user-friendly, and optimized for search engines.
-      </p>
+        <p className="body-section__text">
+          I also got to do some research, create engaging course content and
+          develop lesson plans and scripts for videos and other multimedia
+          content. Before that, I was the owner of Ian Virtue Photography, where
+          I got to create engaging content for various social media channels,
+          including video and infographics, resulting in a 200% engagement
+          increase over a 3-month period. I was also able to deliver
+          professional designs, complex digital graphics, and responsive
+          websites for a diverse client base including businesses,
+          organizations, professionals, and individuals.
+        </p>
 
-      <p>
-        I also got to do some research, create engaging course content and
-        develop lesson plans and scripts for videos and other multimedia
-        content. Before that, I was the owner of Ian Virtue Photography, where I
-        got to create engaging content for various social media channels,
-        including video and infographics, resulting in a 200% engagement
-        increase over a 3-month period. I was also able to deliver professional
-        designs, complex digital graphics, and responsive websites for a diverse
-        client base including businesses, organizations, professionals, and
-        individuals.
-      </p>
+        <p className="body-section__text">
+          I received my diploma in Web Development from BrainStation and my
+          Bachelor of Arts in Communication, Media, & Film and Digital
+          Journalism from the University of Windsor. My skills include
+          JavaScript, React, Node.js, Express, Next.js, and Agile development
+          methodologies, as well as experience in creating responsive websites
+          and web applications, working with APIs, user authentication, and web
+          design principles.
+        </p>
 
-      <p>
-        I received my diploma in Web Development from BrainStation and my
-        Bachelor of Arts in Communication, Media, & Film and Digital Journalism
-        from the University of Windsor. My skills include JavaScript, React,
-        Node.js, Express, Next.js, and Agile development methodologies, as well
-        as experience in creating responsive websites and web applications,
-        working with APIs, user authentication, and web design principles.
-      </p>
+        <p className="body-section__text">
+          Additionally, I am proficient in Adobe Creative Suite, photography,
+          videography, and social media marketing. I am also skilled in using
+          tools such as Figma, Jira, Heroku, GitHub, Jest, and CSS/SCSS/HTML and
+          have working experience with Python, proficient in basic functionality
+          and data manipulation.
+        </p>
 
-      <p>
-        Additionally, I am proficient in Adobe Creative Suite, photography,
-        videography, and social media marketing. I am also skilled in using
-        tools such as Figma, Jira, Heroku, GitHub, Jest, and CSS/SCSS/HTML and
-        have working experience with Python, proficient in basic functionality
-        and data manipulation.
-      </p>
-
-      <h3>
-        So take a look around, let me know if you have any questions, and if
-        you&apos;re interested in working together, let&apos;s chat!
-      </h3>
+        <h3>
+          So take a look around, let me know if you have any questions, and if
+          you&apos;re interested in working together, let&apos;s chat!
+        </h3>
+      </section>
     </main>
   );
 }
