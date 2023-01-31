@@ -23,25 +23,25 @@ export default function Navbar() {
           className={styles.navItem}
           onClick={() => setCurrentPage("about")}
         >
-          <Link className={styles.navLink} href="#about">
+          <a className={styles.navLink} href="#about">
             About
-          </Link>
+          </a>
         </NavigationMenu.Item>
         <NavigationMenu.Item
           className={styles.navItem}
           onClick={() => setCurrentPage("work")}
         >
-          <Link className={styles.navLink} href="#resume">
+          <a className={styles.navLink} href="#resume">
             Resume
-          </Link>
+          </a>
         </NavigationMenu.Item>
         <NavigationMenu.Item
           className={styles.navItem}
           onClick={() => setCurrentPage("contact")}
         >
-          <Link className={styles.navLink} href="#contact">
+          <a className={styles.navLink} href="#contact">
             Contact
-          </Link>
+          </a>
         </NavigationMenu.Item>
       </NavigationMenu.Root>
     </>

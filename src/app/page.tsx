@@ -50,7 +50,8 @@ export default function Home() {
       </section>
       <section className="body-section">
         <div className="body-section__group">
-          <p id="about" className="body-section__text">
+          <h1 id="about">About</h1>
+          <p className="body-section__text">
             I&apos;ve been in the industry for over 5 years now, working in
             communications, business development, and non-profit management. My
             most recent experience was as a Content Development Manager at
