@@ -26,7 +26,7 @@ export default function HoverCards({
         <div className="SocialMediaTrigger">
           <Image
             className="SocialMediaLogo"
-            src={`../${image}.svg`}
+            src={image}
             alt={`${channel} logo`}
             width={50}
             height={50}
