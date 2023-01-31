@@ -45,22 +45,26 @@ export default function Home() {
             I&apos;m really excited to share my work with you and tell you a bit
             more about my background.
           </h2>
-          <Link href="#contact">Let's Work Together</Link>
+          <Link href="#contact">Let&apos;s Work Together</Link>
         </div>
       </section>
       <section className="body-section">
         <div className="body-section__group">
-          <h1 id="about">About</h1>
-          <p className="body-section__text">
-            I&apos;ve been in the industry for over 5 years now, working in
-            communications, business development, and non-profit management. My
-            most recent experience was as a Content Development Manager at
-            Learnedly, where I got to use my skills in front-end development to
-            design, develop, and maintain the company&apos;s website from
-            scratch. I used JavaScript, HTML, CSS, and APIs to make sure the
-            website was responsive, user-friendly, and optimized for search
-            engines.
-          </p>
+          <div className="body-section__text-block">
+            <h1 id="about" className="body-section__title">
+              About
+            </h1>
+            <p className="body-section__text">
+              I&apos;ve been in the industry for over 5 years now, working in
+              communications, business development, and non-profit management.
+              My most recent experience was as a Content Development Manager at
+              Learnedly, where I got to use my skills in front-end development
+              to design, develop, and maintain the company&apos;s website from
+              scratch. I used JavaScript, HTML, CSS, and APIs to make sure the
+              website was responsive, user-friendly, and optimized for search
+              engines.
+            </p>
+          </div>
 
           <div className="image-container">
             <div className="image-container__block">
