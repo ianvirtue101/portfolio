@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: $light-blue;
+  background-color: #e6eaff;
 }
 
 body {
@@ -44,5 +44,5 @@ a {
 }
 
 div {
-  @include font-regular;                    
+  @include font-regular;
 }
