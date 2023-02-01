@@ -1,10 +1,9 @@
 @use "../../styles/mixins.scss" as *;
 @use "../../styles/variables.scss" as *;
 
-
-
 .SocialMediaLogo {
   padding: 0rem 1rem;
+  // create a grow on hover animation
 }
 
 .SocialMediaHoverCardContent {
@@ -12,7 +11,6 @@
   border-radius: 0.5rem;
   padding: 1rem;
 }
-
 
 .SocialMediaTitle {
   @include font-bold;
@@ -30,4 +28,3 @@
 .SocialMediaDescription {
   padding: 1rem 0rem;
 }
-
