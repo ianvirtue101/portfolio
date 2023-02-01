@@ -3,7 +3,7 @@ import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import Headshot from "../assets/ianvirtue.png";
-import Mountains from "@/components/mountains/mountais";
+import Mountains from "@/components/mountains/mountains";
 import Link from "next/link";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
@@ -54,9 +54,9 @@ export default function Home() {
           </h2>
 
           <div className="container__buttonBLock"> </div>
-          <Link className="container__button" href="#contact">
+          <a className="container__button" href="#contact">
             Let&apos;s Work Together
-          </Link>
+          </a>
         </div>
       </section>
       <section className="body-section">

@@ -33,6 +33,7 @@ export default function Mountains() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const mountain1Y = useMemo(
     () => (scrollLimitReached ? 0 : scrollY * 0.1),
     [scrollY, scrollLimitReached]
