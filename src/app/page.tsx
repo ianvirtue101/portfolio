@@ -130,7 +130,8 @@ export default function Home() {
         <div className="resume-section__container">
           <div className="resume-section__block">
             <h3 className="resume-section__header">
-              Content Development Manager | Learnedly
+              Content Development Manager
+              <br />@ Learnedly
             </h3>
             <p className="resume-section__text">
               Utilized Next.js to design, develop, and maintain the
@@ -152,7 +153,7 @@ export default function Home() {
 
           <div className="resume-section__block">
             <h3 className="resume-section__header">
-              Owner | Ian Virtue Photography
+              Owner <br />@ Ian Virtue Photography
             </h3>
             <p className="resume-section__text">
               Successfully managed and created engaging content for various
