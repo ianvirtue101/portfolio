@@ -43,7 +43,7 @@ const ContactForm: React.FC = () => {
   return (
     <>
       {submitSuccess ? (
-        <p>Thanks for reaching out! We'll get back to you shortly.</p>
+        <p>Thanks for reaching out! We&apos;ll get back to you shortly.</p>
       ) : (
         <form onSubmit={handleSubmit} className="form">
           <div className="form__group">
