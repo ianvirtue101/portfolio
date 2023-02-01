@@ -47,7 +47,6 @@ const ContactForm: React.FC = () => {
       ) : (
         <form onSubmit={handleSubmit} className="form">
           <div className="form__group">
-            <FontAwesomeIcon icon={faUser} />
             <label htmlFor="name" className="form__label">
               Name:
             </label>
@@ -62,7 +61,6 @@ const ContactForm: React.FC = () => {
             />
           </div>
           <div className="form__group">
-            <FontAwesomeIcon icon={faEnvelope} />
             <label htmlFor="email" className="form__label">
               Email:
             </label>
@@ -74,10 +72,9 @@ const ContactForm: React.FC = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
-            />
+            ></input>
           </div>
           <div className="form__group">
-            <FontAwesomeIcon icon={faComment} />
             <label htmlFor="message" className="form__label">
               Message:
             </label>
