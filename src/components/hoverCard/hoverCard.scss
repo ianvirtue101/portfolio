@@ -1,8 +1,7 @@
 @use "../../styles/mixins.scss" as *;
 @use "../../styles/variables.scss" as *;
 
-.SocialMediaTrigger {
-}
+
 
 .SocialMediaLogo {
   padding: 0rem 1rem;
@@ -14,8 +13,6 @@
   padding: 1rem;
 }
 
-.SocialMediaContainer {
-}
 
 .SocialMediaTitle {
   @include font-bold;
@@ -34,14 +31,3 @@
   padding: 1rem 0rem;
 }
 
-.SocialMediaFollowers {
-}
-
-.SocialMediaFollowersCount {
-}
-
-.SocialMediaFollowersLabel {
-}
-
-.SocialMediaHoverCardArrow {
-}

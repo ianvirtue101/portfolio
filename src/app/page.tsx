@@ -132,7 +132,7 @@ export default function Home() {
         So take a look around, let me know if you have any questions, and if
         you&apos;re interested in working together, let&apos;s chat!
       </h3>
-      <section>
+      <section className="contact-section">
         <ContactForm />
       </section>
     </main>

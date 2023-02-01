@@ -24,14 +24,46 @@
     width: 20rem;
   }
 
+  //   &__button {
+  //     background-color: $dark-blue;
+  //     color: $white-blue;
+  //     margin: 1rem;
+  //     padding: 1rem 2rem;
+
+  //     width: 22rem;
+
+  //     border-radius: 0.5rem;
+  //   }
+
+  &__buttonBLock {
+    margin-top: 2rem;
+    display: block;
+    width: 15rem;
+    height: 3.5rem;
+    position: relative;
+    background-color: #1f2761;
+  }
+
   &__button {
-    background-color: $dark-blue;
-    color: $white-blue;
-    margin: 1rem;
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid #1f2761 3px;
+    position: relative;
+    bottom: 4rem;
+    margin-bottom: -4rem;
+    right: 0.5rem;
+    color: #1f2761;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+    height: 3.5rem;
+    width: 15rem;
+    font-size: 1.2rem;
+    transition: 0.1s;
 
-    width: 22rem;
-
-    border-radius: 0.5rem;
+    &:hover {
+      transform: translate(0.5rem, 0.5rem);
+    }
   }
 }

@@ -87,6 +87,7 @@ const ContactForm: React.FC = () => {
               required
             />
           </div>
+          <div className="form__buttonBLock"> </div>
           <button className="form__button" type="submit">
             Submit
           </button>
