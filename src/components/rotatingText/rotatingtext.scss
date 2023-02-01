@@ -9,7 +9,10 @@
   transform-origin: top;
 
   &__text {
-    font-size: 10rem;
+    font-size: 2rem;
+    @include desktop {
+      font-size: 10rem;
+    }
 
     color: $dark-blue;
   }
