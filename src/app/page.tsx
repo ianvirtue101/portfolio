@@ -8,6 +8,7 @@ import Link from "next/link";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
+import ContactForm from "../components/contactForm/contactForm";
 
 export default function Home() {
   const data = {
@@ -131,6 +132,7 @@ export default function Home() {
         So take a look around, let me know if you have any questions, and if
         you&apos;re interested in working together, let&apos;s chat!
       </h3>
+      <ContactForm />
     </main>
   );
 }
