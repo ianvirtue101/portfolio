@@ -129,11 +129,13 @@ export default function Home() {
       </section>
 
       <section id="contact" className="contact-section">
-        <h3>
+        <h3 className="contact-section__header">
           So take a look around, let me know if you have any questions, and if
           you&apos;re interested in working together, let&apos;s chat!
         </h3>
-        <ContactForm />
+        <div className="contact-section__circle">
+          <ContactForm />
+        </div>
       </section>
     </main>
   );

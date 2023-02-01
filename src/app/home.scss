@@ -158,4 +158,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $white-blue;
+
+  &__header {
+    position: relative;
+    width: 70%;
+    top: 12rem;
+    line-height: 3rem;
+    margin-top: -12rem;
+    font-size: 2rem;
+    text-align: center;
+    @include font-bold;
+  }
+
+  &__circle {
+    background-color: white;
+    border-radius: 50%;
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
