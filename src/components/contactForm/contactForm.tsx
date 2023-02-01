@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
               Message:
             </label>
             <textarea
-              className="form__input"
+              className="form__textarea"
               id="message"
               name="message"
               value={formData.message}

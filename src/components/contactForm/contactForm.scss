@@ -22,18 +22,21 @@
     background-color: $white-blue;
     filter: drop-shadow(0.5rem 0.5rem 0rem $dark-blue);
     width: 20rem;
+    border: 1px solid black;
   }
 
-  //   &__button {
-  //     background-color: $dark-blue;
-  //     color: $white-blue;
-  //     margin: 1rem;
-  //     padding: 1rem 2rem;
-
-  //     width: 22rem;
-
-  //     border-radius: 0.5rem;
-  //   }
+  &__textarea {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: $white-blue;
+    filter: drop-shadow(0.5rem 0.5rem 0rem $dark-blue);
+    width: 20rem;
+    border: 1px solid black;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    padding-bottom: 2rem;
+  }
 
   &__buttonBLock {
     margin-top: 2rem;

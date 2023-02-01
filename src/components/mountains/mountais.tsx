@@ -13,12 +13,17 @@ import "./mountains.scss";
 
 export default function Mountains() {
   const [scrollY, setScrollY] = useState(0);
+  const [scrollLimitReached, setScrollLimitReached] = useState(false);
+  const scrollLimit = 1000; // define the scroll limit here
 
   useEffect(() => {
     let animationFrameId: any;
     const handleScroll = () => {
       cancelAnimationFrame(animationFrameId);
       animationFrameId = requestAnimationFrame(() => {
+        if (window.scrollY >= scrollLimit) {
+          setScrollLimitReached(true);
+        }
         setScrollY(window.scrollY);
       });
     };
@@ -28,15 +33,35 @@ export default function Mountains() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const mountain1Y = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * 0.1),
+    [scrollY, scrollLimitReached]
+  );
+  const mountain2Y = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * 0.2),
+    [scrollY, scrollLimitReached]
+  );
+  const mountain3Y = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * 0.3),
+    [scrollY, scrollLimitReached]
+  );
+  const mountain5Y = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * 0.4),
+    [scrollY, scrollLimitReached]
+  );
 
-  const mountain1Y = useMemo(() => scrollY * 0.1, [scrollY]);
-  const mountain2Y = useMemo(() => scrollY * 0.2, [scrollY]);
-  const mountain3Y = useMemo(() => scrollY * 0.3, [scrollY]);
-  const mountain5Y = useMemo(() => scrollY * 0.4, [scrollY]);
-
-  const cloud1X = useMemo(() => scrollY * 0.2, [scrollY]);
-  const cloud2X = useMemo(() => scrollY * -0.5, [scrollY]);
-  const cloud3X = useMemo(() => scrollY * -1.0, [scrollY]);
+  const cloud1X = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * 0.2),
+    [scrollY, scrollLimitReached]
+  );
+  const cloud2X = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * -0.5),
+    [scrollY, scrollLimitReached]
+  );
+  const cloud3X = useMemo(
+    () => (scrollLimitReached ? 0 : scrollY * -1.0),
+    [scrollY, scrollLimitReached]
+  );
 
   // Mountian Springs
 
