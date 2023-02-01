@@ -162,9 +162,15 @@
     }
   }
 
-  &__block{
+  &__block {
+    border: 1px solid $white-blue;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    flex-basis: 50%;
+  }
 
-    
+  &__container {
+    display: flex;
   }
 
   &__header {
@@ -175,6 +181,7 @@
   &__text {
     font-size: 1.5rem;
     color: $white-blue;
+    text-align: justify;
   }
 }
 
