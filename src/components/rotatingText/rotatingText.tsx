@@ -55,7 +55,8 @@ export default function RotatingText() {
         animate={controls}
         variants={variants}
         transition={transition}
-        style={{ fontSize: "2rem", color: "#004777" }}
+        style={{ fontSize: "2rem", color: "#1f2761" }}
+        className="rotatingText__text"
       >
         {text}
       </motion.h1>

@@ -1,16 +1,26 @@
+"use client";
 import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import Headshot from "../assets/ianvirtue.png";
 import Mountains from "@/components/mountains/mountains";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
 
 export default function Home() {
+  const [width, setWidth] = useState(window.innerWidth);
+  const tabletBreakpoint = 768;
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const data = {
     instagram: {
       channel: "Instagram",
@@ -43,7 +53,7 @@ export default function Home() {
 
   return (
     <main>
-      <Mountains />
+      {width >= tabletBreakpoint && <Mountains />}
       <section className="section">
         <div className="container">
           <h1 className="container__title">Hi, I&apos;m Ian</h1>
