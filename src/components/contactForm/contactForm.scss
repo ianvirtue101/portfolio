@@ -10,6 +10,7 @@
   &__group {
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
   }
   &__label {
     padding: 1rem 0rem;
@@ -20,6 +21,7 @@
     padding: 0.5rem 1rem;
     background-color: $white-blue;
     filter: drop-shadow(0.5rem 0.5rem 0rem $dark-blue);
+    width: 20rem;
   }
 
   &__button {
@@ -27,7 +29,8 @@
     color: $white-blue;
     margin: 1rem;
     padding: 1rem 2rem;
-    flex-basis: 100%;
+
+    width: 22rem;
 
     border-radius: 0.5rem;
   }
