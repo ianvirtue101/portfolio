@@ -9,8 +9,6 @@
   opacity: 0.95;
   height: 100vh;
   z-index: 1;
-  // add a subtle on hover animotion
-  transition: all 0.3s ease-in-out;
 }
 
 .container {
@@ -165,7 +163,7 @@
 
 .resume-section {
   background-color: $medium-dark-blue;
-  padding: 1rem;
+  padding: 2rem 1rem 5rem 1rem;
 
   @include desktop {
     padding: 4rem;
@@ -193,6 +191,7 @@
   &__block {
     border: 1px solid $white-blue;
     padding: 1rem;
+    margin: 1rem 0rem;
 
     box-shadow: 0.5rem 0.5rem 0rem $light-blue;
     @include desktop {
@@ -240,22 +239,30 @@
 }
 
 .contact-section {
-  padding: 10rem 5rem 5rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $white-blue;
+  padding: 2rem;
+  overflow: hidden;
+  @include desktop {
+    padding: 10rem 5rem 5rem 5rem;
+  }
 
   &__header {
     position: relative;
-    width: 70%;
-    top: 12rem;
-    line-height: 3rem;
-    margin-top: -12rem;
+    text-align: justify;
     font-size: 2rem;
-    text-align: center;
+
     @include font-bold;
+    @include desktop {
+      top: 12rem;
+      line-height: 3rem;
+      margin-top: -12rem;
+      width: 70%;
+      text-align: center;
+    }
   }
 
   &__circle {
@@ -266,5 +273,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
+
+    @include desktop {
+      width: 50rem;
+      height: 50rem;
+    }
   }
 }
