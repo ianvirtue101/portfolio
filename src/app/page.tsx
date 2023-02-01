@@ -117,15 +117,64 @@ export default function Home() {
         </div>
       </section>
       <section id="resume" className="resume-section">
+        <h2 className="resume-section__title">My Experience</h2>
         <p className="resume-section__text">
-          I received my diploma in Web Development from BrainStation and my
-          Bachelor of Arts in Communication, Media, & Film and Digital
-          Journalism from the University of Windsor. My skills include
-          JavaScript, React, Node.js, Express, Next.js, and Agile development
-          methodologies, as well as experience in creating responsive websites
-          and web applications, working with APIs, user authentication, and web
-          design principles.
+          Results-driven professional with 5+ years of experience in
+          communications, business development, and non-profit management.
+          Proven track record of leading cross-functional teams and managing
+          projects from concept to completion, with strong communication and
+          interpersonal skills. Solid front-end development skills, including
+          expertise in HTML, CSS, JavaScript, and front-end frameworks such as
+          ReactJS, AngularJS, and VueJS.
         </p>
+        <div className="resume-section__block">
+          <h3 className="resume-section__header">
+            Content Development Manager | Learnedly
+          </h3>
+          <p className="resume-section__text">
+            Utilized Next.js to design, develop, and maintain the company&apos;s
+            website from scratch, incorporating JavaScript, HTML, CSS, and
+            RESTful APIs to create a responsive, user-friendly, and optimized
+            website for search engines.
+          </p>
+          <p className="resume-section__text">
+            Conducted research on various topics to create engaging and
+            informative course content in collaboration with subject matter
+            experts.
+          </p>
+          <p className="resume-section__text">
+            Skilled in video editing and animation, utilizing Adobe Premiere Pro
+            and After Effects to enhance videos, adding special effects,
+            animation, and sound to increase engagement and impact.
+          </p>
+        </div>
+
+        <div className="resume-section__block">
+          <h3 className="resume-section__header">
+            Owner | Ian Virtue Photography
+          </h3>
+          <p className="resume-section__text">
+            Successfully managed and created engaging content for various social
+            media channels, including video and infographics, resulting in a
+            200% engagement increase over a 3-month period. Adept at
+            implementing regular revisions and optimizations to ensure best
+            results in an Agile project management environment.
+          </p>
+          <p className="resume-section__text">
+            Delivered professional designs, complex digital graphics, and
+            responsive websites for a diverse client base including businesses,
+            organizations, professionals, and individuals. This includes custom
+            graphic and logo designs completed within budget and on schedule.
+            Resulting designs have been featured in catalogs and storefronts
+            across Ontario.
+          </p>
+          <p className="resume-section__text">
+            Photography featured in a province-wide commercial campaign,
+            showcasing the ability to produce high-quality, impactful visual
+            content, which increased the brand presence of the 5th largest
+            winery in Canada.
+          </p>
+        </div>
       </section>
 
       <section id="contact" className="contact-section">
