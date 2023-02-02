@@ -13,10 +13,8 @@ import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
 
 function useWindowSize() {
-  if (typeof window === "undefined") return 0;
-
   const [width, setWidth] = useState(window.innerWidth);
-
+  if (typeof window === "undefined") return 0;
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);

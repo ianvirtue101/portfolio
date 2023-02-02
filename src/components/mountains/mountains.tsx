@@ -120,6 +120,7 @@ export default function Mountains() {
             }}
             src={Mountain5}
             alt="mountain-vector5"
+            priority
           />
         </animated.div>
 
@@ -140,6 +141,7 @@ export default function Mountains() {
             }}
             src={Cloud3}
             alt="mountain-vector1"
+            priority
           />
         </animated.div>
         <animated.div
@@ -157,6 +159,7 @@ export default function Mountains() {
             }}
             src={Mountain3}
             alt="mountain-vector3"
+            priority
           />
         </animated.div>
 
@@ -177,6 +180,7 @@ export default function Mountains() {
             }}
             src={Cloud2}
             alt="mountain-vector1"
+            priority
           />
         </animated.div>
 
@@ -195,6 +199,7 @@ export default function Mountains() {
             }}
             src={Mountain2}
             alt="mountain-vector2"
+            priority
           />
         </animated.div>
 
@@ -213,6 +218,7 @@ export default function Mountains() {
             }}
             src={Cloud1}
             alt="mountain-vector1"
+            priority
           />
         </animated.div>
 
@@ -231,6 +237,7 @@ export default function Mountains() {
             }}
             src={Mountain1}
             alt="mountain-vector1"
+            priority
           />
         </animated.div>
       </div>
