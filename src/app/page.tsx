@@ -13,16 +13,14 @@ import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
 
 function useWindowSize() {
+  if (typeof window === "undefined") return 0;
+
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return undefined;
-    } else {
-      const handleResize = () => setWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return width;
