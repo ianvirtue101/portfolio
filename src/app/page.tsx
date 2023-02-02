@@ -13,7 +13,7 @@ import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
 
 function useWindowSize() {
-  if (typeof window === "undefined") return 0;
+  // if (typeof window === "undefined") return 0;
 
   const [width, setWidth] = useState(window.innerWidth);
 
