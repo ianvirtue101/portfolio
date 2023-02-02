@@ -103,13 +103,7 @@ export default function Mountains() {
 
   return (
     <>
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
-        }}
-      >
+      <div className="mountains-container">
         <animated.div
           style={{
             transform: mountain5Spring.y.to((y) => `translateY(${y}px)`),

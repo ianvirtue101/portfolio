@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faEnvelope,
-  faComment,
-} from "@fortawesome/free-solid-svg-icons";
+import sgMail from "@sendgrid/mail";
 import "./contactForm.scss";
 
 interface FormData {
@@ -29,16 +24,24 @@ const ContactForm: React.FC = () => {
     });
   };
 
-  async function handleSubmit(event: any) {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     try {
-      // send form data to your server or a third-party service here
-      console.log(formData);
-      setSubmitSuccess(true);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSubmitSuccess(true);
+      } else {
+        console.error("Failed to submit the form");
+      }
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   return (
     <>
