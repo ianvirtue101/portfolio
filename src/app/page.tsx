@@ -11,6 +11,7 @@ import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
+import Head from "./head";
 
 function useWindowSize() {
   const isClient = typeof window === "object";
@@ -73,6 +74,7 @@ export default function Home() {
 
   return (
     <main>
+      <Head />
       <ClientOnly>{width >= tabletBreakpoint && <Mountains />}</ClientOnly>
       <section className="section">
         <div className="container">
