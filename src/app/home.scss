@@ -261,6 +261,7 @@
   &__header {
     position: relative;
     text-align: justify;
+    text-justify: inter-word;
     font-size: 2rem;
 
     @include font-bold;
