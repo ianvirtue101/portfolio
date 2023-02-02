@@ -47,7 +47,16 @@ const ContactForm: React.FC = () => {
   return (
     <>
       {submitSuccess ? (
-        <p>Thanks for reaching out! We&apos;ll get back to you shortly.</p>
+        <p className="form__success">
+          Thanks for reaching out!
+          <br />
+          <br />
+          We&apos;ll get back to you shortly.
+          <br />
+          <br />
+          Should you require any assistance please contact me at
+          info@ianvirtue.com
+        </p>
       ) : (
         <form onSubmit={handleSubmit} className="form">
           <div className="form__group">

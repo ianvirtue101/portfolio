@@ -69,4 +69,11 @@
       transform: translate(0.5rem, 0.5rem);
     }
   }
+
+  &__success {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    @include font-bold;
+  }
 }
