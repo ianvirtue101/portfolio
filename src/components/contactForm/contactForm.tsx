@@ -35,9 +35,9 @@ const ContactForm: React.FC = () => {
 
       if (res.ok) {
         setSubmitSuccess(true);
-        console.log("Success!");
+        // console.log("Success!");
       } else {
-        console.error("Failed to submit the form");
+        // console.error("Failed to submit the form");
       }
     } catch (error) {
       console.error(error);
