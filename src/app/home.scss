@@ -108,7 +108,7 @@
 .body-section {
   display: flex;
   flex-direction: column;
-
+  position: relative;
   background-color: #1f2761;
   justify-content: center;
   align-items: center;
@@ -139,8 +139,6 @@
       &:hover {
         box-shadow: inset 800px 0 0 0 $white-blue;
         color: $dark-blue;
-        margin: 0 -0.25rem;
-        padding: 0 0.25rem;
       }
     }
   }
@@ -264,7 +262,7 @@
     text-justify: inter-word;
     font-size: 2rem;
     @include font-bold;
-    
+
     @include desktop {
       top: 12rem;
       line-height: 3rem;
