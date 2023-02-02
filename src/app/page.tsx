@@ -15,13 +15,13 @@ export default function Home() {
   const [width, setWidth] = useState(window.innerWidth);
   const tabletBreakpoint = 768;
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
+  if (typeof window !== "undefined") {
+    useEffect(() => {
       const handleResize = () => setWidth(window.innerWidth);
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+    }, []);
+  }
 
   const data = {
     instagram: {
