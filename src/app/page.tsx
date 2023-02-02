@@ -14,16 +14,14 @@ import ContactForm from "../components/contactForm/contactForm";
 export default function Home() {
   const [width, setWidth] = useState(window.innerWidth);
   const tabletBreakpoint = 768;
+  const handleResize = () => setWidth(window.innerWidth);
 
-  if (typeof window !== "undefined") {
-    (() => {
-      useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-      }, []);
-    })();
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   const data = {
     instagram: {
