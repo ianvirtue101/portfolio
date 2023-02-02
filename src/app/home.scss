@@ -263,8 +263,8 @@
     text-align: justify;
     text-justify: inter-word;
     font-size: 2rem;
-
     @include font-bold;
+    
     @include desktop {
       top: 12rem;
       line-height: 3rem;

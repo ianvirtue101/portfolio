@@ -24,13 +24,15 @@ export default function HoverCards({
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
         <div className="SocialMediaTrigger">
-          <Image
-            className="SocialMediaLogo"
-            src={image}
-            alt={`${channel} logo`}
-            width={100}
-            height={100}
-          />
+          <Link href={link}>
+            <Image
+              className="SocialMediaLogo"
+              src={image}
+              alt={`${channel} logo`}
+              width={100}
+              height={100}
+            />
+          </Link>
         </div>
       </HoverCard.Trigger>
       <HoverCard.Portal>
