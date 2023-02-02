@@ -9,7 +9,6 @@ export default function RotatingText() {
   const textArray = [
     "I'm a Full Stack Developer",
     "I build responsive websites",
-    "In case you can't tell, I love the outdoors",
     "I'm an expert in JavaScript, Next.js, and Node.js",
     "I'm a Professional Photographer",
     "I'm an Adobe Creative Suite Pro",
