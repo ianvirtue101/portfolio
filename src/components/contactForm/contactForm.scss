@@ -71,9 +71,14 @@
   }
 
   &__success {
+    width: 40%;
     text-align: center;
     line-height: 2rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     @include font-bold;
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 }
