@@ -14,11 +14,15 @@ import ClientOnly from "../components/clientOnly/clientOnly";
 
 function useWindowSize() {
   const [width, setWidth] = useState(window.innerWidth);
-  if (typeof window === "undefined") return 0;
+
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window === "undefined") {
+      return undefined;
+    } else {
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return width;
