@@ -160,6 +160,30 @@ export default function Home() {
           expertise in HTML, CSS, JavaScript, and front-end frameworks such as
           ReactJS, AngularJS, and VueJS.
         </p>
+        <p className="resume-section__text">
+          Proven track record of leading cross-functional teams and managing
+          projects from concept to completion, with strong communication and
+          interpersonal skills. Solid front-end development skills, including
+          expertise in HTML, CSS, JavaScript, and front-end frameworks such as
+          ReactJS, AngularJS, and VueJS.
+        </p>
+        <h3 className="resume-section__title">Skills</h3>
+        <p className="resume-section__text">
+          Experience in creating responsive websites and web applications,
+          working with APIs, user authentication, and web design principles.
+        </p>
+        <p className="resume-section__text">
+          Proficient in Adobe Creative Suite, photography, videography, and
+          social media marketing.
+        </p>
+        <p className="resume-section__text">
+          Skilled in using tools such as Figma, Jira, Heroku, GitHub, Jest, and
+          CSS/SCSS/HTML.
+        </p>
+        <p className="resume-section__text">
+          Working experience with Python, proficient in basic functionality and
+          data manipulation
+        </p>
         <div className="resume-section__container">
           <div className="resume-section__block">
             <h3 className="resume-section__header">
@@ -167,10 +191,10 @@ export default function Home() {
               <br />@ Learnedly
             </h3>
             <p className="resume-section__text">
-              Utilized Next.js to design, develop, and maintain the company&apos;s
-              website from scratch, incorporating JavaScript, HTML, CSS, and
-              RESTful APIs to create a responsive, user-friendly, and optimized
-              website for search engines.
+              Utilized Next.js to design, develop, and maintain the
+              company&apos;s website from scratch, incorporating JavaScript,
+              HTML, CSS, and RESTful APIs to create a responsive, user-friendly,
+              and optimized website for search engines.
             </p>
             <p className="resume-section__text">
               Expertly developed and maintained software solutions using Python,
@@ -213,6 +237,18 @@ export default function Home() {
               content, which increased the brand presence of the 5th largest
               winery in Canada.
             </p>
+          </div>
+        </div>
+        <div className="resume-section__button-block">
+          <div className="resume-section__button-container">
+            <div className="resume-section__button-shadow"> </div>
+            <a
+              className="resume-section__button"
+              href="Ian_Virtue_Resume_Software_Engineer.pdf"
+              download
+            >
+              Download My Resume
+            </a>
           </div>
         </div>
       </section>
