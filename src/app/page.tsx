@@ -160,13 +160,7 @@ export default function Home() {
           expertise in HTML, CSS, JavaScript, and front-end frameworks such as
           ReactJS, AngularJS, and VueJS.
         </p>
-        <p className="resume-section__text">
-          Proven track record of leading cross-functional teams and managing
-          projects from concept to completion, with strong communication and
-          interpersonal skills. Solid front-end development skills, including
-          expertise in HTML, CSS, JavaScript, and front-end frameworks such as
-          ReactJS, AngularJS, and VueJS.
-        </p>
+
         <h3 className="resume-section__title">Skills</h3>
         <p className="resume-section__text">
           Experience in creating responsive websites and web applications,
