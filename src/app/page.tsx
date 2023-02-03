@@ -167,15 +167,19 @@ export default function Home() {
               <br />@ Learnedly
             </h3>
             <p className="resume-section__text">
-              Utilized Next.js to design, develop, and maintain the
-              company&apos;s website from scratch, incorporating JavaScript,
-              HTML, CSS, and RESTful APIs to create a responsive, user-friendly,
-              and optimized website for search engines.
+              Utilized Next.js to design, develop, and maintain the company's
+              website from scratch, incorporating JavaScript, HTML, CSS, and
+              RESTful APIs to create a responsive, user-friendly, and optimized
+              website for search engines.
             </p>
             <p className="resume-section__text">
-              Conducted research on various topics to create engaging and
-              informative course content in collaboration with subject matter
-              experts.
+              Expertly developed and maintained software solutions using Python,
+              demonstrating proficiency in scripting and programming.
+            </p>
+            <p className="resume-section__text">
+              Designed and built scalable and reliable proxy services and API
+              connectors using Node.js, incorporating RESTful APIs to meet
+              client needs.
             </p>
             <p className="resume-section__text">
               Skilled in video editing and animation, utilizing Adobe Premiere
