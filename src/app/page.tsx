@@ -167,7 +167,7 @@ export default function Home() {
               <br />@ Learnedly
             </h3>
             <p className="resume-section__text">
-              Utilized Next.js to design, develop, and maintain the company's
+              Utilized Next.js to design, develop, and maintain the company&apos;s
               website from scratch, incorporating JavaScript, HTML, CSS, and
               RESTful APIs to create a responsive, user-friendly, and optimized
               website for search engines.
