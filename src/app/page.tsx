@@ -238,7 +238,7 @@ export default function Home() {
             <div className="resume-section__button-shadow"> </div>
             <a
               className="resume-section__button"
-              href="Ian_Virtue_Resume_Software_Engineer.pdf"
+              href="Ian_Virtue_Resume.pdf"
               download
             >
               Download My Resume
