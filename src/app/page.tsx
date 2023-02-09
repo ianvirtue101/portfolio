@@ -98,14 +98,16 @@ export default function Home() {
               About
             </h1>
             <p className="body-section__text">
-              I&apos;ve been in the industry for over 5 years now, working in
-              communications, business development, and non-profit management.
-              My most recent experience was as a Content Development Manager at
-              Learnedly, where I got to use my skills in front-end development
-              to design, develop, and maintain the company&apos;s website from
-              scratch. I used JavaScript, HTML, CSS, and APIs to make sure the
-              website was responsive, user-friendly, and optimized for search
-              engines.
+              I&apos;m a multi-skilled and detail-oriented professional with
+              expertise in full stack engineering, content development, and
+              digital media. Possessing a passion for creative problem solving
+              and a dedication to staying up to date with industry trends, I
+              bring exceptional technical skills, project management, and
+              customer service to every engagement. With a Diploma in Web
+              Development from BrainStation and a BA in Communication, Media &
+              Film and Digital Journalism from the University of Windsor, I am
+              well equipped to deliver exceptional results for clients no matter
+              the problem.
             </p>
           </div>
 
@@ -152,15 +154,13 @@ export default function Home() {
       <section id="resume" className="resume-section">
         <h2 className="resume-section__title">My Experience</h2>
         <p className="resume-section__text">
-          I'm a multi-skilled and detail-oriented professional with expertise in
-          full stack engineering, content development, and digital media.
-          Possessing a passion for creative problem solving and a dedication to
-          staying up to date with industry trends, I bring exceptional
-          technical skills, project management, and customer service to every
-          engagement. With a Diploma in Web Development from BrainStation and a
-          BA in Communication, Media & Film and Digital Journalism from the
-          University of Windsor, I am well equipped to deliver exceptional
-          results for clients no matter the problem. 
+          Results-driven professional with 5+ years of experience in
+          communications, business development, and non-profit management.
+          Proven track record of leading cross-functional teams and managing
+          projects from concept to completion, with strong communication and
+          interpersonal skills. Solid front-end development skills, including
+          expertise in HTML, CSS, JavaScript, and front-end frameworks such as
+          ReactJS, AngularJS, and VueJS.
         </p>
 
         <h3 className="resume-section__title">Skills</h3>
