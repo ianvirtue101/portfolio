@@ -154,13 +154,11 @@ export default function Home() {
       <section id="resume" className="resume-section">
         <h2 className="resume-section__title">My Experience</h2>
         <p className="resume-section__text">
-          Results-driven professional with 5+ years of experience in
-          communications, business development, and non-profit management.
-          Proven track record of leading cross-functional teams and managing
-          projects from concept to completion, with strong communication and
-          interpersonal skills. Solid front-end development skills, including
-          expertise in HTML, CSS, JavaScript, and front-end frameworks such as
-          ReactJS, AngularJS, and VueJS.
+          I create responsive websites with a passion for solving creative
+          problems and staying up-to-date with industry trends. I have a proven
+          track record of leading cross-functional teams and delivering results
+          through my front-end development skills, content creation expertise,
+          and knowledge of industry tools.
         </p>
 
         <h3 className="resume-section__title">Skills</h3>
