@@ -48,7 +48,7 @@ export default function Home() {
       image: { Instagram },
       link: "https://www.instagram.com/ian.virtue/",
       handle: "ian.virtue",
-      followers: "1145",
+      followers: "1139",
       description:
         "Landscape & Commercial Photographer helping eco-focused brands do more for the world",
     },
