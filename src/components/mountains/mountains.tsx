@@ -17,17 +17,33 @@ export default function Mountains() {
   const scrollLimit = 1000; // define the scroll limit here
 
   useEffect(() => {
+    // Declare a variable to hold the ID of the current animation frame
     let animationFrameId: any;
+
+    // Define a function to handle the scroll event
     const handleScroll = () => {
+      // Cancel any pending animation frames to ensure that the function is not called unnecessarily
       cancelAnimationFrame(animationFrameId);
+
+      // Request a new animation frame to call the function when the browser is ready to render a new frame
       animationFrameId = requestAnimationFrame(() => {
+        // Check if the user has scrolled past a certain point
         if (window.scrollY >= scrollLimit) {
+          // Update the state to indicate that the scroll limit has been reached
           setScrollLimitReached(true);
         }
+
+        // Update the state to reflect the current scroll position
         setScrollY(window.scrollY);
       });
     };
+    // Register an event listener for the "scroll" event on the window object
+    // and call the handleScroll function when it occurs
     window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component is unmounted or updated
+    // by removing the listener and cancelling any pending animation frames
+    // specified by the animationFrameId variable
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("scroll", handleScroll);
