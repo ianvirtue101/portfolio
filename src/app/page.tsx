@@ -1,4 +1,5 @@
 "use client";
+// Import necessary dependencies and components
 import Image from "next/image";
 import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
@@ -13,39 +14,49 @@ import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
 import Head from "./head";
 
+// Create a custom hook that returns the current window width
 function useWindowSize() {
+  // Check if running in a client-side environment
   const isClient = typeof window === "object";
 
+  // Initialize the width state to the current window width
   const [width, setWidth] = useState(isClient ? window.innerWidth : 0);
 
+  // Add an event listener to update the width state when the window is resized
   useEffect(() => {
     if (!isClient) return;
 
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
+
+    // Remove the event listener when the component is unmounted
     return () => window.removeEventListener("resize", handleResize);
   }, [isClient]);
 
+  // Return the current window width
   return width;
 }
 
 export default function Home() {
-  const width = useWindowSize();
+  const width = useWindowSize(); // Get the width of the window using the custom hook
 
-  const tabletBreakpoint = 768;
-  // const handleResize = () => setWidth(window.innerWidth);
+  const tabletBreakpoint = 768; // Define a breakpoint for tablet devices
 
   useEffect(() => {
+    // Use the useEffect hook to conditionally execute code based on the width of the window
     if (width >= tabletBreakpoint) {
+      // If the width of the window is greater than or equal to the tablet breakpoint
       return () => {
         // any cleanup logic here
       };
     }
   }, [width]);
+
   const data = {
+    // Define an object with data for social media channels
     instagram: {
       channel: "Instagram",
-      image: { Instagram },
+      image: { Instagram }, // Use the Instagram icon
       link: "https://www.instagram.com/ian.virtue/",
       handle: "ian.virtue",
       followers: "1139",
@@ -54,7 +65,7 @@ export default function Home() {
     },
     linkedin: {
       channel: "Linkedin",
-      image: { Linkedin },
+      image: { Linkedin }, // Use the Linkedin icon
       link: "https://www.linkedin.com/in/ian-virtue/",
       handle: "ian virtue",
       followers: "519",
@@ -63,7 +74,7 @@ export default function Home() {
     },
     github: {
       channel: "Github",
-      image: { Github },
+      image: { Github }, // Use the Github icon
       link: "https://github.com/ianvirtue101",
       handle: "ianvirtue101",
       followers: "8",
