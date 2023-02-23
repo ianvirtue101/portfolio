@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useEffect, useState, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import Mountain1 from "../../assets/mountain/mountain-1.svg";
 import Mountain2 from "../../assets/mountain/mountain-2.svg";
@@ -14,109 +14,82 @@ import "./mountains.scss";
 export default function Mountains() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollLimitReached, setScrollLimitReached] = useState(false);
-  const scrollLimit = 1000; // define the scroll limit here
+  const scrollLimit = 1000;
+
+  const animationFrameIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Declare a variable to hold the ID of the current animation frame
-    let animationFrameId: any;
-
-    // Define a function to handle the scroll event
     const handleScroll = () => {
-      // Cancel any pending animation frames to ensure that the function is not called unnecessarily
-      cancelAnimationFrame(animationFrameId);
-
-      // Request a new animation frame to call the function when the browser is ready to render a new frame
-      animationFrameId = requestAnimationFrame(() => {
-        // Check if the user has scrolled past a certain point
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+      }
+      animationFrameIdRef.current = requestAnimationFrame(() => {
         if (window.scrollY >= scrollLimit) {
-          // Update the state to indicate that the scroll limit has been reached
-          setScrollLimitReached(true);
+          setScrollLimitReached((prev) => prev || true);
         }
-
-        // Update the state to reflect the current scroll position
         setScrollY(window.scrollY);
       });
     };
-    // Register an event listener for the "scroll" event on the window object
-    // and call the handleScroll function when it occurs
+
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener when the component is unmounted or updated
-    // by removing the listener and cancelling any pending animation frames
-    // specified by the animationFrameId variable
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameIdRef.current!);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollLimit]);
 
-  const mountain1Y = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * 0.1),
-    [scrollY, scrollLimitReached]
-  );
-  const mountain2Y = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * 0.2),
-    [scrollY, scrollLimitReached]
-  );
-  const mountain3Y = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * 0.3),
-    [scrollY, scrollLimitReached]
-  );
-  const mountain5Y = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * 0.4),
-    [scrollY, scrollLimitReached]
-  );
+  const mountain1Y = scrollLimitReached ? 0 : scrollY * 0.1;
+  const mountain2Y = scrollLimitReached ? 0 : scrollY * 0.2;
+  const mountain3Y = scrollLimitReached ? 0 : scrollY * 0.3;
+  const mountain5Y = scrollLimitReached ? 0 : scrollY * 0.4;
 
-  const cloud1X = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * 0.2),
-    [scrollY, scrollLimitReached]
-  );
-  const cloud2X = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * -0.5),
-    [scrollY, scrollLimitReached]
-  );
-  const cloud3X = useMemo(
-    () => (scrollLimitReached ? 0 : scrollY * -1.0),
-    [scrollY, scrollLimitReached]
-  );
+  const cloud1X = scrollLimitReached ? 0 : scrollY * 0.2;
+  const cloud2X = scrollLimitReached ? 0 : scrollY * -0.5;
+  const cloud3X = scrollLimitReached ? 0 : scrollY * -1.0;
 
-  // Mountian Springs
+  const mountainSpringProps = {
+    config: { mass: 0.5, tension: 220, friction: 30 },
+  };
+
+  const cloudSpringProps = {
+    config: { mass: 0.1, tension: 220, friction: 30 },
+  };
 
   const mountain1Spring = useSpring({
+    ...mountainSpringProps,
     y: mountain1Y,
-    config: { mass: 0.5, tension: 220, friction: 30 },
   });
 
   const mountain2Spring = useSpring({
+    ...mountainSpringProps,
     y: mountain2Y,
-    config: { mass: 0.5, tension: 220, friction: 30 },
   });
 
   const mountain3Spring = useSpring({
+    ...mountainSpringProps,
     y: mountain3Y,
-    config: { mass: 0.5, tension: 220, friction: 30 },
   });
 
   const mountain5Spring = useSpring({
+    ...mountainSpringProps,
     y: mountain5Y,
-    config: { mass: 0.5, tension: 220, friction: 30 },
   });
-
-  // Cloud Springs
 
   const Cloud1Spring = useSpring({
+    ...cloudSpringProps,
     y: cloud1X,
-    config: { mass: 0.1, tension: 220, friction: 30 },
-  });
-  const Cloud2Spring = useSpring({
-    y: cloud2X,
-    config: { mass: 0.1, tension: 220, friction: 30 },
-  });
-  const Cloud3Spring = useSpring({
-    y: cloud3X,
-    config: { mass: 0.1, tension: 220, friction: 30 },
   });
 
+  const Cloud2Spring = useSpring({
+    ...cloudSpringProps,
+    y: cloud2X,
+  });
+
+  const Cloud3Spring = useSpring({
+    ...cloudSpringProps,
+    y: cloud3X,
+  });
   return (
     <>
       <div className="mountains-container">
