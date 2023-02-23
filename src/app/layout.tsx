@@ -1,5 +1,6 @@
 import "../styles/global.scss";
 import Navbar from "../components/navbar/navbar";
+import { AnalyticsWrapper } from "../components/analytics/analytics";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
         <Navbar />
         {children}
       </body>
+      <AnalyticsWrapper />
     </html>
   );
 }
