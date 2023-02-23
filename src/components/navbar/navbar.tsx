@@ -16,8 +16,8 @@ export default function Navbar() {
   return (
     <>
       <NavigationMenu.Root className="nav">
-        // create menu item for Home page, use Link from Next.js to handle
-        routing
+        {/* // create menu item for Home page, use Link from Next.js to handle
+        routing */}
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("home")}
@@ -26,8 +26,8 @@ export default function Navbar() {
             Home
           </Link>
         </NavigationMenu.Item>
-        // create menu item for About page, use anchor tag with href for
-        scrolling
+        {/* // create menu item for About page, use anchor tag with href for
+        scrolling */}
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("about")}
@@ -36,8 +36,8 @@ export default function Navbar() {
             About
           </a>
         </NavigationMenu.Item>
-        // create menu item for Resume page, use anchor tag with href for
-        scrolling
+        {/* // create menu item for Resume page, use anchor tag with href for
+        scrolling */}
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("work")}
@@ -46,8 +46,8 @@ export default function Navbar() {
             Resume
           </a>
         </NavigationMenu.Item>
-        // create menu item for Contact page, use anchor tag with href for
-        scrolling
+        {/* // create menu item for Contact page, use anchor tag with href for
+        scrolling */}
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("contact")}
