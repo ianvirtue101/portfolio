@@ -3,13 +3,16 @@ import React, { useState } from "react";
 import sgMail from "@sendgrid/mail";
 import "./contactForm.scss";
 
+// Define the expected form data type
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
 
+// Define a functional component to render the contact form
 const ContactForm: React.FC = () => {
+  // State / Props
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -17,6 +20,7 @@ const ContactForm: React.FC = () => {
   });
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  // Function to update form data as user types in
   const handleInputChange = (event: any) => {
     setFormData({
       ...formData,
@@ -24,26 +28,31 @@ const ContactForm: React.FC = () => {
     });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     try {
+      // Send the form data to the server-side API
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
+      // If the response is successful, set submitSuccess to true
       if (res.ok) {
         setSubmitSuccess(true);
-        // console.log("Success!");
       } else {
-        // console.error("Failed to submit the form");
+        // Otherwise, log an error
+        console.error("Failed to submit the form");
       }
     } catch (error) {
+      // Log any errors that occur during the submission process
       console.error(error);
     }
   };
 
+  // Render either the success message or the contact form based on the submitSuccess state
   return (
     <>
       {submitSuccess ? (
@@ -110,4 +119,5 @@ const ContactForm: React.FC = () => {
   );
 };
 
+// Export the ContactForm component as the default export of this module
 export default ContactForm;
