@@ -1,16 +1,23 @@
+// import necessary modules
 "use client";
 import Link from "next/link";
 import { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 
+// import stylesheet
 import "./navbar.scss";
 
+// define Navbar component
 export default function Navbar() {
+  // define state to keep track of current page
   const [currentPage, setCurrentPage] = useState("home");
 
+  // render navigation menu using NavigationMenu.Root and NavigationMenu.Item components
   return (
     <>
       <NavigationMenu.Root className="nav">
+        // create menu item for Home page, use Link from Next.js to handle
+        routing
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("home")}
@@ -19,14 +26,18 @@ export default function Navbar() {
             Home
           </Link>
         </NavigationMenu.Item>
+        // create menu item for About page, use anchor tag with href for
+        scrolling
         <NavigationMenu.Item
-        className="navItem"
+          className="navItem"
           onClick={() => setCurrentPage("about")}
         >
           <a className="navLink" href="#about">
             About
           </a>
         </NavigationMenu.Item>
+        // create menu item for Resume page, use anchor tag with href for
+        scrolling
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("work")}
@@ -35,8 +46,10 @@ export default function Navbar() {
             Resume
           </a>
         </NavigationMenu.Item>
+        // create menu item for Contact page, use anchor tag with href for
+        scrolling
         <NavigationMenu.Item
-        className="navItem"
+          className="navItem"
           onClick={() => setCurrentPage("contact")}
         >
           <a className="navLink" href="#contact">
