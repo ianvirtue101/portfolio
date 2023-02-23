@@ -64,14 +64,19 @@ export default function RotatingText() {
     return () => clearInterval(interval);
   }, [text]);
 
+  // Set up motion props object to pass as props to Framer Motion component
   const motionProps = {
+    // Pass the `controls` variable as the `animate` prop
     animate: controls,
+    // Pass the `variants` object as the `variants` prop
     variants,
+    // Pass the `transition` object as the `transition` prop
     transition,
+    // Set inline styles to define font size and color
     style: { fontSize: "2rem", color: "#1f2761" },
+    // Add a class name to the component for styling purposes
     className: "rotatingText__text",
   };
-
   // Render RotatingText component
   return (
     <div className="rotatingText">
