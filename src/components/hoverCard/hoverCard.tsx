@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import "./hoverCard.scss";
 
+// Define the props for the HoverCards component
 export default function HoverCards({
   channel,
   link,
@@ -20,10 +21,13 @@ export default function HoverCards({
   description: string;
   image: any;
 }) {
+  // Render the HoverCard component
   return (
     <HoverCard.Root>
+      {/* Define the trigger that activates the hover card */}
       <HoverCard.Trigger asChild>
         <div className="SocialMediaTrigger">
+          {/* Render the social media image with a link */}
           <Link href={link}>
             <Image
               className="SocialMediaLogo"
@@ -35,12 +39,14 @@ export default function HoverCards({
           </Link>
         </div>
       </HoverCard.Trigger>
+      {/* Define the content that will appear in the hover card */}
       <HoverCard.Portal>
         <HoverCard.Content
           className="SocialMediaHoverCardContent"
           sideOffset={5}
         >
           <div>
+            {/* Render the social media image with a larger size */}
             {/* <img
               className="SocialMediaLogo large"
               src={`../${channel}.svg`}
@@ -48,15 +54,19 @@ export default function HoverCards({
             /> */}
             <div>
               <div className="SocialMediaContainer">
+                {/* Render the social media channel name */}
                 <div className="SocialMediaTitle">{channel}</div>
 
+                {/* Render the social media handle with a link */}
                 <Link href={link} className="SocialMediaHandle">
                   @{handle}
                 </Link>
               </div>
+              {/* Render the social media description */}
               <div className="SocialMediaDescription">{description}</div>
               <div>
                 <div className="SocialMediaFollowers">
+                  {/* Render the social media follower count */}
                   <div className="SocialMediaFollowersCount">
                     {followers} Followers
                   </div>{" "}
@@ -64,6 +74,7 @@ export default function HoverCards({
               </div>
             </div>
           </div>
+          {/* Render the arrow that points to the trigger */}
           <HoverCard.Arrow className="SocialMediaHoverCardArrow" />
         </HoverCard.Content>
       </HoverCard.Portal>
