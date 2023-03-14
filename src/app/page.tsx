@@ -13,7 +13,6 @@ import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
 import Head from "./head";
-import Resume from "../"
 
 // Create a custom hook that returns the current window width
 function useWindowSize() {
