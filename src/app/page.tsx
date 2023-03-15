@@ -165,16 +165,16 @@ export default function Home() {
       <section id="resume" className="resume-section">
         <h2 className="resume-section__title">My Experience</h2>
         <p className="resume-section__text">
-          As a dedicated Full Stack Developer and creative problem solver, I've
-          spent years honing my skills in web development, content creation, and
-          teamwork. With a strong foundation in JavaScript, React, Node.js, and
-          Express, I've successfully led cross-functional teams and delivered
-          exceptional results in various projects.
+          As a dedicated Full Stack Developer and creative problem solver,
+          I&apos;ve spent years honing my skills in web development, content
+          creation, and teamwork. With a strong foundation in JavaScript, React,
+          Node.js, and Express, I&apos;ve successfully led cross-functional
+          teams and delivered exceptional results in various projects.
         </p>
         <p className="resume-section__text">
           At Learnedly, I spearheaded the end-to-end design, development, and
           maintenance of the website, achieving a near-perfect Lighthouse score
-          and significantly improving load times across all devices. I've
+          and significantly improving load times across all devices. I&apos;ve
           developed key features, such as dynamic homepages, custom user
           authentication, and interactive carousels, all while ensuring
           responsiveness and accessibility.
@@ -183,9 +183,10 @@ export default function Home() {
           Beyond coding, I have a keen eye for visual design and content
           production, having worked with industry tools like Adobe Creative
           Suite, Figma, and Jira. As a Content Development Manager and the owner
-          of Ian Virtue Photography, I've effectively increased social media
-          engagement, managed marketing campaigns, and delivered professional
-          graphics, websites, and photography for a wide range of clients.
+          of Ian Virtue Photography, I&apos;ve effectively increased social
+          media engagement, managed marketing campaigns, and delivered
+          professional graphics, websites, and photography for a wide range of
+          clients.
         </p>
 
         <h3 className="resume-section__title">Skills</h3>
@@ -196,16 +197,16 @@ export default function Home() {
           JavaScript, React, Node.js, Express, and Next.js.
         </p>
         <p className="resume-section__text">
-          As a creative professional, I'm well-versed in Adobe Creative Suite,
-          photography, videography, and social media marketing. I've
+          As a creative professional, I&apos;m well-versed in Adobe Creative
+          Suite, photography, videography, and social media marketing. I&apos;ve
           successfully used Figma, Jira, Heroku, GitHub, Jest, and CSS/SCSS/HTML
           to manage projects and deliver outstanding results.
         </p>
         <p className="resume-section__text">
           In addition to my front-end development expertise, I have working
-          experience with Python, SQL, MongoDB, and Firebase, which I've used to
-          manipulate data, manage databases, and develop custom solutions for
-          various projects.
+          experience with Python, SQL, MongoDB, and Firebase, which I&apos;ve
+          used to manipulate data, manage databases, and develop custom
+          solutions for various projects.
         </p>
 
         <div className="resume-section__container">
