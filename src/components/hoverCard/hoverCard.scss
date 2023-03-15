@@ -28,3 +28,25 @@
 .SocialMediaDescription {
   padding: 1rem 0rem;
 }
+
+@include tablet {
+  .SocialMediaLogo {
+    padding: 0rem 1.5rem;
+  }
+
+  .SocialMediaHoverCardContent {
+    padding: 1.5rem;
+  }
+
+  .SocialMediaTitle {
+    font-size: 1.2rem;
+  }
+
+  .SocialMediaHandle {
+    font-size: 1.1rem;
+  }
+
+  .SocialMediaDescription {
+    padding: 1.5rem 0rem;
+  }
+}
