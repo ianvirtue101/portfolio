@@ -29,7 +29,6 @@
     flex-basis: 40%;
   }
 
-
   &__title {
     color: $dark-blue;
   }
@@ -375,7 +374,7 @@
     }
 
     &__container {
-      flex-direction: row;
+      flex-direction: column;
     }
 
     &__text {
