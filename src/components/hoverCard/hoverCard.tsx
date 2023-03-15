@@ -2,7 +2,7 @@
 import * as HoverCard from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FaUsers } from "react-icons/fa"; // Import the users icon
 import "./hoverCard.scss";
 
 // Define the props for the HoverCards component
@@ -67,6 +67,8 @@ export default function HoverCards({
               <div>
                 <div className="SocialMediaFollowers">
                   {/* Render the social media follower count */}
+                  <FaUsers className="SocialMediaFollowerIcon" />{" "}
+                  {/* Add the follower icon */}
                   <div className="SocialMediaFollowersCount">
                     {followers} Followers
                   </div>{" "}
