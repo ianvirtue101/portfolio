@@ -5,10 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   @include desktop {
     justify-content: flex-end;
-    padding: 1rem;
+    padding: 3rem;
   }
 }
 
