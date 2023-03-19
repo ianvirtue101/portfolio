@@ -90,8 +90,8 @@ export default function Home() {
       {/* <ClientOnly>{width >= tabletBreakpoint && <Mountains />}</ClientOnly> */}
 
       <section className="section">
-        <PortCredit>
-          {" "}
+        <PortCredit />
+        {/* {" "}
           <div className="container">
             <h1 className="container__title">Hi, I&apos;m Ian</h1>
             <RotatingText />
@@ -104,8 +104,7 @@ export default function Home() {
             <a className="container__button" href="#contact">
               Let&apos;s Work Together
             </a>
-          </div>
-        </PortCredit>
+          </div> */}
       </section>
       <section className="body-section">
         <div className="body-section__group">
