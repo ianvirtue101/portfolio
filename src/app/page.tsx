@@ -12,6 +12,7 @@ import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
 import ClientOnly from "../components/clientOnly/clientOnly";
+import PortCredit from "../components/PortCredit/PortCredit";
 import Head from "./head";
 
 // Create a custom hook that returns the current window width
@@ -86,21 +87,25 @@ export default function Home() {
   return (
     <main>
       <Head />
-      <ClientOnly>{width >= tabletBreakpoint && <Mountains />}</ClientOnly>
-      <section className="section">
-        <div className="container">
-          <h1 className="container__title">Hi, I&apos;m Ian</h1>
-          <RotatingText />
-          <h2 className="container__text">
-            I&apos;m really excited to share my work with you and tell you a bit
-            more about my background.
-          </h2>
+      {/* <ClientOnly>{width >= tabletBreakpoint && <Mountains />}</ClientOnly> */}
 
-          <div className="container__buttonBLock"> </div>
-          <a className="container__button" href="#contact">
-            Let&apos;s Work Together
-          </a>
-        </div>
+      <section className="section">
+        <PortCredit>
+          {" "}
+          <div className="container">
+            <h1 className="container__title">Hi, I&apos;m Ian</h1>
+            <RotatingText />
+            <h2 className="container__text">
+              I&apos;m really excited to share my work with you and tell you a
+              bit more about my background.
+            </h2>
+
+            <div className="container__buttonBLock"> </div>
+            <a className="container__button" href="#contact">
+              Let&apos;s Work Together
+            </a>
+          </div>
+        </PortCredit>
       </section>
       <section className="body-section">
         <div className="body-section__group">
