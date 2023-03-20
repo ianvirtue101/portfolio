@@ -3,7 +3,7 @@ import { Canvas, Object3DProps } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, useGLTF } from "@react-three/drei";
 
 function Model(props: Object3DProps) {
-  const { scene } = useGLTF("/cubicity_assembly_v01.gltf");
+  const { scene } = useGLTF("/cubicity_assembly_v01.glb");
   return <primitive object={scene} {...props} />;
 }
 
