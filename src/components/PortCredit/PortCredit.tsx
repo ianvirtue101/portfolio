@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo } from "react";
+import React, { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, Object3DProps } from "@react-three/fiber";
 import {
   Environment,
@@ -19,11 +19,16 @@ function Model(props: ModelProps) {
         child.castShadow = true;
         child.receiveShadow = true;
 
-        if (
-          child.material instanceof THREE.MeshStandardMaterial &&
-          child.material.map
-        ) {
-          child.material.map.encoding = THREE.sRGBEncoding;
+        if (child.material instanceof THREE.MeshStandardMaterial) {
+          if (child.material.map) {
+            child.material.map.encoding = THREE.sRGBEncoding;
+          }
+          if (child.material.roughnessMap) {
+            child.material.roughnessMap.encoding = THREE.LinearEncoding;
+          }
+          if (child.material.metalnessMap) {
+            child.material.metalnessMap.encoding = THREE.LinearEncoding;
+          }
           child.material.needsUpdate = true;
         }
       }
@@ -65,29 +70,29 @@ function GLTFViewer() {
         linear
         onCreated={({ gl }) => {
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 2;
+          gl.toneMappingExposure = 0.8;
           gl.outputEncoding = THREE.sRGBEncoding;
         }}
         shadows={true}
       >
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.25} />
         <directionalLight
           castShadow
-          intensity={1}
-          position={[1, 1, 1]}
+          intensity={1.2}
+          position={[-5, 10, 10]}
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
-          shadow-camera-far={20}
+          shadow-camera-far={50} // Increase the shadow camera far plane to capture more shadows.
           shadow-camera-near={0.1}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
+          shadow-camera-top={30} // Increase the shadow camera's top and bottom planes.
+          shadow-camera-bottom={-30}
+          shadow-camera-left={-30} // Increase the shadow camera's left and right planes.
+          shadow-camera-right={30}
         />
         <Suspense fallback={null}>
           <Model />
-          <Environment preset="city" />
+          <Environment preset="sunset" />
         </Suspense>
         <GradientBackground />
         <OrbitControls />
