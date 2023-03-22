@@ -11,7 +11,7 @@ import * as THREE from "three";
 type ModelProps = JSX.IntrinsicElements["group"];
 
 function Model(props: ModelProps) {
-  const { scene } = useGLTF("/cubicity_assembly_v01.gltf");
+  const { scene } = useGLTF("/cubicity_assembly_v04.gltf");
 
   useEffect(() => {
     scene.traverse((child) => {
@@ -87,7 +87,7 @@ function GLTFViewer() {
         />
         <Suspense fallback={null}>
           <Model />
-          <Environment preset="sunset" />
+          <Environment preset="city" />
         </Suspense>
         <GradientBackground />
         <OrbitControls />
