@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useMemo, useRef } from "react";
-import { Canvas, Object3DProps, useThree } from "@react-three/fiber";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import {
   Environment,
   OrbitControls,
@@ -7,6 +7,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
+import Loading from "../../app/loading";
 
 type ModelProps = JSX.IntrinsicElements["group"];
 
@@ -62,7 +63,7 @@ function GradientBackground() {
     </mesh>
   );
 }
-// HELPER FUNCTION FOR 
+// HELPER FUNCTION FOR
 // function DirectionalLightWithHelper(props) {
 //   const dirLightRef = useRef<THREE.DirectionalLight>(null);
 //   const { scene } = useThree();
@@ -99,6 +100,27 @@ function GradientBackground() {
 //   );
 // }
 
+function RotatingCamera() {
+  const cameraRef = useRef<THREE.PerspectiveCamera>(null);
+
+  useFrame(({ clock }) => {
+    if (cameraRef.current) {
+      const radius = 25;
+      const speed = 0.05; // Adjust this value to control the rotation speed
+      const angle = clock.getElapsedTime() * speed;
+      cameraRef.current.position.set(
+        radius * Math.sin(angle),
+        15,
+        // Adjust this value to control the camera height
+        radius * Math.cos(angle)
+      );
+      cameraRef.current.lookAt(0, 0, 0);
+    }
+  });
+
+  return <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 0]} />;
+}
+
 function GLTFViewer() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
@@ -106,26 +128,27 @@ function GLTFViewer() {
         linear
         onCreated={({ gl }) => {
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 0.8;
+          gl.toneMappingExposure = 1;
           gl.outputEncoding = THREE.sRGBEncoding;
         }}
         shadows={true}
       >
-        <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+        <RotatingCamera />
+        {/* <PerspectiveCamera makeDefault position={[0, 0, 5]} /> */}
         <ambientLight intensity={0.25} />
 
         <directionalLight
           castShadow
           intensity={2}
           position={[-20, 10, -20]}
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-          shadow-camera-far={50} // Increase the shadow camera far plane to capture more shadows.
+          shadow-mapSize-width={4000}
+          shadow-mapSize-height={4000}
+          shadow-camera-far={100} // Increase the shadow camera far plane to capture more shadows.
           shadow-camera-near={0.1}
-          shadow-camera-top={30} // Increase the shadow camera's top and bottom planes.
-          shadow-camera-bottom={-30}
-          shadow-camera-left={-30} // Increase the shadow camera's left and right planes.
-          shadow-camera-right={30}
+          shadow-camera-top={60} // Increase the shadow camera's top and bottom planes.
+          shadow-camera-bottom={-60}
+          shadow-camera-left={-60} // Increase the shadow camera's left and right planes.
+          shadow-camera-right={60}
         />
         <Suspense fallback={null}>
           <Model />
