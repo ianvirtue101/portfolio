@@ -10,8 +10,23 @@ import * as THREE from "three";
 
 type ModelProps = JSX.IntrinsicElements["group"];
 
+const dirLightRef = useRef<THREE.DirectionalLight>(null);
+
 function Model(props: ModelProps) {
   const { scene } = useGLTF("/cubicity_assembly_v04.gltf");
+
+  useEffect(() => {
+    if (dirLightRef.current) {
+      const helper = new THREE.DirectionalLightHelper(dirLightRef.current, 5); // 5 is the helper size.
+      scene.add(helper);
+
+      // Clean up the helper when the component unmounts
+      return () => {
+        scene.remove(helper);
+        helper.dispose();
+      };
+    }
+  }, [scene]);
 
   useEffect(() => {
     scene.traverse((child) => {
@@ -78,6 +93,7 @@ function GLTFViewer() {
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
         <ambientLight intensity={0.25} />
         <directionalLight
+          ref={dirLightRef}
           castShadow
           intensity={1.2}
           position={[-5, 10, 10]}
