@@ -12,7 +12,7 @@ import Loading from "../../app/loading";
 type ModelProps = JSX.IntrinsicElements["group"];
 
 function Model(props: ModelProps) {
-  const { scene } = useGLTF("/cubicity_assembly_v04.gltf");
+  const { scene } = useGLTF("/cubicity_assembly_v06.gltf");
 
   useEffect(() => {
     scene.traverse((child) => {
@@ -135,7 +135,7 @@ function GLTFViewer() {
       >
         <RotatingCamera />
         {/* <PerspectiveCamera makeDefault position={[0, 0, 5]} /> */}
-        <ambientLight intensity={0.25} />
+        <ambientLight intensity={0.75} />
 
         <directionalLight
           castShadow
