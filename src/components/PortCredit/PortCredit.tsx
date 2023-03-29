@@ -7,29 +7,31 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
-import Loading from "../../app/loading";
 
 type ModelProps = JSX.IntrinsicElements["group"];
 
 function Model(props: ModelProps) {
-  const { scene } = useGLTF("/cubicity_assembly_v06.gltf");
+  const { scene } = useGLTF("/cubicity_assembly_v17.gltf");
 
   useEffect(() => {
     scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.castShadow = true;
         child.receiveShadow = true;
+        child.castShadow = true;
 
-        if (child.material instanceof THREE.MeshStandardMaterial) {
+        // Ensure that the material is a MeshStandardMaterial or a MeshPhysicalMaterial
+        if (
+          child.material instanceof THREE.MeshStandardMaterial ||
+          child.material instanceof THREE.MeshPhysicalMaterial
+        ) {
+          // Set roughness and metalness to improve shadow quality
+          child.material.roughness = 1;
+          child.material.metalness = 0;
+
           if (child.material.map) {
             child.material.map.encoding = THREE.sRGBEncoding;
           }
-          if (child.material.roughnessMap) {
-            child.material.roughnessMap.encoding = THREE.LinearEncoding;
-          }
-          if (child.material.metalnessMap) {
-            child.material.metalnessMap.encoding = THREE.LinearEncoding;
-          }
+
           child.material.needsUpdate = true;
         }
       }
@@ -84,79 +86,92 @@ function GradientBackground() {
 //   return (
 //     <directionalLight
 //       ref={dirLightRef}
+//       color={0xffa726}
 //       castShadow
-//       intensity={1.2}
-//       position={[-5, 10, 10]}
-//       shadow-mapSize-width={2048}
-//       shadow-mapSize-height={2048}
-//       shadow-camera-far={50} // Increase the shadow camera far plane to capture more shadows.
-//       shadow-camera-near={0.1}
-//       shadow-camera-top={30} // Increase the shadow camera's top and bottom planes.
-//       shadow-camera-bottom={-30}
-//       shadow-camera-left={-30} // Increase the shadow camera's left and right planes.
-//       shadow-camera-right={30}
+//       receiveShadow
+//       intensity={2}
+//       position={[10, 20, -30]}
+//       shadow-mapSize-width={10120}
+//       shadow-mapSize-height={10120}
+//       // shadow-bias={10}
 //       {...props}
 //     />
 //   );
 // }
 
-function RotatingCamera() {
-  const cameraRef = useRef<THREE.PerspectiveCamera>(null);
+// function RotatingCamera() {
+//   const cameraRef = useRef<THREE.PerspectiveCamera>(null);
 
-  useFrame(({ clock }) => {
-    if (cameraRef.current) {
-      const radius = 25;
-      const speed = 0.05; // Adjust this value to control the rotation speed
-      const angle = clock.getElapsedTime() * speed;
-      cameraRef.current.position.set(
-        radius * Math.sin(angle),
-        15,
-        // Adjust this value to control the camera height
-        radius * Math.cos(angle)
-      );
-      cameraRef.current.lookAt(0, 0, 0);
-    }
-  });
+//   useFrame(({ clock }) => {
+//     if (cameraRef.current) {
+//       const radius = 25;
+//       const speed = 0.05; // Adjust this value to control the rotation speed
+//       const angle = clock.getElapsedTime() * speed;
+//       cameraRef.current.position.set(
+//         radius * Math.sin(angle),
+//         15,
+//         // Adjust this value to control the camera height
+//         radius * Math.cos(angle)
+//       );
+//       cameraRef.current.lookAt(0, 0, 0);
+//     }
+//   });
 
-  return <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 0]} />;
-}
+//   return <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 0]} />;
+// }
 
 function GLTFViewer() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <Canvas
-        linear
-        onCreated={({ gl }) => {
-          gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 1;
-          gl.outputEncoding = THREE.sRGBEncoding;
-        }}
-        shadows={true}
-      >
-        <RotatingCamera />
-        {/* <PerspectiveCamera makeDefault position={[0, 0, 5]} /> */}
-        <ambientLight intensity={0.75} />
+      <Suspense fallback={null}>
+        <Canvas
+          linear
+          onCreated={({ gl }) => {
+            gl.toneMapping = THREE.ACESFilmicToneMapping;
+            gl.toneMappingExposure = 0.75;
+            gl.outputEncoding = THREE.sRGBEncoding;
+            gl.autoClear = true;
+          }}
+          shadows
+        >
+          {/* <RotatingCamera /> */}
+          <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+          <ambientLight intensity={0.75} />
+          {/* <DirectionalLightWithHelper /> */}
+          <directionalLight
+            color={0xffeedd} // Sunlight color
+            castShadow={true} // Enable shadow casting
+            intensity={5} // Adjust the intensity to make the sunlight look more natural
+            position={[10, 20, -40]} // Adjust the position to control the light direction
+            shadow-mapSize-width={4096}
+            shadow-mapSize-height={4096}
+            shadowBias={0.005}
+            shadow-camera-far={50}
+            shadow-camera-near={1}
+            shadow-camera-top={60}
+            shadow-camera-bottom={-60}
+            shadow-camera-left={-60}
+            shadow-camera-right={60}
+          />
+          {/* <directionalLight
+            castShadow
+            position={[2.5, 8, 5]}
+            shadow-mapSize={[1024, 1024]}
+          >
+            +{" "}
+            <orthographicCamera
+              attach="shadow-camera"
+              args={[-10, 10, 10, -10]}
+            />
+            +{" "}
+          </directionalLight> */}
 
-        <directionalLight
-          castShadow
-          intensity={2}
-          position={[-20, 10, -20]}
-          shadow-mapSize-width={4000}
-          shadow-mapSize-height={4000}
-          shadow-camera-far={100} // Increase the shadow camera far plane to capture more shadows.
-          shadow-camera-near={0.1}
-          shadow-camera-top={60} // Increase the shadow camera's top and bottom planes.
-          shadow-camera-bottom={-60}
-          shadow-camera-left={-60} // Increase the shadow camera's left and right planes.
-          shadow-camera-right={60}
-        />
-        <Suspense fallback={null}>
-          <Model />
-          <Environment preset="sunset" />
-        </Suspense>
-        <GradientBackground />
-        <OrbitControls />
-      </Canvas>
+          <Model receiveShadow castShadow />
+          {/* <Environment preset="night" /> */}
+          <GradientBackground />
+          <OrbitControls />
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
