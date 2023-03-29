@@ -130,7 +130,6 @@ function GLTFViewer() {
             gl.toneMapping = THREE.ACESFilmicToneMapping;
             gl.toneMappingExposure = 0.75;
             gl.outputEncoding = THREE.sRGBEncoding;
-            gl.autoClear = true;
           }}
           shadows
         >
