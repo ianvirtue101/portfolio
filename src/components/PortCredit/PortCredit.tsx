@@ -140,7 +140,7 @@ function LimitedCamera() {
 function GLTFViewer() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}> */}
         <Canvas
           linear
           onCreated={({ gl }) => {
@@ -199,7 +199,7 @@ function GLTFViewer() {
           {/* <GradientBackground /> */}
           <OrbitControls />
         </Canvas>
-      </Suspense>
+      {/* </Suspense> */}
     </div>
   );
 }
