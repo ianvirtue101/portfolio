@@ -50,8 +50,9 @@ function GradientBackground() {
     const ctx = gradient.image.getContext("2d");
     if (ctx) {
       const grd = ctx.createLinearGradient(0, 0, 0, size.y);
-      grd.addColorStop(0, "#4A90E2");
-      grd.addColorStop(1, "#1A3B59");
+      grd.addColorStop(0, "#F08080"); // Peach Puff color for the top part of the gradient
+      grd.addColorStop(0.5, "#FFA07A"); // Navajo White for the middle of the gradient
+      grd.addColorStop(1, "#4169E1"); // Lavender for the bottom part of the gradient
       ctx.fillStyle = grd;
       ctx.fillRect(0, 0, size.x, size.y);
     }
@@ -99,18 +100,35 @@ function GradientBackground() {
 //   );
 // }
 
+// function easeInOutQuart(t) {
+//   return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+// }
+
 // function RotatingCamera() {
 //   const cameraRef = useRef<THREE.PerspectiveCamera>(null);
 
 //   useFrame(({ clock }) => {
 //     if (cameraRef.current) {
-//       const radius = 25;
-//       const speed = 0.05; // Adjust this value to control the rotation speed
-//       const angle = clock.getElapsedTime() * speed;
+//       const radius = 50;
+//       const baseSpeed = 0.05;
+//       const changeDirectionInterval = 5;
+
+//       const elapsedTime = clock.getElapsedTime();
+//       const progress =
+//         (elapsedTime % changeDirectionInterval) / changeDirectionInterval;
+//       const easedProgress = easeInOutQuart(progress);
+//       const speed =
+//         baseSpeed *
+//         (Math.floor(elapsedTime / changeDirectionInterval) % 2 === 0
+//           ? easedProgress
+//           : 1 - easedProgress);
+
+//       const initialAngle = Math.PI / 10;
+//       const angle = elapsedTime * speed + initialAngle;
+
 //       cameraRef.current.position.set(
 //         radius * Math.sin(angle),
-//         15,
-//         // Adjust this value to control the camera height
+//         10,
 //         radius * Math.cos(angle)
 //       );
 //       cameraRef.current.lookAt(0, 0, 0);
@@ -119,6 +137,10 @@ function GradientBackground() {
 
 //   return <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 0]} />;
 // }
+
+function LimitedCamera() {
+  return <PerspectiveCamera makeDefault position={[60, 20, -30]} />;
+}
 
 function GLTFViewer() {
   return (
@@ -134,23 +156,34 @@ function GLTFViewer() {
           shadows
         >
           {/* <RotatingCamera /> */}
-          <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-          <ambientLight intensity={0.75} />
+          {/* <PerspectiveCamera makeDefault position={[60, 25, -30]} /> */}
+
+          <OrbitControls
+            enablePan={false} // Disable panning
+            minPolarAngle={Math.PI / 4} // Minimum polar angle (up-down movement)
+            maxPolarAngle={(3 * Math.PI) / 4} // Maximum polar angle (up-down movement)
+            // minAzimuthAngle={-Math.PI / 2} // Minimum azimuth angle (left-right movement)
+            // maxAzimuthAngle={Math.PI / 2} // Maximum azimuth angle (left-right movement)
+            target={[10, 5, -5]}
+          />
+          <LimitedCamera />
+
+          <ambientLight intensity={1} color={"#87CEFA"} />
           {/* <DirectionalLightWithHelper /> */}
           <directionalLight
-            color={0xffeedd} // Sunlight color
+            color={"#FFA500"} // Sunlight color
             castShadow={true} // Enable shadow casting
             intensity={5} // Adjust the intensity to make the sunlight look more natural
-            position={[10, 20, -40]} // Adjust the position to control the light direction
-            shadow-mapSize-width={4096}
-            shadow-mapSize-height={4096}
-            shadowBias={0.005}
-            shadow-camera-far={50}
-            shadow-camera-near={1}
+            position={[10, 20, -30]} // Adjust the position to control the light direction
+            shadow-mapSize-width={4096} // Increased shadow map resolution
+            shadow-mapSize-height={4096} // Increased shadow map resolution
+            shadow-camera-far={100}
+            shadow-camera-near={0.1}
             shadow-camera-top={60}
             shadow-camera-bottom={-60}
             shadow-camera-left={-60}
             shadow-camera-right={60}
+            shadow-bias={-0.005} // Adjusted shadow bias to reduce artifacts
           />
           {/* <directionalLight
             castShadow
