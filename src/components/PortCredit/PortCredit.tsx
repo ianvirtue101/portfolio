@@ -51,9 +51,9 @@ function GradientBackground() {
     const ctx = gradient.image.getContext("2d");
     if (ctx) {
       const grd = ctx.createLinearGradient(0, 0, 0, size.y);
-      grd.addColorStop(0, "#F08080"); // Peach Puff color for the top part of the gradient
-      grd.addColorStop(0.5, "#FFA07A"); // Navajo White for the middle of the gradient
-      grd.addColorStop(1, "#4169E1"); // Lavender for the bottom part of the gradient
+      grd.addColorStop(0, "#FFA8A8"); // Peach Puff color for the top part of the gradient
+      grd.addColorStop(0.5, "#FFC5A1"); // Navajo White for the middle of the gradient
+      grd.addColorStop(1, "#6A89F3"); // Lavender for the bottom part of the gradient
       ctx.fillStyle = grd;
       ctx.fillRect(0, 0, size.x, size.y);
     }
@@ -151,7 +151,7 @@ function GLTFViewer() {
           linear
           onCreated={({ gl }) => {
             gl.toneMapping = THREE.CineonToneMapping;
-            gl.toneMappingExposure = 0.5;
+            gl.toneMappingExposure = 0.6;
             gl.outputEncoding = THREE.sRGBEncoding;
           }}
           shadows
