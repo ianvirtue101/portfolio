@@ -4,6 +4,7 @@ import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  SpotLight,
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
@@ -11,7 +12,7 @@ import * as THREE from "three";
 type ModelProps = JSX.IntrinsicElements["group"];
 
 function Model(props: ModelProps) {
-  const { scene } = useGLTF("/cubicity_assembly_v17.gltf");
+  const { scene } = useGLTF("/PortCredit2-PreBake2.glb");
 
   useEffect(() => {
     scene.traverse((child) => {
@@ -139,7 +140,7 @@ function GradientBackground() {
 // }
 
 function LimitedCamera() {
-  return <PerspectiveCamera makeDefault position={[60, 20, -30]} />;
+  return <PerspectiveCamera makeDefault position={[50, 20, -40]} />;
 }
 
 function GLTFViewer() {
@@ -149,8 +150,8 @@ function GLTFViewer() {
         <Canvas
           linear
           onCreated={({ gl }) => {
-            gl.toneMapping = THREE.ACESFilmicToneMapping;
-            gl.toneMappingExposure = 0.75;
+            gl.toneMapping = THREE.CineonToneMapping;
+            gl.toneMappingExposure = 0.5;
             gl.outputEncoding = THREE.sRGBEncoding;
           }}
           shadows
@@ -168,12 +169,12 @@ function GLTFViewer() {
           />
           <LimitedCamera />
 
-          <ambientLight intensity={1} color={"#87CEFA"} />
+          <ambientLight intensity={2} color={"#87CEFA"} />
           {/* <DirectionalLightWithHelper /> */}
           <directionalLight
             color={"#FFA500"} // Sunlight color
             castShadow={true} // Enable shadow casting
-            intensity={5} // Adjust the intensity to make the sunlight look more natural
+            intensity={8} // Adjust the intensity to make the sunlight look more natural
             position={[10, 20, -30]} // Adjust the position to control the light direction
             shadow-mapSize-width={4096} // Increased shadow map resolution
             shadow-mapSize-height={4096} // Increased shadow map resolution
