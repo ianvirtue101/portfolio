@@ -42,7 +42,11 @@ function Model(props: ModelProps) {
   return <primitive object={scene} {...props} />;
 }
 
-function ColorBackground({ color }) {
+type ColorBackgroundProps = {
+  color: string;
+};
+
+function ColorBackground({ color }: ColorBackgroundProps) {
   const { scene } = useThree();
 
   useEffect(() => {
