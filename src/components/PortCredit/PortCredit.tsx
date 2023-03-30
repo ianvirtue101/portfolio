@@ -151,7 +151,7 @@ function GLTFViewer() {
           linear
           onCreated={({ gl }) => {
             gl.toneMapping = THREE.CineonToneMapping;
-            gl.toneMappingExposure = 0.6;
+            gl.toneMappingExposure = 0.;
             gl.outputEncoding = THREE.sRGBEncoding;
           }}
           shadows
