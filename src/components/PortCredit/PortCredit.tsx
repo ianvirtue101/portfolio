@@ -42,31 +42,21 @@ function Model(props: ModelProps) {
   return <primitive object={scene} {...props} />;
 }
 
-function GradientBackground() {
-  const texture = useMemo(() => {
-    const size = new THREE.Vector2(window.innerWidth, window.innerHeight);
-    const gradient = new THREE.CanvasTexture(document.createElement("canvas"));
-    gradient.image.width = size.x;
-    gradient.image.height = size.y;
-    const ctx = gradient.image.getContext("2d");
-    if (ctx) {
-      const grd = ctx.createLinearGradient(0, 0, 0, size.y);
-      grd.addColorStop(0, "#FFA8A8"); // Peach Puff color for the top part of the gradient
-      grd.addColorStop(0.5, "#FFC5A1"); // Navajo White for the middle of the gradient
-      grd.addColorStop(1, "#6A89F3"); // Lavender for the bottom part of the gradient
-      ctx.fillStyle = grd;
-      ctx.fillRect(0, 0, size.x, size.y);
-    }
-    return gradient;
-  }, []);
+function ColorBackground({ color }) {
+  const { scene } = useThree();
 
-  return (
-    <mesh>
-      <boxGeometry args={[1000, 1000, 1000]} />
-      <meshBasicMaterial map={texture} side={THREE.BackSide} />
-    </mesh>
-  );
+  useEffect(() => {
+    const originalBackground = scene.background;
+    scene.background = new THREE.Color(color);
+
+    return () => {
+      scene.background = originalBackground;
+    };
+  }, [scene, color]);
+
+  return null;
 }
+
 // HELPER FUNCTION FOR
 // function DirectionalLightWithHelper(props) {
 //   const dirLightRef = useRef<THREE.DirectionalLight>(null);
@@ -174,8 +164,8 @@ function GLTFViewer() {
           <directionalLight
             color={"#FFA500"} // Sunlight color
             castShadow={true} // Enable shadow casting
-            intensity={8} // Adjust the intensity to make the sunlight look more natural
-            position={[10, 20, -30]} // Adjust the position to control the light direction
+            intensity={5} // Adjust the intensity to make the sunlight look more natural
+            position={[40, 20, 30]} // Adjust the position to control the light direction
             shadow-mapSize-width={4096} // Increased shadow map resolution
             shadow-mapSize-height={4096} // Increased shadow map resolution
             shadow-camera-far={100}
@@ -200,8 +190,9 @@ function GLTFViewer() {
           </directionalLight> */}
 
           <Model receiveShadow castShadow />
-          <Environment preset="dawn" />
-          <GradientBackground />
+          <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
+          <ColorBackground color="#D1EFFF" />
+          {/* <GradientBackground /> */}
           <OrbitControls />
         </Canvas>
       </Suspense>
