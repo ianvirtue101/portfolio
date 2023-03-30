@@ -151,7 +151,7 @@ function GLTFViewer() {
           linear
           onCreated={({ gl }) => {
             gl.toneMapping = THREE.CineonToneMapping;
-            gl.toneMappingExposure = 0.;
+            gl.toneMappingExposure = 0.5;
             gl.outputEncoding = THREE.sRGBEncoding;
           }}
           shadows
@@ -200,7 +200,7 @@ function GLTFViewer() {
           </directionalLight> */}
 
           <Model receiveShadow castShadow />
-          {/* <Environment preset="night" /> */}
+          <Environment preset="dawn" />
           <GradientBackground />
           <OrbitControls />
         </Canvas>
