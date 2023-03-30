@@ -8,8 +8,8 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
-
 type ModelProps = JSX.IntrinsicElements["group"];
+import Loading from "@/app/loading";
 
 function Model(props: ModelProps) {
   const { scene } = useGLTF("/PortCredit2-PreBake2.glb");
@@ -140,7 +140,7 @@ function LimitedCamera() {
 function GLTFViewer() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loading />}>
         <Canvas
           linear
           onCreated={({ gl }) => {
