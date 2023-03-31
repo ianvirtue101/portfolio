@@ -37,6 +37,24 @@ function useWindowSize() {
 }
 
 export default function Home() {
+  const [splitCloud, setSplitCloud] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setSplitCloud(true);
+      } else {
+        setSplitCloud(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const width = useWindowSize(); // Get the width of the window using the custom hook
 
   const tabletBreakpoint = 768; // Define a breakpoint for tablet devices
