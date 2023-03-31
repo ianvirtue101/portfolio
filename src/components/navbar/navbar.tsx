@@ -57,10 +57,10 @@ export default function Navbar() {
             Contact
           </a>
         </NavigationMenu.Item>
+        <div className="imageContainer">
+          <Image src={CloudsTop} alt="layers of white fluffy clouds" />
+        </div>
       </NavigationMenu.Root>
-      <div className="imageContainer">
-        <Image src={CloudsTop} alt="layers of white fluffy clouds" />
-      </div>
     </>
   );
 }
