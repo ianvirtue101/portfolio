@@ -16,13 +16,15 @@
 }
 
 .CloudContainer {
-  position: absolute;
-  bottom: 37rem;
-  pointer-events: none;
+  display: flex;
+  align-items: flex-end; // Align the SVG to the bottom
   width: 100%;
-  height: 100%;
-  /* Additional styles if needed */
+  height: auto;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
   z-index: 10000000;
+  pointer-events: none;
 
   img {
     width: 100%;
