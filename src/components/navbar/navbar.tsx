@@ -1,9 +1,10 @@
 // import necessary modules
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-
+import CloudsTop from "../../../public/SVG/clouds-top.svg";
 // import stylesheet
 import "./navbar.scss";
 
@@ -57,6 +58,9 @@ export default function Navbar() {
           </a>
         </NavigationMenu.Item>
       </NavigationMenu.Root>
+      <div className="imageContainer">
+        <Image src={CloudsTop} alt="layers of white fluffy clouds" />
+      </div>
     </>
   );
 }

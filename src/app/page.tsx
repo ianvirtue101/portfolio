@@ -1,20 +1,16 @@
 "use client";
 // Import necessary dependencies and components
 import Image from "next/image";
-import RotatingText from "../components/rotatingText/rotatingText";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import Headshot from "../assets/ianvirtue.png";
-import Mountains from "@/components/mountains/mountains";
 import React, { useState, useEffect, Suspense } from "react";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
-import ClientOnly from "../components/clientOnly/clientOnly";
 import PortCredit from "../components/PortCredit/PortCredit";
 import Head from "./head";
-import Loading from "./loading";
 
 // Create a custom hook that returns the current window width
 function useWindowSize() {
