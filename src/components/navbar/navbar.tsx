@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import CloudsTop from "../../../public/SVG/clouds-top.svg";
+import CloudsTop from "../../../public/SVG/Cloud-Top.svg";
 // import stylesheet
 import "./navbar.scss";
 

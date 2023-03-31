@@ -10,8 +10,24 @@
 
   z-index: 9999999;
 
-  @include desktop {
-    height: 100vh;
+  // @include desktop {
+  //   height: 100vh;
+  // }
+}
+
+.CloudContainer {
+  position: absolute;
+  bottom: 37rem;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  /* Additional styles if needed */
+  z-index: 10000000;
+
+  img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
 }
 
@@ -106,13 +122,13 @@
 }
 
 .body-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
   position: relative;
   background-color: #1f2761;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   font-size: 1rem;
   @include desktop {
     padding-top: 0rem;
@@ -160,6 +176,7 @@
   &__group {
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
     @include desktop {
       flex-direction: row;
       justify-content: space-around;
@@ -179,7 +196,7 @@
 
   &__title {
     font-size: 2rem;
-    color: $white-blue;
+    color: #1f2761;
     @include desktop {
       font-size: 4rem;
 
