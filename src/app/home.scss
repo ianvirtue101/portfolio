@@ -123,13 +123,8 @@
 }
 
 .body-section {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   position: relative;
-  background-color: #1f2761;
-  // justify-content: center;
-  // align-items: center;
+  background-color: white;
   font-size: 1rem;
   @include desktop {
     flex-direction: row;
@@ -137,18 +132,17 @@
 
   &__text-block {
     padding: 1rem;
-
     @include desktop {
       display: flex;
-      // align-items: flex-start;
+
       flex-direction: column;
       padding: 2rem 5rem;
-      // flex-basis: 45%;
     }
   }
 
   &__title {
     font-size: 2rem;
+    color: $medium-dark-blue;
     @include desktop {
       font-size: 4rem;
       transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
@@ -169,9 +163,9 @@
     line-height: 2rem;
     font-size: 1rem;
     text-align: justify;
+    color: $medium-dark-blue;
     @include desktop {
       font-size: 1.5rem;
-
       text-align: justify;
     }
   }
