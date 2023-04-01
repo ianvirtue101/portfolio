@@ -3,25 +3,39 @@ import { useCallback, useRef, useState } from "react";
 const useFullscreenToggle = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [lastTap, setLastTap] = useState<number>(0);
-
   const handleDoubleClick = useCallback(
-    (event: React.MouseEvent<HTMLDivElement>) => {
-      const container = containerRef.current;
+    (
+      event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+    ) => {
+      const fullscreenElement =
+        (document as any).fullscreenElement ||
+        (document as any).webkitFullscreenElement ||
+        (document as any).mozFullScreenElement ||
+        (document as any).msFullscreenElement;
 
-      if (container) {
-        if (!document.fullscreenElement) {
-          // If not in fullscreen mode, request fullscreen
-          container.requestFullscreen();
-        } else {
-          // If in fullscreen mode, exit fullscreen
-          document.exitFullscreen();
+      if (!fullscreenElement) {
+        if (containerRef.current) {
+          const el = containerRef.current as any;
+          const requestFullscreen =
+            el.requestFullscreen ||
+            el.webkitRequestFullscreen ||
+            el.mozRequestFullScreen ||
+            el.msRequestFullscreen;
+          requestFullscreen.call(el);
         }
+      } else {
+        const exitFullscreen =
+          document.exitFullscreen ||
+          (document as any).webkitExitFullscreen ||
+          (document as any).mozCancelFullScreen ||
+          (document as any).msExitFullscreen;
+        exitFullscreen.call(document);
       }
     },
     []
   );
 
-  const handleDoubleTap = useCallback(
+  const handleTouch = useCallback(
     (event: React.TouchEvent<HTMLDivElement>) => {
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTap;
@@ -37,7 +51,7 @@ const useFullscreenToggle = () => {
     [handleDoubleClick, lastTap]
   );
 
-  return { containerRef, handleDoubleClick, handleDoubleTap };
+  return { containerRef, handleDoubleClick, handleTouch };
 };
 
 export { useFullscreenToggle };

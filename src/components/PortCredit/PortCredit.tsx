@@ -154,14 +154,14 @@ function LimitedCamera() {
 }
 
 function GLTFViewer() {
-  const { containerRef, handleDoubleClick, handleDoubleTap } =
+  const { containerRef, handleDoubleClick, handleTouch } =
     useFullscreenToggle();
 
   return (
     <div
       ref={containerRef}
       onDoubleClick={handleDoubleClick}
-      onTouchStart={handleDoubleTap}
+      onTouchStart={handleTouch}
       className="canvas-container"
     >
       <Canvas
