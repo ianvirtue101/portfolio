@@ -116,9 +116,9 @@
 
   &__hover-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding-top: 0.5rem;
+    padding: 2rem;
     width: 100%;
   }
 }
@@ -133,7 +133,6 @@
   // align-items: center;
   font-size: 1rem;
   @include desktop {
-    padding-top: 0rem;
     flex-direction: row;
   }
 
@@ -144,13 +143,12 @@
       display: flex;
       // align-items: flex-start;
       flex-direction: column;
-      padding: 0rem 0rem 0rem 0rem;
+      padding: 2rem 5rem;
       // flex-basis: 45%;
     }
   }
 
   &__title {
-    color: $white-blue;
     font-size: 2rem;
     @include desktop {
       font-size: 4rem;
@@ -163,8 +161,11 @@
     }
   }
 
+  &__subheading {
+    font-size: 2rem;
+  }
+
   &__text {
-    color: #e6eaff;
     line-height: 2rem;
     font-size: 1rem;
     text-align: justify;
@@ -180,10 +181,9 @@
     flex-direction: column;
     background-color: #ffffff;
     @include desktop {
-      flex-direction: row;
       justify-content: space-around;
       align-items: center;
-      padding: 0rem 2rem;
+      padding: 2rem 2rem;
     }
   }
 }

@@ -197,9 +197,9 @@ function GLTFViewer() {
           <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
           <ColorBackground color="#D1EFFF" />
 
-          <Physics>
+          {/* <Physics>
             <PhysicsLetters gltfPath="/Letters.glb" />
-          </Physics>
+          </Physics> */}
 
           <OrbitControls />
         </Physics>

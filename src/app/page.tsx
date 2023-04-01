@@ -150,7 +150,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="image-container">
+          {/* <div className="image-container">
             <div className="image-container__block">
               <Image
                 className="image-container__image"
@@ -159,35 +159,35 @@ export default function Home() {
                 width={300}
                 priority
               />
-            </div>
-            <h2>Let&apos;s Connect</h2>
-            <div className="image-container__hover-card">
-              <HoverCards
-                channel={data.instagram.channel}
-                link={data.instagram.link}
-                handle={data.instagram.handle}
-                followers={data.instagram.followers}
-                description={data.instagram.description}
-                image={Instagram}
-              />
-              <HoverCards
-                channel={data.linkedin.channel}
-                link={data.linkedin.link}
-                handle={data.linkedin.handle}
-                followers={data.linkedin.followers}
-                description={data.linkedin.description}
-                image={Linkedin}
-              />
-              <HoverCards
-                channel={data.github.channel}
-                link={data.github.link}
-                handle={data.github.handle}
-                followers={data.github.followers}
-                description={data.github.description}
-                image={Github}
-              />
-            </div>
+            </div> */}
+          <h2 className="body-section__subheading">Let&apos;s Connect</h2>
+          <div className="image-container__hover-card">
+            <HoverCards
+              channel={data.instagram.channel}
+              link={data.instagram.link}
+              handle={data.instagram.handle}
+              followers={data.instagram.followers}
+              description={data.instagram.description}
+              image={Instagram}
+            />
+            <HoverCards
+              channel={data.linkedin.channel}
+              link={data.linkedin.link}
+              handle={data.linkedin.handle}
+              followers={data.linkedin.followers}
+              description={data.linkedin.description}
+              image={Linkedin}
+            />
+            <HoverCards
+              channel={data.github.channel}
+              link={data.github.link}
+              handle={data.github.handle}
+              followers={data.github.followers}
+              description={data.github.description}
+              image={Github}
+            />
           </div>
+          {/* </div> */}
         </div>
       </section>
       <section id="resume" className="resume-section">
