@@ -158,6 +158,7 @@ function GLTFViewer() {
       <Canvas
         linear
         onCreated={({ gl }) => {
+          gl.setPixelRatio(window.devicePixelRatio);
           gl.toneMapping = THREE.CineonToneMapping;
           gl.toneMappingExposure = 0.5;
           gl.outputEncoding = THREE.sRGBEncoding;
