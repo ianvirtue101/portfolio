@@ -161,7 +161,7 @@ function GLTFViewer() {
     <div
       ref={containerRef}
       onDoubleClick={handleDoubleClick}
-      onTouchEnd={handleDoubleTap}
+      onTouchStart={handleDoubleTap}
       className="canvas-container"
     >
       <Canvas
