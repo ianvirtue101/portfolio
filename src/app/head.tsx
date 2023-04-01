@@ -5,9 +5,10 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
-        content="I'm Ian Virtue. I'm a front-end developer based in Toronto with expertise in HTML, CSS, JavaScript, and front-end frameworks such as ReactJS, NextJS, and VueJS."
+        content="Ian Virtue, an innovative front-end developer in Mississauga, Ontario, specializes in modern web development using HTML, CSS, JavaScript, ReactJS, NextJS, and Three.js. Explore my portfolio and discover how I create responsive, accessible, and user-friendly web experiences with immersive 3D graphics."
       />
       <link rel="icon" href="/favicon.ico" />
+      <meta property="og:image" content="/PortCredit.jpg" />
     </>
   );
 }
