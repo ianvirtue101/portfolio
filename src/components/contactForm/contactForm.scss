@@ -44,19 +44,19 @@
     width: 15rem;
     height: 3.5rem;
     position: relative;
-    background-color: #1f2761;
+    background-color: $dark-blue;
   }
 
   &__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid #1f2761 3px;
+    border: solid $dark-blue 3px;
     position: relative;
     bottom: 4rem;
     margin-bottom: -4rem;
     right: 0.5rem;
-    color: #1f2761;
+    color: $dark-blue;
     background-color: white;
     text-decoration: none;
     text-align: center;
