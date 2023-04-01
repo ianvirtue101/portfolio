@@ -3,7 +3,6 @@
 import Image from "next/image";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
-import Headshot from "../assets/ianvirtue.png";
 import React, { useState, useEffect, Suspense } from "react";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
@@ -76,7 +75,7 @@ export default function Home() {
       image: { Instagram }, // Use the Instagram icon
       link: "https://www.instagram.com/ian.virtue/",
       handle: "ian.virtue",
-      followers: "1139",
+      followers: "1146",
       description:
         "Landscape & Commercial Photographer helping eco-focused brands do more for the world",
     },
@@ -240,7 +239,7 @@ export default function Home() {
         <div className="resume-section__container">
           <div className="resume-section__block">
             <h3 className="resume-section__header">
-              Content Development Manager
+              Full Stack Developer
               <br />@ Learnedly
             </h3>
             <p className="resume-section__text">
