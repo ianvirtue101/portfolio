@@ -118,8 +118,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    width: 100%;
+    padding-bottom: 3rem;
   }
 }
 
@@ -163,6 +162,7 @@
 
   &__subheading {
     font-size: 2rem;
+    padding: 1rem;
   }
 
   &__text {
@@ -181,7 +181,7 @@
     flex-direction: column;
     background-color: #ffffff;
     @include desktop {
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       padding: 2rem 2rem;
     }

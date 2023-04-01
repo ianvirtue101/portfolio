@@ -1,9 +1,15 @@
 @use "../../styles/mixins.scss" as *;
 @use "../../styles/variables.scss" as *;
 
-.SocialMediaLogo {
-  padding: 0rem 1rem;
+.LogoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.SocialMediaLogo {
+  padding: 1rem;
   transition: transform 0.3s; // Add a smoother transition for hover effect
 
   &:hover {

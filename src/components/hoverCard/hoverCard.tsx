@@ -28,13 +28,13 @@ export default function HoverCards({
       <HoverCard.Trigger asChild>
         <div className="SocialMediaTrigger">
           {/* Render the social media image with a link */}
-          <Link href={link}>
+          <Link href={link} className="LogoContainer">
             <Image
               className="SocialMediaLogo"
               src={image}
               alt={`${channel} logo`}
-              width={100}
-              height={100}
+              width={50}
+              height={50}
             />
           </Link>
         </div>
