@@ -11,6 +11,7 @@ import {
 import * as THREE from "three";
 import { Mesh, Vector3 } from "three";
 type ModelProps = JSX.IntrinsicElements["group"];
+import "./portCredit.scss"
 
 function Model(props: ModelProps) {
   const { scene } = useGLTF("/PortCredit2-PreBake2.glb");
@@ -153,59 +154,91 @@ function LimitedCamera() {
 }
 
 function GLTFViewer() {
+  // Create a container ref
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Add a double-click event listener to the container
+    const handleDoubleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+      const container = containerRef.current;
+
+      if (container) {
+        if (!document.fullscreenElement) {
+          // If not in fullscreen mode, request fullscreen
+          container.requestFullscreen();
+        } else {
+          // If in fullscreen mode, exit fullscreen
+          document.exitFullscreen();
+        }
+      }
+    };
+
+    const container = containerRef.current;
+
+    if (container) {
+      container.addEventListener("dblclick", handleDoubleClick);
+    }
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      if (container) {
+        container.removeEventListener("dblclick", handleDoubleClick);
+      }
+    };
+  }, []);
   return (
-    // <div style={{ width: "100%", height: "100%" }}>
-    <Canvas
-      linear
-      onCreated={({ gl }) => {
-        gl.setPixelRatio(window.devicePixelRatio);
-        gl.toneMapping = THREE.CineonToneMapping;
-        gl.toneMappingExposure = 0.5;
-        gl.outputEncoding = THREE.sRGBEncoding;
-      }}
-      shadows
-    >
-      <Physics>
-        <OrbitControls
-          enablePan={false} // Disable panning
-          minPolarAngle={Math.PI / 4} // Minimum polar angle (up-down movement)
-          maxPolarAngle={(3 * Math.PI) / 4} // Maximum polar angle (up-down movement)
-          // minAzimuthAngle={-Math.PI / 2} // Minimum azimuth angle (left-right movement)
-          // maxAzimuthAngle={Math.PI / 2} // Maximum azimuth angle (left-right movement)
-          target={[10, 5, -5]}
-        />
-        <LimitedCamera />
+    <div ref={containerRef} className="canvas-container">
+      <Canvas
+        linear
+        onCreated={({ gl }) => {
+          gl.setPixelRatio(window.devicePixelRatio);
+          gl.toneMapping = THREE.CineonToneMapping;
+          gl.toneMappingExposure = 0.5;
+          gl.outputEncoding = THREE.sRGBEncoding;
+        }}
+        shadows
+      >
+        <Physics>
+          <OrbitControls
+            enablePan={false} // Disable panning
+            minPolarAngle={Math.PI / 4} // Minimum polar angle (up-down movement)
+            maxPolarAngle={(3 * Math.PI) / 4} // Maximum polar angle (up-down movement)
+            // minAzimuthAngle={-Math.PI / 2} // Minimum azimuth angle (left-right movement)
+            // maxAzimuthAngle={Math.PI / 2} // Maximum azimuth angle (left-right movement)
+            target={[10, 5, -5]}
+          />
+          <LimitedCamera />
 
-        <ambientLight intensity={2} color={"#87CEFA"} />
-        {/* <DirectionalLightWithHelper /> */}
-        <directionalLight
-          color={"#FFA500"} // Sunlight color
-          castShadow={true} // Enable shadow casting
-          intensity={5} // Adjust the intensity to make the sunlight look more natural
-          position={[40, 20, 30]} // Adjust the position to control the light direction
-          shadow-mapSize-width={4096} // Increased shadow map resolution
-          shadow-mapSize-height={4096} // Increased shadow map resolution
-          shadow-camera-far={100}
-          shadow-camera-near={0.1}
-          shadow-camera-top={60}
-          shadow-camera-bottom={-60}
-          shadow-camera-left={-60}
-          shadow-camera-right={60}
-          shadow-bias={-0.005} // Adjusted shadow bias to reduce artifacts
-        />
+          <ambientLight intensity={2} color={"#87CEFA"} />
+          {/* <DirectionalLightWithHelper /> */}
+          <directionalLight
+            color={"#FFA500"} // Sunlight color
+            castShadow={true} // Enable shadow casting
+            intensity={5} // Adjust the intensity to make the sunlight look more natural
+            position={[40, 20, 30]} // Adjust the position to control the light direction
+            shadow-mapSize-width={4096} // Increased shadow map resolution
+            shadow-mapSize-height={4096} // Increased shadow map resolution
+            shadow-camera-far={100}
+            shadow-camera-near={0.1}
+            shadow-camera-top={60}
+            shadow-camera-bottom={-60}
+            shadow-camera-left={-60}
+            shadow-camera-right={60}
+            shadow-bias={-0.005} // Adjusted shadow bias to reduce artifacts
+          />
 
-        <Model receiveShadow castShadow />
-        <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
-        <ColorBackground color="#D1EFFF" />
+          <Model receiveShadow castShadow />
+          <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
+          <ColorBackground color="#D1EFFF" />
 
-        {/* <Physics>
+          {/* <Physics>
             <PhysicsLetters gltfPath="/Letters.glb" />
           </Physics> */}
 
-        <OrbitControls />
-      </Physics>
-    </Canvas>
-    // </div>
+          <OrbitControls />
+        </Physics>
+      </Canvas>
+    </div>
   );
 }
 
