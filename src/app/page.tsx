@@ -136,16 +136,15 @@ export default function Home() {
               About
             </h1>
             <p className="body-section__text">
-              I&apos;m a multi-skilled and detail-oriented professional with
-              expertise in full stack engineering, content development, and
-              digital media. Possessing a passion for creative problem solving
-              and a dedication to staying up to date with industry trends, I
-              bring exceptional technical skills, project management, and
-              customer service to every engagement. With a Diploma in Web
-              Development from BrainStation and a BA in Communication, Media &
-              Film and Digital Journalism from the University of Windsor, I am
-              well equipped to deliver exceptional results for clients no matter
-              the problem.
+              I&apos;m a versatile and meticulous professional, specializing in
+              full stack engineering, content creation, and digital media.
+              Driven by a passion for inventive problem-solving and a commitment
+              to staying current with industry developments, I excel in
+              technical expertise, project management, and customer service.
+              Holding a Diploma in Web Development from BrainStation and a BA in
+              Communication, Media & Film and Digital Journalism from the
+              University of Windsor, I&apos;m well-prepared to deliver
+              outstanding results for clients across various challenges.
             </p>
           </div>
 
