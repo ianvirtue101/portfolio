@@ -9,9 +9,9 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
-import { Mesh, Vector3 } from "three";
+import { useFullscreenToggle } from "../FullScreenToggle/FullScreenToggle";
 type ModelProps = JSX.IntrinsicElements["group"];
-import "./portCredit.scss"
+import "./portCredit.scss";
 
 function Model(props: ModelProps) {
   const { scene } = useGLTF("/PortCredit2-PreBake2.glb");
@@ -154,40 +154,13 @@ function LimitedCamera() {
 }
 
 function GLTFViewer() {
-  // Create a container ref
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Add a double-click event listener to the container
-    const handleDoubleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-      const container = containerRef.current;
-
-      if (container) {
-        if (!document.fullscreenElement) {
-          // If not in fullscreen mode, request fullscreen
-          container.requestFullscreen();
-        } else {
-          // If in fullscreen mode, exit fullscreen
-          document.exitFullscreen();
-        }
-      }
-    };
-
-    const container = containerRef.current;
-
-    if (container) {
-      container.addEventListener("dblclick", handleDoubleClick);
-    }
-
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      if (container) {
-        container.removeEventListener("dblclick", handleDoubleClick);
-      }
-    };
-  }, []);
+  const { containerRef, handleDoubleClick } = useFullscreenToggle();
   return (
-    <div ref={containerRef} className="canvas-container">
+    <div
+      ref={containerRef}
+      onDoubleClick={handleDoubleClick}
+      className="canvas-container"
+    >
       <Canvas
         linear
         onCreated={({ gl }) => {
