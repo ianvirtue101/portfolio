@@ -138,10 +138,10 @@ function GLTFViewer() {
           <ambientLight intensity={2} color={"#87CEFA"} />
           {/* <DirectionalLightWithHelper /> */}
           <directionalLight
-            color={"#FFA500"} // Sunlight color
-            castShadow={true} // Enable shadow casting
-            intensity={5} // Adjust the intensity to make the sunlight look more natural
-            position={[40, 20, 30]} // Adjust the position to control the light direction
+            color={darkMode ? "#96c1ff" : "#FFA500"}
+            castShadow={true}
+            intensity={darkMode ? 1 : 5}
+            position={darkMode ? [10, 30, 20] : [40, 20, 30]} // Adjust the position to control the light direction
             shadow-mapSize-width={4096} // Increased shadow map resolution
             shadow-mapSize-height={4096} // Increased shadow map resolution
             shadow-camera-far={100}
@@ -154,7 +154,13 @@ function GLTFViewer() {
           />
 
           <Model receiveShadow castShadow />
-          <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
+          <Environment
+            files={
+              darkMode
+                ? "/shanghai_bund_1k.hdr"
+                : "/kloppenheim_06_puresky_1k.hdr"
+            }
+          />
           <ColorBackground color={darkMode ? "#152238" : "#D1EFFF"} />
 
           {/* <Physics>
