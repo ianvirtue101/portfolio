@@ -140,3 +140,25 @@
     transform: translate(0.5rem, 0.5rem);
   }
 }
+
+// Theme mixin for module-specific styles
+@mixin themed() {
+  @each $theme, $map in (lightmode: $lightmode, darkmode: $darkmode) {
+    .#{$theme} & {
+      $theme-map: $map !global;
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+// Theme mixin for global styles
+@mixin gthemed() {
+  @each $theme, $map in (lightmode: $lightmode, darkmode: $darkmode) {
+    .#{$theme} & {
+      $theme-map: $map !global;
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}

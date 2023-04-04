@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import CloudsTop from "../../../public/SVG/Cloud-Top.svg";
-// import stylesheet
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./navbar.scss";
 
 // define Navbar component
@@ -19,6 +19,7 @@ export default function Navbar() {
       <NavigationMenu.Root className="nav">
         {/* // create menu item for Home page, use Link from Next.js to handle
         routing */}
+        <ThemeToggle />
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("home")}

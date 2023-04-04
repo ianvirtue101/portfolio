@@ -6,7 +6,9 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: #ffffff;
+  @include gthemed() {
+    background-color: map-get($theme-map, "white-blue");
+  }
   position: relative;
   height: auto;
 
@@ -24,12 +26,12 @@
 .navLink {
   text-decoration: none;
   font-size: 1.25rem;
-
-  // add a subtle on hover animotion
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: $dark-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
   }
 }
 

@@ -10,15 +10,17 @@
 
 .SocialMediaLogo {
   padding: 1rem;
-  transition: transform 0.3s; // Add a smoother transition for hover effect
+  transition: transform 0.3s;
 
   &:hover {
-    transform: scale(1.1); // Create a grow on hover animation
+    transform: scale(1.1);
   }
 }
 
 .SocialMediaHoverCardContent {
-  background: white;
+  @include gthemed() {
+    background: map-get($theme-map, "white");
+  }
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -27,7 +29,9 @@
 }
 
 .SocialMediaHoverCardContent:hover {
-  background-color: rgba(142, 152, 230, 1);
+  @include gthemed() {
+    background-color: map-get($theme-map, "medium-blue");
+  }
 }
 
 .SocialMediaTitle {
@@ -36,11 +40,12 @@
 }
 
 .SocialMediaHandle {
-  transition: all ease-in-out 0.5s;
-
-  &:hover {
-    color: $dark-blue;
+  @include gthemed() {
+    &:hover {
+      color: map-get($theme-map, "dark-blue");
+    }
   }
+  transition: all ease-in-out 0.5s;
 }
 
 .SocialMediaDescription {

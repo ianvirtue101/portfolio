@@ -19,8 +19,10 @@
   &__input {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: $white-blue;
-    filter: drop-shadow(0.5rem 0.5rem 0rem $dark-blue);
+    @include gthemed() {
+      background-color: map-get($theme-map, "white-blue");
+      filter: drop-shadow(0.5rem 0.5rem 0rem map-get($theme-map, "dark-blue"));
+    }
     width: 20rem;
     border: 1px solid black;
   }
@@ -28,8 +30,10 @@
   &__textarea {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: $white-blue;
-    filter: drop-shadow(0.5rem 0.5rem 0rem $dark-blue);
+    @include gthemed() {
+      background-color: map-get($theme-map, "white-blue");
+      filter: drop-shadow(0.5rem 0.5rem 0rem map-get($theme-map, "dark-blue"));
+    }
     width: 20rem;
     border: 1px solid black;
     resize: none;
@@ -44,19 +48,23 @@
     width: 15rem;
     height: 3.5rem;
     position: relative;
-    background-color: $dark-blue;
+    @include gthemed() {
+      background-color: map-get($theme-map, "dark-blue");
+    }
   }
 
   &__button {
+    @include gthemed() {
+      border: solid 3px map-get($theme-map, "dark-blue");
+      color: map-get($theme-map, "dark-blue");
+    }
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid $dark-blue 3px;
     position: relative;
     bottom: 4rem;
     margin-bottom: -4rem;
     right: 0.5rem;
-    color: $dark-blue;
     background-color: white;
     text-decoration: none;
     text-align: center;

@@ -5,14 +5,8 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
   opacity: 0.95;
-
   z-index: 9999999;
-
-  // @include desktop {
-  //   height: 100vh;
-  // }
 }
 
 .CloudContainer {
@@ -48,11 +42,15 @@
   }
 
   &__title {
-    color: $dark-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
   }
 
   &__text {
-    color: $dark-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
   }
 
   &__buttonBLock {
@@ -142,14 +140,21 @@
 
   &__title {
     font-size: 2rem;
-    color: $medium-dark-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "medium-dark-blue");
+    }
     @include desktop {
       font-size: 4rem;
       transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
-      box-shadow: inset 0 0 0 0 $dark-blue;
-      &:hover {
-        box-shadow: inset 800px 0 0 0 $white-blue;
-        color: $dark-blue;
+      @include gthemed() {
+        box-shadow: inset 0 0 0 0 map-get($theme-map, "dark-blue");
+      }
+
+      @include gthemed() {
+        &:hover {
+          box-shadow: inset 800px 0 0 0 map-get($theme-map, "white-blue");
+          color: map-get($theme-map, "dark-blue");
+        }
       }
     }
   }
@@ -157,13 +162,18 @@
   &__subheading {
     font-size: 2rem;
     padding: 1rem;
+    @include gthemed() {
+      color: map-get($theme-map, "medium-dark-blue");
+    }
   }
 
   &__text {
     line-height: 2rem;
     font-size: 1rem;
     text-align: justify;
-    color: $medium-dark-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "medium-dark-blue");
+    }
     @include desktop {
       font-size: 1.5rem;
       text-align: justify;
@@ -182,7 +192,10 @@
 }
 
 .resume-section {
-  background-color: $medium-dark-blue;
+  @include gthemed() {
+    background-color: map-get($theme-map, "medium-dark-blue");
+  }
+
   padding: 2rem 1rem 5rem 1rem;
 
   @include desktop {
@@ -191,29 +204,38 @@
 
   &__title {
     font-size: 2rem;
-    color: $white-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "white-blue");
+    }
     @include desktop {
       font-size: 4rem;
-
-      box-shadow: inset 0 0 0 0 $dark-blue;
+      @include gthemed() {
+        @include gthemed() {
+          box-shadow: inset 0 0 0 0 map-get($theme-map, "dark-blue");
+        }
+      }
 
       margin: 0 -0.25rem;
       padding: 0 0.25rem;
       transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
 
-      &:hover {
-        box-shadow: inset 800px 0 0 0 $white-blue;
-        color: $dark-blue;
+      @include gthemed() {
+        &:hover {
+          box-shadow: inset 800px 0 0 0 map-get($theme-map, "white-blue");
+          color: map-get($theme-map, "dark-blue");
+        }
       }
     }
   }
 
   &__block {
-    border: 1px solid $white-blue;
+    @include gthemed() {
+      border: 1px solid map-get($theme-map, "white-blue");
+      box-shadow: 0.5rem 0.5rem 0rem map-get($theme-map, "light-blue");
+    }
     padding: 1rem;
     margin: 1rem 0rem;
 
-    box-shadow: 0.5rem 0.5rem 0rem $light-blue;
     @include desktop {
       margin: 1rem;
       padding: 1rem 2rem;
@@ -232,14 +254,18 @@
 
   &__header {
     font-size: 2rem;
-    color: $white-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "white-blue");
+    }
     margin: 0 -0.25rem;
     padding: 0 0.25rem;
     transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
 
-    &:hover {
-      box-shadow: inset 800px 0 0 0 $white-blue;
-      color: $dark-blue;
+    @include gthemed() {
+      &:hover {
+        box-shadow: inset 800px 0 0 0 map-get($theme-map, "white-blue");
+        color: map-get($theme-map, "dark-blue");
+      }
     }
   }
 
@@ -247,7 +273,9 @@
     font-size: 1rem;
     text-align: justify;
     text-justify: inter-character;
-    color: $white-blue;
+    @include gthemed() {
+      color: map-get($theme-map, "white-blue");
+    }
     line-height: 2rem;
 
     @include desktop {
@@ -265,16 +293,18 @@
   }
 
   &__button {
+    @include gthemed() {
+      border: solid 3px map-get($theme-map, "white-blue");
+      color: map-get($theme-map, "white-blue");
+      background-color: map-get($theme-map, "medium-dark-blue");
+    }
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid $white-blue 3px;
     position: relative;
     bottom: 4rem;
     margin-bottom: -4rem;
     right: 0.5rem;
-    color: $white-blue;
-    background-color: $medium-dark-blue;
     text-decoration: none;
     text-align: center;
     height: 3.5rem;
@@ -293,7 +323,9 @@
     width: 15rem;
     height: 3.5rem;
     position: relative;
-    background-color: $white-blue;
+    @include gthemed() {
+      background-color: map-get($theme-map, "white-blue");
+    }
   }
 }
 
@@ -302,7 +334,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $white-blue;
+  @include gthemed() {
+    background-color: map-get($theme-map, "white-blue");
+  }
   padding: 2rem;
   overflow: hidden;
   @include desktop {

@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/navbar";
 import { AnalyticsWrapper } from "../components/analytics/analytics";
 import { Suspense } from "react";
 import Loading from "./loading";
+import ThemeWrapper from "@/components/ThemeWrapper/ThemeWrapper";
 
 export default function RootLayout({
   children,
@@ -17,10 +18,12 @@ export default function RootLayout({
       */}
       <head />
       <Suspense fallback={<Loading />}>
-        <body>
-          <Navbar />
-          {children}
-        </body>
+        <ThemeWrapper>
+          <body>
+            <Navbar />
+            {children}
+          </body>
+        </ThemeWrapper>
       </Suspense>
       <AnalyticsWrapper />
     </html>
