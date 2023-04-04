@@ -2,7 +2,7 @@
 import React from "react";
 import * as Switch from "@radix-ui/react-switch";
 import { useTheme } from "../ThemeWrapper/ThemeWrapper";
-// import "./styles.css";
+import "./ThemeToggle.scss";
 
 const ThemeToggle = () => {
   const { darkMode, setDarkMode } = useTheme();

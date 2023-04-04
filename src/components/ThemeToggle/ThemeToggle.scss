@@ -1,0 +1,51 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+/* reset */
+button {
+  all: unset;
+}
+
+.SwitchRoot {
+  width: 42px;
+  height: 25px;
+  background-color: map-get(
+    $lightmode,
+    "medium-dark-blue"
+  ); // Day mode background color
+  border-radius: 9999px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.SwitchRoot:focus {
+  box-shadow: 0 0 0 2px map-get($lightmode, "medium-dark-blue"); // Add focus color for accessibility
+}
+.SwitchRoot[data-state="checked"] {
+  background-color: map-get(
+    $darkmode,
+    "medium-dark-blue"
+  ); // Night mode background color
+}
+
+.SwitchThumb {
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-color: map-get($lightmode, "dark-blue"); // Day mode thumb color
+  border-radius: 9999px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 100ms;
+  transform: translateX(2px);
+  will-change: transform;
+}
+.SwitchThumb[data-state="checked"] {
+  background-color: map-get($darkmode, "white-blue"); // Night mode thumb color
+  transform: translateX(19px);
+}
+
+.Label {
+  color: map-get($lightmode, "dark-blue"); // Day mode label color
+  font-size: 15px;
+  line-height: 1;
+}

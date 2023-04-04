@@ -1,10 +1,15 @@
 // Dark mode
 $darkmode: (
-  white-blue: #6d8a94,
-  light-blue: #2d5471,
-  medium-blue: #1a3b56,
-  medium-dark-blue: #3f6b9a,
-  dark-blue: #5c8db5,
+  white-blue: #d5f0ff,
+  // A muted, darker shade of blue
+  light-blue: #1d2e4c,
+  // A deep, nighttime blue
+  medium-blue: #18223a,
+  // A very dark blue, almost black
+  medium-dark-blue: #5b4899,
+  // A dark shade of purple-blue
+  dark-blue: #2c365f,
+  // A dark, desaturated blue
 );
 
 // Light mode
@@ -21,5 +26,3 @@ $mobile-breakpoint: 30rem;
 $tablet-breakpoint: 48rem;
 $desktop-breakpoint: 80rem;
 $large-desktop-breakpoint: 120rem;
-
-

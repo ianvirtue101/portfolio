@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useMemo, useRef, RefObject } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { useTheme } from "../ThemeWrapper/ThemeWrapper";
 import { Physics, useBox, usePlane } from "@react-three/cannon";
 import {
   Environment,
@@ -97,63 +98,12 @@ function ColorBackground({ color }: ColorBackgroundProps) {
 //   );
 // }
 
-// type PhysicsLetterProps = {
-//   mesh: THREE.Mesh;
-// };
-
-// function PhysicsLetter({ mesh }: { mesh: Mesh }) {
-//   // Ensure the bounding box is computed
-//   if (!mesh.geometry.boundingBox) {
-//     mesh.geometry.computeBoundingBox();
-//   }
-
-//   // Calculate the dimensions of the bounding box
-//   const size = new Vector3();
-//   mesh.geometry.boundingBox.getSize(size);
-
-//   const mass = 98; // Adjust the mass as needed
-
-//   const [ref] = useBox(() => ({
-//     mass,
-//     args: [size.x, size.y, size.z],
-//     position: mesh.position.toArray(),
-//   }));
-
-//   return (
-//     <mesh
-//       ref={ref as RefObject<Mesh>}
-//       geometry={mesh.geometry}
-//       material={mesh.material}
-//       castShadow
-//       receiveShadow
-//     />
-//   );
-// }
-
-// type PhysicsLettersProps = {
-//   gltfPath: string;
-// };
-
-// function PhysicsLetters({ gltfPath }: PhysicsLettersProps) {
-//   const { scene } = useGLTF(gltfPath);
-
-//   return (
-//     <>
-//       {scene.children.map((child, index) => {
-//         if (child instanceof THREE.Mesh) {
-//           return <PhysicsLetter key={index} mesh={child} />;
-//         }
-//         return null;
-//       })}
-//     </>
-//   );
-// }
-
 function LimitedCamera() {
   return <PerspectiveCamera makeDefault position={[50, 20, -40]} />;
 }
 
 function GLTFViewer() {
+  const { darkMode } = useTheme();
   const { containerRef, handleDoubleClick, handleTouch } =
     useFullscreenToggle();
 
@@ -205,7 +155,7 @@ function GLTFViewer() {
 
           <Model receiveShadow castShadow />
           <Environment files={"/kloppenheim_06_puresky_1k.hdr"} />
-          <ColorBackground color="#D1EFFF" />
+          <ColorBackground color={darkMode ? "#152238" : "#D1EFFF"} />
 
           {/* <Physics>
             <PhysicsLetters gltfPath="/Letters.glb" />
