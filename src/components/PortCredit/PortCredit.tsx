@@ -15,7 +15,10 @@ type ModelProps = JSX.IntrinsicElements["group"];
 import "./portCredit.scss";
 
 function Model(props: ModelProps) {
-  const { scene } = useGLTF("/PortCredit2-PreBake2.glb");
+  const { darkMode } = useTheme();
+  const { scene } = useGLTF(
+    darkMode ? "/PortCredit2-PreBakeNightTime.glb" : "/PortCredit2-PreBake2.glb"
+  );
 
   useEffect(() => {
     scene.traverse((child) => {
