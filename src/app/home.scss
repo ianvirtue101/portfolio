@@ -337,7 +337,7 @@
   justify-content: center;
   align-items: center;
   @include gthemed() {
-    background-color: map-get($theme-map, "white-blue");
+    background-color: map-get($theme-map, "medium-blue");
   }
   padding: 2rem;
   overflow: hidden;
@@ -348,7 +348,7 @@
   &__header {
     position: relative;
     text-align: justify;
-    text-justify: inter-word;
+
     font-size: 2rem;
     @include font-bold;
 
@@ -362,7 +362,9 @@
   }
 
   &__circle {
-    background-color: white;
+    @include gthemed() {
+      background-color: map-get($theme-map, "header");
+    }
     border-radius: 50%;
     width: 50rem;
     height: 50rem;

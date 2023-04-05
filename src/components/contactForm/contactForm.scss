@@ -14,28 +14,36 @@
   }
   &__label {
     padding: 1rem 0rem;
+    @include gthemed() {
+      color: map-get($theme-map, "medium-blue");
+    }
   }
 
   &__input {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     @include gthemed() {
-      background-color: map-get($theme-map, "white-blue");
-      filter: drop-shadow(0.5rem 0.5rem 0rem map-get($theme-map, "dark-blue"));
+      background-color: map-get($theme-map, "header");
+      filter: drop-shadow(
+        0.5rem 0.5rem 0rem map-get($theme-map, "medium-blue")
+      );
+      border: 1px solid map-get($theme-map, "medium-blue");
     }
     width: 20rem;
-    border: 1px solid black;
   }
 
   &__textarea {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     @include gthemed() {
-      background-color: map-get($theme-map, "white-blue");
-      filter: drop-shadow(0.5rem 0.5rem 0rem map-get($theme-map, "dark-blue"));
+      background-color: map-get($theme-map, "header");
+      filter: drop-shadow(
+        0.5rem 0.5rem 0rem map-get($theme-map, "medium-blue")
+      );
+      border: 1px solid map-get($theme-map, "medium-blue");
     }
     width: 20rem;
-    border: 1px solid black;
+
     resize: none;
     overflow: auto;
     outline: none;
@@ -49,14 +57,15 @@
     height: 3.5rem;
     position: relative;
     @include gthemed() {
-      background-color: map-get($theme-map, "dark-blue");
+      background-color: map-get($theme-map, "medium-blue");
     }
   }
 
   &__button {
     @include gthemed() {
-      border: solid 3px map-get($theme-map, "dark-blue");
-      color: map-get($theme-map, "dark-blue");
+      border: solid 3px map-get($theme-map, "medium-blue");
+      color: map-get($theme-map, "medium-blue");
+      background-color: map-get($theme-map, "header");
     }
     display: flex;
     align-items: center;
@@ -65,7 +74,7 @@
     bottom: 4rem;
     margin-bottom: -4rem;
     right: 0.5rem;
-    background-color: white;
+
     text-decoration: none;
     text-align: center;
     height: 3.5rem;
