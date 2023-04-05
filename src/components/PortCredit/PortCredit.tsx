@@ -1,7 +1,9 @@
 import React, { Suspense, useEffect, useMemo, useRef, RefObject } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { PMREMGenerator, UnsignedByteType } from "three";
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 import { useTheme } from "../ThemeWrapper/ThemeWrapper";
-import { Physics, useBox, usePlane } from "@react-three/cannon";
+import { Physics } from "@react-three/cannon";
 import {
   Environment,
   OrbitControls,
@@ -16,36 +18,102 @@ import "./portCredit.scss";
 
 function Model(props: ModelProps) {
   const { darkMode } = useTheme();
-  const { scene } = useGLTF(
-    darkMode ? "/PortCredit2-PreBakeNightTime.glb" : "/PortCredit2-PreBake2.glb"
+  const gltfPath = useMemo(
+    () =>
+      darkMode
+        ? "/PortCredit2-PreBakeNightTime.glb"
+        : "/PortCredit2-PreBake2.glb",
+    [darkMode]
   );
+  const gltf = useGLTF(gltfPath);
+  const groupRef = useRef<THREE.Group>(null);
 
   useEffect(() => {
-    scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.receiveShadow = true;
-        child.castShadow = true;
+    if (groupRef.current && gltf.scene) {
+      const clonedScene = gltf.scene.clone();
 
-        // Ensure that the material is a MeshStandardMaterial or a MeshPhysicalMaterial
-        if (
-          child.material instanceof THREE.MeshStandardMaterial ||
-          child.material instanceof THREE.MeshPhysicalMaterial
-        ) {
-          // Set roughness and metalness to improve shadow quality
-          child.material.roughness = 1;
-          child.material.metalness = 0;
+      clonedScene.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.receiveShadow = true;
+          child.castShadow = true;
 
-          if (child.material.map) {
-            child.material.map.encoding = THREE.sRGBEncoding;
+          if (
+            child.material instanceof THREE.MeshStandardMaterial ||
+            child.material instanceof THREE.MeshPhysicalMaterial
+          ) {
+            child.material.roughness = 1;
+            child.material.metalness = 0;
+
+            if (child.material.map) {
+              child.material.map.encoding = THREE.sRGBEncoding;
+            }
+
+            child.material.needsUpdate = true;
           }
-
-          child.material.needsUpdate = true;
         }
-      }
-    });
-  }, [scene]);
+      });
 
-  return <primitive object={scene} {...props} />;
+      groupRef.current.add(clonedScene);
+    }
+
+    return () => {
+      if (groupRef.current) {
+        groupRef.current.children.forEach((child) => {
+          child.parent?.remove(child);
+          if (child instanceof THREE.Mesh) {
+            child.geometry.dispose();
+            child.material.dispose();
+
+            if (child.material.map) {
+              child.material.map.dispose();
+            }
+          }
+        });
+      }
+    };
+  }, [gltf.scene, darkMode]);
+
+  return <group ref={groupRef as RefObject<THREE.Group>} {...props} />;
+}
+
+function EnvironmentManager() {
+  const { darkMode } = useTheme();
+  const { gl, scene } = useThree();
+
+  useEffect(() => {
+    const pmremGenerator = new PMREMGenerator(gl);
+    pmremGenerator.compileEquirectangularShader();
+
+    const loadEnvironment = (path: string) => {
+      new RGBELoader().load(path, (texture: THREE.Texture) => {
+        const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+        scene.environment = envMap;
+        texture.dispose();
+      });
+    };
+
+    // Dispose the environment map when darkMode changes
+    const disposeEnvMap = () => {
+      if (scene.environment) {
+        scene.environment.dispose();
+      }
+    };
+
+    // Call the disposeEnvMap function
+    disposeEnvMap();
+
+    // Load the environment map
+    loadEnvironment(
+      darkMode ? "/shanghai_bund_1k.hdr" : "/kloppenheim_06_puresky_1k.hdr"
+    );
+
+    // Call the disposeEnvMap function when the component is unmounted
+    return () => {
+      disposeEnvMap();
+    };
+  }, [darkMode, gl, scene]);
+
+  return null;
 }
 
 type ColorBackgroundProps = {
@@ -157,13 +225,7 @@ function GLTFViewer() {
           />
 
           <Model receiveShadow castShadow />
-          <Environment
-            files={
-              darkMode
-                ? "/shanghai_bund_1k.hdr"
-                : "/kloppenheim_06_puresky_1k.hdr"
-            }
-          />
+          <EnvironmentManager />
           <ColorBackground color={darkMode ? "#152238" : "#D1EFFF"} />
 
           {/* <Physics>

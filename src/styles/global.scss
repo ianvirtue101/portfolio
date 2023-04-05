@@ -53,7 +53,7 @@ p {
 a {
   @include font-semibold;
   @include gthemed() {
-    color: map-get($theme-map, "medium-dark-blue");
+    color: map-get($theme-map, "text");
   }
 }
 

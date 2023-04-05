@@ -1,5 +1,7 @@
 // Dark mode
 $darkmode: (
+  header: #2c365f,
+  text: #d5f0ff,
   white-blue: #d5f0ff,
   // A muted, darker shade of blue
   light-blue: #1d2e4c,
@@ -14,6 +16,8 @@ $darkmode: (
 
 // Light mode
 $lightmode: (
+  header: #ffffff,
+  text: #174a99,
   white-blue: #d5f0ff,
   light-blue: #99c7ff,
   medium-blue: #5d9eff,

@@ -7,7 +7,7 @@
   align-items: center;
   padding: 2rem;
   @include gthemed() {
-    background-color: map-get($theme-map, "white-blue");
+    background-color: map-get($theme-map, "header");
   }
   position: relative;
   height: auto;
@@ -30,7 +30,7 @@
 
   &:hover {
     @include gthemed() {
-      color: map-get($theme-map, "dark-blue");
+      color: map-get($theme-map, "text");
     }
   }
 }
