@@ -57,6 +57,13 @@ a {
   }
 }
 
+label {
+  @include font-semibold;
+  @include gthemed() {
+    color: map-get($theme-map, "text");
+  }
+}
+
 div {
   @include font-regular;
 }

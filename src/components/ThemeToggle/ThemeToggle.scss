@@ -45,7 +45,7 @@ button {
 }
 
 .Label {
-  color: map-get($lightmode, "dark-blue"); // Day mode label color
+  color: map-get($lightmode, "text"); // Day mode label color
   font-size: 15px;
   line-height: 1;
 }

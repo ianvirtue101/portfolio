@@ -14,7 +14,7 @@ const ThemeToggle = () => {
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <label className="Label" htmlFor="dark-mode" style={{ paddingRight: 15 }}>
-        Dark Mode
+        {darkMode ? "Dark Mode" : "Light Mode"}
       </label>
       <Switch.Root
         className="SwitchRoot"
