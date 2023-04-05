@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useTheme } from "../ThemeWrapper/ThemeWrapper";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import CloudsTop from "../../../public/SVG/Cloud-Top.svg";
-import CloudTopDarkmode from "../../../public/SVG/Cloud-Top-Darkmode.svg";
+import CloudTopDarkmode from "../../../public/SVG/Cloud-Top-darkmode.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./navbar.scss";
 
