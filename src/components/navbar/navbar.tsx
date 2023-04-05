@@ -23,7 +23,9 @@ export default function Navbar() {
       <NavigationMenu.Root className="nav">
         {/* // create menu item for Home page, use Link from Next.js to handle
         routing */}
-        <ThemeToggle />
+        <div className="navItem__toggle">
+          <ThemeToggle />
+        </div>
         <NavigationMenu.Item
           className="navItem"
           onClick={() => setCurrentPage("home")}

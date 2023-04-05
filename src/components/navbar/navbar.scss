@@ -21,6 +21,12 @@
 .navItem {
   list-style: none;
   padding: 0rem 1rem;
+
+  &__toggle {
+    @include tablet {
+      flex-basis: 90%;
+    }
+  }
 }
 
 .navLink {
