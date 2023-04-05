@@ -62,6 +62,7 @@ label {
   @include gthemed() {
     color: map-get($theme-map, "text");
   }
+
 }
 
 div {

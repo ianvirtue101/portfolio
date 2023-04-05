@@ -21,49 +21,46 @@ export default function Navbar() {
   return (
     <>
       <NavigationMenu.Root className="nav">
-        {/* // create menu item for Home page, use Link from Next.js to handle
-        routing */}
         <div className="navItem__toggle">
           <ThemeToggle />
         </div>
-        <NavigationMenu.Item
-          className="navItem"
-          onClick={() => setCurrentPage("home")}
-        >
-          <Link className="navLink" href="/">
-            Home
-          </Link>
-        </NavigationMenu.Item>
-        {/* // create menu item for About page, use anchor tag with href for
-        scrolling */}
-        <NavigationMenu.Item
-          className="navItem"
-          onClick={() => setCurrentPage("about")}
-        >
-          <a className="navLink" href="#about">
-            About
-          </a>
-        </NavigationMenu.Item>
-        {/* // create menu item for Resume page, use anchor tag with href for
-        scrolling */}
-        <NavigationMenu.Item
-          className="navItem"
-          onClick={() => setCurrentPage("work")}
-        >
-          <a className="navLink" href="#resume">
-            Resume
-          </a>
-        </NavigationMenu.Item>
-        {/* // create menu item for Contact page, use anchor tag with href for
-        scrolling */}
-        <NavigationMenu.Item
-          className="navItem"
-          onClick={() => setCurrentPage("contact")}
-        >
-          <a className="navLink" href="#contact">
-            Contact
-          </a>
-        </NavigationMenu.Item>
+        <NavigationMenu.List className="navMenu">
+          <NavigationMenu.Item
+            className="navItem"
+            onClick={() => setCurrentPage("home")}
+          >
+            <Link className="navLink" href="/">
+              Home
+            </Link>
+          </NavigationMenu.Item>
+
+          <NavigationMenu.Item
+            className="navItem"
+            onClick={() => setCurrentPage("about")}
+          >
+            <a className="navLink" href="#about">
+              About
+            </a>
+          </NavigationMenu.Item>
+
+          <NavigationMenu.Item
+            className="navItem"
+            onClick={() => setCurrentPage("work")}
+          >
+            <a className="navLink" href="#resume">
+              Resume
+            </a>
+          </NavigationMenu.Item>
+
+          <NavigationMenu.Item
+            className="navItem"
+            onClick={() => setCurrentPage("contact")}
+          >
+            <a className="navLink" href="#contact">
+              Contact
+            </a>
+          </NavigationMenu.Item>
+        </NavigationMenu.List>
         <div className="imageContainer">
           <Image
             src={darkMode ? CloudTopDarkmode : CloudsTop}
