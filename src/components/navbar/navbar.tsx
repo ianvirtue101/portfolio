@@ -3,13 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useTheme } from "../ThemeWrapper/ThemeWrapper";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import CloudsTop from "../../../public/SVG/Cloud-Top.svg";
+import CloudTopDarkmode from "../../../public/SVG/Cloud-Top-Darkmode.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./navbar.scss";
 
 // define Navbar component
 export default function Navbar() {
+  // define darkMode state
+  const { darkMode } = useTheme();
   // define state to keep track of current page
   const [currentPage, setCurrentPage] = useState("home");
 
@@ -59,7 +63,11 @@ export default function Navbar() {
           </a>
         </NavigationMenu.Item>
         <div className="imageContainer">
-          <Image src={CloudsTop} alt="layers of white fluffy clouds" />
+          <Image
+            src={darkMode ? CloudTopDarkmode : CloudsTop}
+            alt="layers of white fluffy clouds"
+            priority
+          />
         </div>
       </NavigationMenu.Root>
     </>

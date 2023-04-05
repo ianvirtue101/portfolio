@@ -4,12 +4,14 @@ import Image from "next/image";
 import HoverCards from "../components/hoverCard/hoverCard";
 import "./home.scss";
 import React, { useState, useEffect, Suspense } from "react";
+import { useTheme } from "../components/ThemeWrapper/ThemeWrapper";
 import Instagram from "../assets/icons/instagram.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
 import PortCredit from "../components/PortCredit/PortCredit";
 import CloudBottom from "../../public/SVG/Cloud-Bottom.svg";
+import CloudBottomDarkMode from "../../public/SVG/Cloud-Bottom-darkmode.svg";
 import Head from "./head";
 
 // Create a custom hook that returns the current window width
@@ -36,24 +38,7 @@ function useWindowSize() {
 }
 
 export default function Home() {
-  // const [splitCloud, setSplitCloud] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setSplitCloud(true);
-  //     } else {
-  //       setSplitCloud(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
+  const { darkMode } = useTheme();
   const width = useWindowSize(); // Get the width of the window using the custom hook
 
   const tabletBreakpoint = 768; // Define a breakpoint for tablet devices
@@ -100,33 +85,17 @@ export default function Home() {
   };
 
   return (
-    // <Suspense fallback={<Loading />}>
     <main>
       <Head />
-      {/* <ClientOnly>{width >= tabletBreakpoint && <Mountains />}</ClientOnly> */}
 
       <section className="section">
         <PortCredit />
-        {/* {" "}
-          <div className="container">
-            <h1 className="container__title">Hi, I&apos;m Ian</h1>
-            <RotatingText />
-            <h2 className="container__text">
-              I&apos;m really excited to share my work with you and tell you a
-              bit more about my background.
-            </h2>
-
-            <div className="container__buttonBLock"> </div>
-            <a className="container__button" href="#contact">
-              Let&apos;s Work Together
-            </a>
-          </div> */}
       </section>
 
       <section className="body-section">
         <div className="CloudContainer">
           <Image
-            src={CloudBottom}
+            src={darkMode ? CloudBottomDarkMode : CloudBottom}
             alt="fluffy white clouds to frame the cityscape"
           />
         </div>
@@ -148,16 +117,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* <div className="image-container">
-            <div className="image-container__block">
-              <Image
-                className="image-container__image"
-                src={Headshot}
-                alt="Ian Virtue Headshot"
-                width={300}
-                priority
-              />
-            </div> */}
           <h2 className="body-section__subheading">Let&apos;s Connect</h2>
           <div className="image-container__hover-card">
             <HoverCards
