@@ -21,7 +21,7 @@ function Model(props: ModelProps) {
   const gltfPath = useMemo(
     () =>
       darkMode
-        ? "/PortCredit2-PreBakeNightTime.glb"
+        ? "/PortCredit2-PreBakeNightTime2.glb"
         : "/PortCredit2-PreBake2.glb",
     [darkMode]
   );
