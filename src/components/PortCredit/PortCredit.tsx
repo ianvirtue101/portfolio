@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useMemo, useRef, RefObject } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import { PMREMGenerator, UnsignedByteType } from "three";
+import { PMREMGenerator, SpotLightHelper, UnsignedByteType } from "three";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 import { useTheme } from "../ThemeWrapper/ThemeWrapper";
 import { Physics } from "@react-three/cannon";
@@ -10,6 +10,7 @@ import {
   PerspectiveCamera,
   SpotLight,
   useGLTF,
+  useHelper,
 } from "@react-three/drei";
 import * as THREE from "three";
 import { useFullscreenToggle } from "../FullScreenToggle/FullScreenToggle";
@@ -21,8 +22,8 @@ function Model(props: ModelProps) {
   const gltfPath = useMemo(
     () =>
       darkMode
-        ? "/PortCredit2-PreBakeNightTime2.glb"
-        : "/PortCredit2-PreBake2.glb",
+        ? "/PortCredit2-PreBakeNightTime3.glb"
+        : "/PortCredit2-PreBake3.glb",
     [darkMode]
   );
   const gltf = useGLTF(gltfPath);
@@ -72,7 +73,6 @@ function Model(props: ModelProps) {
       }
     };
   }, [gltf.scene, darkMode]);
-
   return <group ref={groupRef as RefObject<THREE.Group>} {...props} />;
 }
 
@@ -195,45 +195,48 @@ function GLTFViewer() {
         }}
         shadows
       >
-        <Physics>
-          <OrbitControls
-            enablePan={false} // Disable panning
-            minPolarAngle={Math.PI / 4} // Minimum polar angle (up-down movement)
-            maxPolarAngle={(3 * Math.PI) / 4} // Maximum polar angle (up-down movement)
-            // minAzimuthAngle={-Math.PI / 2} // Minimum azimuth angle (left-right movement)
-            // maxAzimuthAngle={Math.PI / 2} // Maximum azimuth angle (left-right movement)
-            target={[10, 5, -5]}
-          />
-          <LimitedCamera />
+        {/* <Physics> */}
+        <OrbitControls
+          enablePan={false} // Disable panning
+          minPolarAngle={Math.PI / 4} // Minimum polar angle (up-down movement)
+          maxPolarAngle={(3 * Math.PI) / 4} // Maximum polar angle (up-down movement)
+          // minAzimuthAngle={-Math.PI / 2} // Minimum azimuth angle (left-right movement)
+          // maxAzimuthAngle={Math.PI / 2} // Maximum azimuth angle (left-right movement)
+          target={[10, 5, -5]}
+        />
+        <LimitedCamera />
 
-          <ambientLight intensity={2} color={"#87CEFA"} />
-          {/* <DirectionalLightWithHelper /> */}
-          <directionalLight
-            color={darkMode ? "#96c1ff" : "#FFA500"}
-            castShadow={true}
-            intensity={darkMode ? 1 : 5}
-            position={darkMode ? [10, 30, 20] : [40, 20, 30]} // Adjust the position to control the light direction
-            shadow-mapSize-width={4096} // Increased shadow map resolution
-            shadow-mapSize-height={4096} // Increased shadow map resolution
-            shadow-camera-far={100}
-            shadow-camera-near={0.1}
-            shadow-camera-top={60}
-            shadow-camera-bottom={-60}
-            shadow-camera-left={-60}
-            shadow-camera-right={60}
-            shadow-bias={-0.005} // Adjusted shadow bias to reduce artifacts
-          />
+        <ambientLight
+          intensity={darkMode ? 1 : 2}
+          color={darkMode ? "#2F4F4F" : "#ADD8E6"}
+        />
+        {/* <DirectionalLightWithHelper /> */}
+        <directionalLight
+          color={darkMode ? "#96c1ff" : "#FFA500"}
+          castShadow={true}
+          intensity={darkMode ? 2 : 5}
+          position={darkMode ? [10, 30, 20] : [40, 20, 30]} // Adjust the position to control the light direction
+          shadow-mapSize-width={4096} // Increased shadow map resolution
+          shadow-mapSize-height={4096} // Increased shadow map resolution
+          shadow-camera-far={100}
+          shadow-camera-near={0.1}
+          shadow-camera-top={60}
+          shadow-camera-bottom={-60}
+          shadow-camera-left={-60}
+          shadow-camera-right={60}
+          shadow-bias={-0.005} // Adjusted shadow bias to reduce artifacts
+        />
 
-          <Model receiveShadow castShadow />
-          <EnvironmentManager />
-          <ColorBackground color={darkMode ? "#152238" : "#D1EFFF"} />
+        <Model receiveShadow castShadow />
+        <EnvironmentManager />
+        <ColorBackground color={darkMode ? "#152238" : "#D1EFFF"} />
 
-          {/* <Physics>
+        {/* <Physics>
             <PhysicsLetters gltfPath="/Letters.glb" />
           </Physics> */}
 
-          <OrbitControls />
-        </Physics>
+        <OrbitControls />
+        {/* </Physics> */}
       </Canvas>
     </div>
   );
