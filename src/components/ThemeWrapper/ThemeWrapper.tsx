@@ -1,4 +1,3 @@
-// ThemeWrapper.tsx
 "use client";
 import React, {
   createContext,
