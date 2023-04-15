@@ -337,7 +337,7 @@
   justify-content: center;
   align-items: center;
   @include gthemed() {
-    background-color: map-get($theme-map, "medium-blue");
+    background-color: map-get($theme-map, "header");
   }
   padding: 2rem;
   overflow: hidden;
@@ -348,29 +348,29 @@
   &__header {
     position: relative;
     text-align: justify;
-
+    @include gthemed() {
+      color: map-get($theme-map, "text");
+    }
     font-size: 2rem;
     @include font-bold;
 
     @include desktop {
-      top: 12rem;
       line-height: 3rem;
-      margin-top: -12rem;
-      width: 70%;
       text-align: center;
     }
   }
 
   &__circle {
     @include gthemed() {
-      background-color: map-get($theme-map, "header");
+      background-color: map-get($theme-map, "medium-blue");
     }
     border-radius: 50%;
     width: 50rem;
     height: 50rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
 
     @include desktop {
       width: 50rem;
