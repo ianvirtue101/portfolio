@@ -348,6 +348,7 @@
   &__header {
     position: relative;
     text-align: justify;
+    width: 50%;
     @include gthemed() {
       color: map-get($theme-map, "text");
     }
@@ -355,6 +356,7 @@
     @include font-bold;
 
     @include desktop {
+      width: 100%;
       line-height: 3rem;
       text-align: center;
     }
