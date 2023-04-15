@@ -6,6 +6,9 @@ import "./home.scss";
 import React, { useState, useEffect, Suspense } from "react";
 import { useTheme } from "../components/ThemeWrapper/ThemeWrapper";
 import Instagram from "../assets/icons/instagram.svg";
+import InstagramDarkmode from "../assets/icons/instagram-darkmode.svg";
+import GitHubDarkmode from "../assets/icons/github-darkmode.svg";
+import LinkedInDarkmode from "../assets/icons/linkedin-darkmode.svg";
 import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 import ContactForm from "../components/contactForm/contactForm";
@@ -125,7 +128,7 @@ export default function Home() {
               handle={data.instagram.handle}
               followers={data.instagram.followers}
               description={data.instagram.description}
-              image={Instagram}
+              image={darkMode ? InstagramDarkmode : Instagram}
             />
             <HoverCards
               channel={data.linkedin.channel}
@@ -133,7 +136,7 @@ export default function Home() {
               handle={data.linkedin.handle}
               followers={data.linkedin.followers}
               description={data.linkedin.description}
-              image={Linkedin}
+              image={darkMode ? LinkedInDarkmode : Linkedin}
             />
             <HoverCards
               channel={data.github.channel}
@@ -141,7 +144,7 @@ export default function Home() {
               handle={data.github.handle}
               followers={data.github.followers}
               description={data.github.description}
-              image={Github}
+              image={darkMode ? GitHubDarkmode : Github}
             />
           </div>
           {/* </div> */}

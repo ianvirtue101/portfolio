@@ -350,7 +350,7 @@
     text-align: justify;
     width: 50%;
     @include gthemed() {
-      color: map-get($theme-map, "text");
+      color: map-get($theme-map, "contact-form-text");
     }
     font-size: 2rem;
     @include font-bold;
@@ -375,8 +375,8 @@
     flex-direction: column;
 
     @include desktop {
-      width: 50rem;
-      height: 50rem;
+      width: 55rem;
+      height: 55rem;
     }
   }
 }
@@ -440,10 +440,9 @@
     padding: 6rem 3rem 3rem 3rem;
 
     &__header {
-      top: 8rem;
       line-height: 2.5rem;
-      margin-top: -8rem;
-      width: 80%;
+
+      width: 60%;
       text-align: center;
     }
   }

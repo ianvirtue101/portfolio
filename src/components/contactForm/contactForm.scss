@@ -15,7 +15,7 @@
   &__label {
     padding: 1rem 0rem;
     @include gthemed() {
-      color: map-get($theme-map, "text");
+      color: map-get($theme-map, "contact-form-text");
     }
   }
 
@@ -23,7 +23,7 @@
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     @include gthemed() {
-      background-color: map-get($theme-map, "text");
+      background-color: map-get($theme-map, "contact-form-text");
       filter: drop-shadow(
         0.5rem 0.5rem 0rem map-get($theme-map, "medium-blue")
       );
@@ -36,7 +36,7 @@
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     @include gthemed() {
-      background-color: map-get($theme-map, "text");
+      background-color: map-get($theme-map, "contact-form-text");
       filter: drop-shadow(
         0.5rem 0.5rem 0rem map-get($theme-map, "medium-blue")
       );
@@ -64,7 +64,7 @@
   &__button {
     @include gthemed() {
       border: solid 3px map-get($theme-map, "header");
-      color: map-get($theme-map, "text");
+      color: map-get($theme-map, "contact-form-text");
       background-color: map-get($theme-map, "medium-blue");
     }
     display: flex;
