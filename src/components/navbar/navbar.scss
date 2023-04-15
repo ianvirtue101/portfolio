@@ -6,7 +6,7 @@
   flex-wrap: wrap-reverse;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+
   position: relative;
   height: auto;
   @include gthemed() {
@@ -21,11 +21,15 @@
 
 .navMenu {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0rem;
 }
 
 .navItem {
   list-style: none;
-  padding: 0rem 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 
   @include tablet {
     flex-grow: 0;
@@ -33,7 +37,7 @@
 
   &__toggle {
     justify-content: end;
-    
+
     @include tablet {
       flex-grow: 4;
     }

@@ -348,11 +348,12 @@
   &__header {
     position: relative;
     text-align: justify;
-    width: 50%;
+    width: 40%;
+    font-size: 1.5rem;
     @include gthemed() {
       color: map-get($theme-map, "contact-form-text");
     }
-    font-size: 2rem;
+
     @include font-bold;
 
     @include desktop {
@@ -441,7 +442,7 @@
 
     &__header {
       line-height: 2.5rem;
-
+      font-size: 2rem;
       width: 60%;
       text-align: center;
     }
