@@ -5,10 +5,10 @@ import { useTheme } from "../ThemeWrapper/ThemeWrapper";
 import "./ThemeToggle.scss";
 
 const ThemeToggle = () => {
-  const { darkMode, setDarkMode } = useTheme();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   const handleToggleClick = () => {
-    setDarkMode(!darkMode);
+    toggleDarkMode();
   };
 
   return (

@@ -1,30 +1,36 @@
 "use client";
-import React, {
-  createContext,
-  useState,
-  useContext,
-  ReactNode,
-  useEffect,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-type ThemeContextType = {
+interface ThemeContextValue {
   darkMode: boolean;
-  setDarkMode: (darkMode: boolean) => void;
-};
+  toggleDarkMode: () => void;
+}
 
-const ThemeContext = createContext<ThemeContextType>({
+const ThemeContext = createContext<ThemeContextValue>({
   darkMode: false,
-  setDarkMode: () => {},
+  toggleDarkMode: () => {},
 });
 
 export const useTheme = () => useContext(ThemeContext);
 
-type ThemeWrapperProps = {
-  children: ReactNode;
-};
+interface ThemeWrapperProps {
+  children: React.ReactNode;
+}
 
-const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+export const ThemeWrapper: React.FC<ThemeWrapperProps> = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("dark-mode");
+    if (savedDarkMode !== null) {
+      setDarkMode(JSON.parse(savedDarkMode));
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem("dark-mode", JSON.stringify(!darkMode));
+  };
 
   useEffect(() => {
     const className = darkMode ? "darkmode" : "lightmode";
@@ -35,10 +41,8 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeWrapper;

@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/navbar";
 import { AnalyticsWrapper } from "../components/analytics/analytics";
 import { Suspense } from "react";
 import Loading from "./loading";
-import ThemeWrapper from "@/components/ThemeWrapper/ThemeWrapper";
+import { ThemeWrapper } from "@/components/ThemeWrapper/ThemeWrapper";
 
 export default function RootLayout({
   children,
