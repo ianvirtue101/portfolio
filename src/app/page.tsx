@@ -17,44 +17,10 @@ import CloudBottom from "../../public/SVG/Cloud-Bottom.svg";
 import CloudBottomDarkMode from "../../public/SVG/Cloud-Bottom-darkmode.svg";
 import Head from "./head";
 
-// // Create a custom hook that returns the current window width
-// function useWindowSize() {
-//   // Check if running in a client-side environment
-//   const isClient = typeof window === "object";
-
-//   // Initialize the width state to the current window width
-//   const [width, setWidth] = useState(isClient ? window.innerWidth : 0);
-
-//   // Add an event listener to update the width state when the window is resized
-//   useEffect(() => {
-//     if (!isClient) return;
-
-//     const handleResize = () => setWidth(window.innerWidth);
-//     window.addEventListener("resize", handleResize);
-
-//     // Remove the event listener when the component is unmounted
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, [isClient]);
-
-//   // Return the current window width
-//   return width;
-// }
 
 export default function Home() {
   const { darkMode } = useTheme();
-  // const width = useWindowSize(); // Get the width of the window using the custom hook
 
-  // const tabletBreakpoint = 768; // Define a breakpoint for tablet devices
-
-  // useEffect(() => {
-  //   // Use the useEffect hook to conditionally execute code based on the width of the window
-  //   if (width >= tabletBreakpoint) {
-  //     // If the width of the window is greater than or equal to the tablet breakpoint
-  //     return () => {
-  //       // any cleanup logic here
-  //     };
-  //   }
-  // }, [width]);
 
   const data = {
     // Define an object with data for social media channels

@@ -37,6 +37,10 @@ const useFullscreenToggle = () => {
 
   const handleTouch = useCallback(
     (event: React.TouchEvent<HTMLDivElement>) => {
+      if (event.touches.length !== 1) {
+        return;
+      }
+
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTap;
       const tapTimeout = 300; // Adjust this value to control the time between taps
