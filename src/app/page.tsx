@@ -17,10 +17,8 @@ import CloudBottom from "../../public/SVG/Cloud-Bottom.svg";
 import CloudBottomDarkMode from "../../public/SVG/Cloud-Bottom-darkmode.svg";
 import Head from "./head";
 
-
 export default function Home() {
   const { darkMode } = useTheme();
-
 
   const data = {
     // Define an object with data for social media channels
@@ -66,6 +64,7 @@ export default function Home() {
           <Image
             src={darkMode ? CloudBottomDarkMode : CloudBottom}
             alt="fluffy white clouds to frame the cityscape"
+            loading="lazy"
           />
         </div>
         <div className="body-section__group">
