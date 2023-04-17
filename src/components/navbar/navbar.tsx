@@ -66,7 +66,6 @@ export default function Navbar() {
             src={darkMode ? CloudTopDarkmode : CloudsTop}
             alt="layers of white fluffy clouds"
             priority
-            loading="lazy"
           />
         </div>
       </NavigationMenu.Root>

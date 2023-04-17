@@ -6,7 +6,7 @@
   flex-wrap: wrap-reverse;
   justify-content: center;
   align-items: center;
-
+  padding: 2rem;
   position: relative;
   height: auto;
   @include gthemed() {
@@ -37,6 +37,7 @@
 
   &__toggle {
     justify-content: end;
+    padding: 0rem 1rem;
 
     @include tablet {
       flex-grow: 4;
