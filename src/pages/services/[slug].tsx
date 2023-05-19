@@ -12,7 +12,7 @@ const client = contentful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default function ServicesPage(props) {
+export default function ServicesPage(props : any) {
   console.log(props);
   if (props.error) {
     return (
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context : any) {
   // Get data from headless CMS
   const service = await client.getEntries({
     content_type: "services",
