@@ -1,4 +1,3 @@
-import contentful from "contentful";
 import { createClient } from "contentful";
 
 if (
@@ -13,17 +12,16 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-client
-  .getEntries()
-  .then((response) => console.log(response.items))
-  .catch(console.error);
-
 async function fetchServices() {
   const entries = await client.getEntries({
     content_type: "services",
   });
-  console.log(entries.items);
-  return entries.items.map((item) => item.fields);
+
+  if (entries.items.length > 0) {
+    return entries.items.map((item) => item.fields);
+  }
+
+  throw new Error("No services found.");
 }
 
 async function fetchService(slug: string) {
@@ -42,15 +40,11 @@ async function fetchService(slug: string) {
 async function fetchServiceSlugs() {
   const entries = await client.getEntries({ content_type: "services" });
 
-  if (entries.items) {
-    const slugs = entries.items.map((item) => item.fields.slug);
-    console.log(slugs);
-    return slugs;
+  if (entries.items.length > 0) {
+    return entries.items.map((item) => item.fields.slug);
   }
 
-  // It's good practice to handle potential empty states
-  console.log("No items found");
-  return [];
+  throw new Error("No services found.");
 }
 
 export { fetchServices, fetchService, fetchServiceSlugs };

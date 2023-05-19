@@ -1,19 +1,6 @@
-import * as contentful from "contentful";
-
-if (
-  !process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID ||
-  !process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
-) {
-  throw new Error("Contentful space ID and/or access token are missing");
-}
-
-const client = contentful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+import { fetchService, fetchServiceSlugs } from "../../lib/contentful";
 
 export default function ServicesPage(props: any) {
-  // console.log(props);
   if (props.error) {
     return (
       <div>
@@ -33,39 +20,18 @@ export default function ServicesPage(props: any) {
 }
 
 export async function getStaticPaths() {
-  const services = await client.getEntries({
-    content_type: "services",
-  });
-
-  const paths = services.items.map((service) => ({
-    params: {
-      slug: service.fields.slug,
-    },
-  }));
-
-  console.log("paths: ", paths);
+  const paths = await fetchServiceSlugs();
 
   return {
     fallback: false,
-    paths,
+    paths: paths.map((slug) => ({ params: { slug } })),
   };
 }
 
 export async function getStaticProps(context: any) {
-  // Get data from headless CMS
-  const service = await client.getEntries({
-    content_type: "services",
-    limit: 1,
-    "fields.slug": context.params.slug,
-  });
-
-  // console.log("services: ", service);
+  const service = await fetchService(context.params.slug);
 
   return {
-    props: {
-      error:
-        !service.items.length && `No service with id: ${context.params.slug}`,
-      ...service?.items?.[0]?.fields,
-    },
+    props: service,
   };
 }
