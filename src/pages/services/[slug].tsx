@@ -16,6 +16,7 @@ export default function ServicesPage(props: any) {
       <h1>{props.title}</h1>
       <h2>{props.description}</h2>
       <p>{props.detailedDescription}</p>
+      <p>{props.priceInformation}</p>
     </div>
   );
 }

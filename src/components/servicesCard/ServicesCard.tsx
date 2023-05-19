@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const ServicesCard = ({ service }: any) => {
-  const { title, description, pricingInformation, slug } = service;
+  const { title, description, priceInformation, slug } = service;
 
   console.log(service);
 
@@ -10,7 +10,7 @@ const ServicesCard = ({ service }: any) => {
       <h1>Title</h1>
       <h3>{title}</h3>
       <p>{description}</p>
-      <p>Pricing:{pricingInformation}</p>
+      <p>Pricing:{priceInformation}</p>
       <Link href={`/services/${slug}`} passHref>
         Learn More
       </Link>
