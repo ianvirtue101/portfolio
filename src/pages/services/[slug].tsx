@@ -12,8 +12,8 @@ const client = contentful.createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default function ServicesPage(props : any) {
-  console.log(props);
+export default function ServicesPage(props: any) {
+  // console.log(props);
   if (props.error) {
     return (
       <div>
@@ -27,6 +27,7 @@ export default function ServicesPage(props : any) {
     <div>
       <h1>{props.title}</h1>
       <h2>{props.description}</h2>
+      <p>{props.detailedDescription}</p>
     </div>
   );
 }
@@ -50,7 +51,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context : any) {
+export async function getStaticProps(context: any) {
   // Get data from headless CMS
   const service = await client.getEntries({
     content_type: "services",
@@ -58,7 +59,7 @@ export async function getStaticProps(context : any) {
     "fields.slug": context.params.slug,
   });
 
-  console.log("services: ", service);
+  // console.log("services: ", service);
 
   return {
     props: {
