@@ -1,4 +1,5 @@
 import { fetchService, fetchServiceSlugs } from "../../lib/contentful";
+import "../../styles/global.scss";
 
 export default function ServicesPage(props: any) {
   if (props.error) {
