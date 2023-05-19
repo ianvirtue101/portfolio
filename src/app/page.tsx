@@ -16,6 +16,9 @@ import PortCredit from "../components/PortCredit/PortCredit";
 import CloudBottom from "../../public/SVG/Cloud-Bottom.svg";
 import CloudBottomDarkMode from "../../public/SVG/Cloud-Bottom-darkmode.svg";
 import Head from "./head";
+import { fetchServices } from "@/lib/contentful";
+
+fetchServices().then(() => console.log("Done"));
 
 export default function Home() {
   const { darkMode } = useTheme();
