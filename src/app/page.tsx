@@ -15,9 +15,25 @@ import ContactForm from "../components/contactForm/contactForm";
 import PortCredit from "../components/PortCredit/PortCredit";
 import CloudBottom from "../../public/SVG/Cloud-Bottom.svg";
 import CloudBottomDarkMode from "../../public/SVG/Cloud-Bottom-darkmode.svg";
+import ServicesCard from "@/components/servicesCard/ServicesCard";
+import { fetchServices } from "@/lib/contentful";
 import Head from "./head";
 
+// receive the services from fetchServices
+
 export default function Home() {
+  const [servicesList, setServicesList] = useState([]);
+
+  useEffect(() => {
+    async function fetchServicesList() {
+      const services: any = await fetchServices();
+      setServicesList(services);
+    }
+    fetchServicesList();
+  }, []);
+
+  console.log(servicesList);
+
   const { darkMode } = useTheme();
 
   const data = {
@@ -114,6 +130,11 @@ export default function Home() {
           </div>
           {/* </div> */}
         </div>
+      </section>
+      <section>
+        {servicesList.map((service: any) => (
+          <ServicesCard key={service.slug} service={service} />
+        ))}
       </section>
       <section id="resume" className="resume-section">
         <h2 className="resume-section__title">My Experience</h2>
