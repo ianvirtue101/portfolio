@@ -1,5 +1,6 @@
 import { fetchService, fetchServiceSlugs } from "../../lib/contentful";
 import { useTheme } from "../../components/ThemeWrapper/ThemeWrapper";
+import RootLayout from "@/app/layout";
 import "../../styles/global.scss";
 import "./slug.scss";
 
@@ -14,16 +15,22 @@ export default function ServicesPage(props: any) {
   }
 
   return (
-    <div>
-      <div className="service-container">
-        <h1 className="service-title">{props.title}</h1>
-        <h2 className="service-description">{props.description}</h2>
-        <p className="service-detailed-description">
-          {props.detailedDescription}
-        </p>
-        <p className="service-price-information">{props.priceInformation}</p>
-      </div>
-    </div>
+    <>
+      <RootLayout>
+        <div>
+          <div className="service-container">
+            <h1 className="service-title">{props.title}</h1>
+            <h2 className="service-description">{props.description}</h2>
+            <p className="service-detailed-description">
+              {props.detailedDescription}
+            </p>
+            <p className="service-price-information">
+              {props.priceInformation}
+            </p>
+          </div>
+        </div>
+      </RootLayout>
+    </>
   );
 }
 
