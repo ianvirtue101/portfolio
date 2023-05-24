@@ -1,5 +1,7 @@
 import { fetchService, fetchServiceSlugs } from "../../lib/contentful";
+import { useTheme } from "../../components/ThemeWrapper/ThemeWrapper";
 import "../../styles/global.scss";
+import "./slug.scss";
 
 export default function ServicesPage(props: any) {
   if (props.error) {
@@ -13,10 +15,14 @@ export default function ServicesPage(props: any) {
 
   return (
     <div>
-      <h1>{props.title}</h1>
-      <h2>{props.description}</h2>
-      <p>{props.detailedDescription}</p>
-      <p>{props.priceInformation}</p>
+      <div className="service-container">
+        <h1 className="service-title">{props.title}</h1>
+        <h2 className="service-description">{props.description}</h2>
+        <p className="service-detailed-description">
+          {props.detailedDescription}
+        </p>
+        <p className="service-price-information">{props.priceInformation}</p>
+      </div>
     </div>
   );
 }
