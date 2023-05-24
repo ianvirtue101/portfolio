@@ -122,21 +122,22 @@
 
 .body-section {
   position: relative;
+  padding: 1rem;
   @include gthemed() {
     background-color: map-get($theme-map, "header");
   }
   font-size: 1rem;
   @include desktop {
     flex-direction: row;
+    padding: 2rem 2rem;
   }
 
   &__text-block {
-    padding: 1rem;
+    // padding: 1rem;
     @include desktop {
       display: flex;
 
       flex-direction: column;
-      padding: 2rem 2rem;
     }
   }
 
@@ -194,8 +195,11 @@
 }
 
 .services-section {
-  padding: 1rem;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .resume-section {
@@ -410,7 +414,7 @@
     &__text-block {
       display: flex;
       flex-direction: column;
-      // padding: 0rem 2rem 2rem 2rem;
+
       flex-basis: 45%;
     }
 
@@ -432,10 +436,6 @@
       margin: 1rem;
       padding: 1rem 1.5rem;
     }
-
-    // &__container {
-    //   // flex-direction: column;
-    // }
 
     &__text {
       font-size: 1.2rem;

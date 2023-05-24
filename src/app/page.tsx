@@ -131,11 +131,13 @@ export default function Home() {
           {/* </div> */}
         </div>
       </section>
-      <section id="services" className="services-section">
-        <h2>Services</h2>
-        {servicesList.map((service: any) => (
-          <ServicesCard key={service.slug} service={service} />
-        ))}
+      <section id="services" className="body-section">
+        <h2 className="body-section__title">Services</h2>
+        <div className="services-section">
+          {servicesList.map((service: any) => (
+            <ServicesCard key={service.slug} service={service} />
+          ))}
+        </div>
       </section>
       <section id="resume" className="resume-section">
         <h2 className="resume-section__title">My Experience</h2>
