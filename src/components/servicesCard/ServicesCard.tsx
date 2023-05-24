@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./ServicesCard.scss";
 
 const ServicesCard = ({ service }: any) => {
   const { title, description, priceInformation, slug } = service;
@@ -7,11 +8,10 @@ const ServicesCard = ({ service }: any) => {
 
   return (
     <div className="card">
-      <h1>Title</h1>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <p>Pricing:{priceInformation}</p>
-      <Link href={`/services/${slug}`} passHref>
+      <h3 className="card__title">{title}</h3>
+      <p className="card__description">{description}</p>
+      <p className="card__pricing">Pricing:{priceInformation}</p>
+      <Link className="card__link" href={`/services/${slug}`} passHref>
         Learn More
       </Link>
     </div>

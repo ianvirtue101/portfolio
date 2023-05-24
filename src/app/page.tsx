@@ -131,7 +131,8 @@ export default function Home() {
           {/* </div> */}
         </div>
       </section>
-      <section>
+      <section id="services" className="services-section">
+        <h2>Services</h2>
         {servicesList.map((service: any) => (
           <ServicesCard key={service.slug} service={service} />
         ))}

@@ -193,6 +193,11 @@
   }
 }
 
+.services-section {
+  padding: 1rem;
+  display: flex;
+}
+
 .resume-section {
   @include gthemed() {
     background-color: map-get($theme-map, "medium-dark-blue");
