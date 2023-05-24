@@ -32,8 +32,6 @@ export default function Home() {
     fetchServicesList();
   }, []);
 
-  console.log(servicesList);
-
   const { darkMode } = useTheme();
 
   const data = {

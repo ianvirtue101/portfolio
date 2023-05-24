@@ -1,0 +1,129 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.pricing-structure {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include gthemed() {
+    background-color: map-get($theme-map, "medium-dark-blue");
+  }
+
+  &__timeline {
+    position: relative;
+    padding-left: 3rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 1rem;
+      width: 2px;
+      @include gthemed() {
+        background-color: map-get($theme-map, "medium-blue");
+      }
+    }
+  }
+}
+
+.stage {
+  position: relative;
+  padding: 1rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: -1.5rem;
+    width: 1rem;
+    height: 1rem;
+    @include gthemed() {
+      background-color: map-get($theme-map, "medium-blue");
+    }
+    border-radius: 50%;
+  }
+
+  &__title {
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__cost {
+    @include gthemed() {
+      color: map-get($theme-map, "medium-dark-blue");
+    }
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__details {
+    @include gthemed() {
+      color: map-get($theme-map, "text");
+    }
+    font-size: 1em;
+  }
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &__title {
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
+    font-size: 2em;
+  }
+
+  &__text {
+    @include gthemed() {
+      color: map-get($theme-map, "text");
+    }
+    font-size: 1.2em;
+  }
+}
+
+.cta {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  &__title {
+    @include gthemed() {
+      color: map-get($theme-map, "dark-blue");
+    }
+    font-size: 2em;
+  }
+
+  &__text {
+    @include gthemed() {
+      color: map-get($theme-map, "text");
+    }
+    font-size: 1.2em;
+  }
+
+  &__button {
+    @include gthemed() {
+      background-color: map-get($theme-map, "medium-blue");
+      color: map-get($theme-map, "text");
+    }
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      @include gthemed() {
+        background-color: map-get($theme-map, "medium-dark-blue");
+      }
+    }
+  }
+}
